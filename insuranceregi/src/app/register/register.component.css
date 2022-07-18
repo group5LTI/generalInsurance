@@ -1,0 +1,36 @@
+*{
+	box-sizing: border-box;
+}
+
+
+html,body{
+	height: 100%;
+	margin: 0px;
+}
+
+
+nav{
+	font-family: 'Montserrat',Arial, sans-serif;
+}
+
+
+.form-container
+
+{height: 100vh;
+	margin: 1% 10% 10% 10%;
+	font-family: 'Montserrat', Arial,sans-serif;
+}
+
+.form-header{
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+}
+
+.color-me{
+	color:#e6cf25;
+}
+#grad1{
+	/*#5b0a91,#e9ebf2*/
+	background-image: linear-gradient(to top,#00ffff,#ff1493);
+	/*background-color: linear-gradient(to top,#000000,#ffffff);*/
+}
