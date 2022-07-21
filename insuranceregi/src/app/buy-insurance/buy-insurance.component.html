@@ -1,0 +1,57 @@
+<body>
+    <div class="container">
+        <div class="title">Buy Insurance</div><br>
+        <div class="content">
+            <form [formGroup]="exform">
+                <div class="vehicle-details">
+                    <input type="radio" name="Vehicle" id="dot-1" value="1">
+                    <input type="radio" name="Vehicle" id="dot-2" value="2">
+                    <span class="details">Vehicle Type</span>
+                    <div class="category">
+                        <label for="dot-1">
+                            <span class="dot one"></span>
+                            <span class="Vehicle">Two-Wheeler</span>
+                        </label>
+                        <label for="dot-2">
+                            <span class="dot two"></span>
+                            <span class="gender">Four-Wheeler</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Vehicle Manufacture</span>
+                        <input type="text" placeholder="Enter Manufacture" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Vehicle Model</span>
+                        <input type="text" placeholder="Enter Model" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Driving Licence</span>
+                        <input type="text" placeholder="Enter Driving Licence" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Registration Number</span>
+                        <input type="text" placeholder="Enter Registration Number" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Engine Number</span>
+                        <input type="text" placeholder="Enter Engine Number" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details" id="Chassis">Chassis Number</span>
+                        <input type="text" placeholder="Enter Chassis Number" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Plan Duration</span>
+                        <input type="number" placeholder="Enter Plan Duration" required>
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Submit" (click)="clicksub()" disabled = "exform.invalid">
+                  </div>
+            </form>
+        </div>
+    </div>
+</body>
