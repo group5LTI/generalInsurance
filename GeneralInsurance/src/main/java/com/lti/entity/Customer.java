@@ -28,6 +28,9 @@ public class Customer {
 	
 	@OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
 	List<TravelInsurance> travelInsurances;
+	
+	@OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
+	List<InsuranceDocument> documents;
 
 	public int getUserId() {
 		return userId;
