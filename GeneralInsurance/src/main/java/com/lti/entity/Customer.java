@@ -4,14 +4,20 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Customer {
 	
 	@Id
+	@SequenceGenerator(name = "customer_seq", initialValue = 100, allocationSize = 1)
+	@GeneratedValue(generator = "customer_seq", strategy = GenerationType.SEQUENCE)
 	int userId;
+	
 	String userName;
 	String password;
 	String mailId;

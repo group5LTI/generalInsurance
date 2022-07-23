@@ -4,15 +4,20 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Insurance {
 
 	@Id
+	@SequenceGenerator(name = "insurance_seq", initialValue = 20000, allocationSize = 1)
+	@GeneratedValue(generator = "insurance_seq", strategy = GenerationType.SEQUENCE)
 	int insuranceId;
 	
 	@OneToMany(mappedBy = "insurance",cascade = CascadeType.ALL)

@@ -1,14 +1,19 @@
 package com.lti.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Vehicle {
 
 	@Id
+	@SequenceGenerator(name = "vehicle_seq", initialValue = 50000, allocationSize = 1)
+	@GeneratedValue(generator = "vehicle_seq", strategy = GenerationType.SEQUENCE)
 	int vehicleId;
 	String brand;
 	VehicleType vehicleType;

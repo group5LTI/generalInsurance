@@ -3,14 +3,20 @@ package com.lti.entity;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Claim {
 
 	@Id
+	@SequenceGenerator(name = "claim_seq", initialValue = 10000, allocationSize = 1)
+	@GeneratedValue(generator = "claim_seq", strategy = GenerationType.SEQUENCE)
+	
 	int claimId;
 	String reason;
 	int accountNumber;

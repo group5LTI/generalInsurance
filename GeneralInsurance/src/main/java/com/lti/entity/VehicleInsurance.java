@@ -3,15 +3,20 @@ package com.lti.entity;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class VehicleInsurance {
 
 	@Id
+	@SequenceGenerator(name = "vehicle_insurance_seq", initialValue = 60000, allocationSize = 1)
+	@GeneratedValue(generator = "vehicle_insurance_seq", strategy = GenerationType.SEQUENCE)
 	int vehicleInsuranceId;
 	LocalDate issue_date;
 	int years;
