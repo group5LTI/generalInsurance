@@ -1,78 +1,32 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<!-- <link rel="stylesheet" type="text/css" href="login.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> -->
-
-	<title>Login</title>
-</head>
-<body>
-	<div class="fluid-container">
-	<header>
-	
-	<!--Navbar-->
-	
-	</header>
-
-<!--MAIN BODY CONTENT-->
-    <div id="grad1">
-	    <div class="container">
-	    	<div class="row  form-wrapper ">
-	    		
-	    		<div class="col-lg-10 col-sm-12 col-md-12 text-white form-container container">
-	    			
-	    			<!--Form header-->
-
-	    			<div class="text-center text-uppercase form-header page-header">
-	    				<h1>Log into Page</h1>
-	    				<h5>or  <a href="signup.html" class="text-reset font-italic">Create Account</a></h5>
-	    			</div>
-
-	    			<!--SignUp Form-->
-	    			<form action="login.php" method="POST">
-
-	    				<div class="form-group">
-	    					<label for="username"><h3>Username</h3></label>
-	    					<input type="text" name="username" id="username" class="form-control" required>
-	    					<div class="invalid-feedback">Username invalid.Enter another username</div>
-	    				</div>
-                        <br/>
-	    				<div class="form-group">
-	    					<label for="password"><h3>Password</h3></label>
-	    					<input type="password" name="password" id="password" class="form-control" required minlength="5" >
-	    					<div class="invalid-feedback">Username invalid.Enter another username</div>
-	    				</div>
-                        <br/>
-                        <br/>
-	    				<div class="form-group text-center">
-	    					<button type="submit" class="btn btn-primary">Login</button>
-	    				</div>
-	    			</form>
-
-	    			<!-- <div class="text-center text-white">
-	    				Forgot your login? <strong><a href="#">Click here</a></strong>
-	    			</div> -->
-	    		</div>
-	    	</div>
-	    </div>
-
-
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Animated Login Form | CodingNepal</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+  </head>
+  <body>
+    <div class="center">
+      <h1>Login</h1>
+      <form method="post">
+        <div class="txt_field">
+          <input type="text" required>
+          <span></span>
+          <label style="font-family: 'Lora';">Username</label>
+        </div>
+        <div class="txt_field">
+          <input type="password"  required>
+          <span></span>
+          <label style="font-family: 'Lora';">Password</label>
+        </div>
+        <div class="pass" style="font-family: 'Lora';">Forgot Password?</div>
+        <input type="submit" value="Login">
+        <div class="signup_link" style="font-family: 'Lora';">
+          Not a member? <a href="#">Signup</a>
+        </div>
+      </form>
     </div>
 
-
-	</div>
-
-
-
-
-
-	<!--Bootstrap components-->
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
-</body>
+  </body>
 </html>

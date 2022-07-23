@@ -10,11 +10,11 @@
 
 body {
     display: flex;
-    height: 100vh;
+    height: 120vh;
     justify-content: center;
     align-items: center;
     padding: 10px;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    background: whitesmoke
 }
 
 .container {

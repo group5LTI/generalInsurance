@@ -1,191 +1,47 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<!-- <link rel="stylesheet" type="text/css" href="signup.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> -->
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Animated Login Form | CodingNepal</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+  </head>
+  <body>
+    <div class="center">
+      <h1>Registration</h1>
+      <form method="post">
+        <div class="txt_field">
+          <input type="text" required>
+          <span></span>
+          <label>Username</label>
+        </div>
+        <div class="txt_field">
+          <input type="password" required>
+          <span></span>
+          <label>Password</label>
+        </div>
+	<div class="txt_field">
+          <input type="password" required>
+          <span></span>
+          <label>Confirm Password</label>
+        </div>
+	<div class="txt_field">
+          <input type="text" required>
+          <span></span>
+          <label>City</label>
+        </div>
+	<div class="txt_field">
+          <input type="text" required>
+          <span></span>
+          <label>Locality</label>
+        </div>
+        <div class="pass">Forgot Password?</div>
+        <input type="submit" value="Register">
+        <div class="signup_link">
+          Not a member? <a href="#">Signup</a>
+        </div>
+      </form>
+    </div>
 
-	<title>Signup</title>
-	<script src="js/jquery.js">
-</script>
-<script>
-	function emails(){
-    // Create our XMLHttpRequest object
-    var hr = new XMLHttpRequest();
-    // Create some variables we need to send to our PHP file
-    var url = "mailval.php";
-    var fn = document.getElementById("email").value;
-    
-    var vars = "email="+fn;
-    hr.open("POST", url, true);
-    // Set content type header information for sending url encoded variables in the request
-    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	// Send the data to PHP now... and wait for response to update the status div
-    hr.send(vars); // Actually execute the request
-    document.getElementById("status11").innerHTML = "";
-    // Access the onreadystatechange event for the XMLHttpRequest object
-    hr.onreadystatechange = function() {
-	    if(hr.readyState == 4 && hr.status == 200) {
-		    var return_data = hr.responseText;
-			document.getElementById("status11").innerHTML = return_data;
-	    }}}
-	function uname(){
-    // Create our XMLHttpRequest object
-    var hr = new XMLHttpRequest();
-    // Create some variables we need to send to our PHP file
-    var url = "my_parse_file.php";
-    var fn = document.getElementById("username").value;
-    
-    var vars = "uname="+fn;
-    hr.open("POST", url, true);
-    // Set content type header information for sending url encoded variables in the request
-    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	// Send the data to PHP now... and wait for response to update the status div
-    hr.send(vars); // Actually execute the request
-    document.getElementById("status1").innerHTML = "";
-    // Access the onreadystatechange event for the XMLHttpRequest object
-    hr.onreadystatechange = function() {
-	    if(hr.readyState == 4 && hr.status == 200) {
-		    var return_data = hr.responseText;
-			document.getElementById("status1").innerHTML = return_data;
-	    }}}
-	    function passw(){
-    // Create our XMLHttpRequest object
-    var hr = new XMLHttpRequest();
-    // Create some variables we need to send to our PHP file
-    var url = "pwdlen.php";
-    var fn = document.getElementById("password").value;
-    
-    var vars = "pwd="+fn;
-    hr.open("POST", url, true);
-    // Set content type header information for sending url encoded variables in the request
-    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	// Send the data to PHP now... and wait for response to update the status div
-    hr.send(vars); // Actually execute the request
-    document.getElementById("mlength").innerHTML = "";
-    // Access the onreadystatechange event for the XMLHttpRequest object
-    hr.onreadystatechange = function() {
-	    if(hr.readyState == 4 && hr.status == 200) {
-		    var return_data = hr.responseText;
-			document.getElementById("mlength").innerHTML = return_data;
-			pasc();
-	    }}}
-	function pasc(){
-    // Create our XMLHttpRequest object
-    var hr = new XMLHttpRequest();
-    // Create some variables we need to send to our PHP file
-    var url = "pwdck.php";
-    var fn = document.getElementById("pwdcheck").value;
-    var ln = document.getElementById("password").value;
-    var vars = "pwd="+ln+"&cwd="+fn;
-    hr.open("POST", url, true);
-    // Set content type header information for sending url encoded variables in the request
-    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	// Send the data to PHP now... and wait for response to update the status div
-    hr.send(vars); // Actually execute the request
-    document.getElementById("messa").innerHTML = "";
-    // Access the onreadystatechange event for the XMLHttpRequest object
-    hr.onreadystatechange = function() {
-	    if(hr.readyState == 4 && hr.status == 200) {
-		    var return_data = hr.responseText;
-			document.getElementById("messa").innerHTML = return_data;
-	    }}}
-	
-	</script>  
-</head>
-<body >
-	<div class="fluid-container">
-	
-
-<!--MAIN BODY CONTENT-->
-      <div id="grad1">
-	    <div class="container">
-	    	<div class="row  form-wrapper ">
-	    		
-	    		<div class="col-lg-10 col-sm-12 col-md-10 text-white form-container container">
-	    			
-	    			<!--Form header-->
-<br>
-	    			<div class="text-center text-uppercase form-header page-header">
-	    				<h1>Sign Up Today!</h1>
-	    				<h2>by joining us today</h2>
-	    				<p >Already have an account? <strong><a href="login.html">Login</a></strong></p>
-	    			</div>
-
-	    			<!--SignUp Form-->
-	    			<form action="signupdb.php" method="POST">
-	    				<div class="form-group">
-	    					<label for="email">Email</label>
-	    					<input type="email" name="email" class="form-control" id="email" required onkeyup="emails()">
-	    					<div class="invalid-feedback">Email address already exists</div>
-	    					<h6><b><span id="status11"></span></b></h6>
-	    				</div>
-
-	    				<div class="form-group">
-	    					<label for="username">Username</label>
-	    					<input type="text" name="username" id="username" class="form-control" required onkeyup="uname()" minlength="5" maxlength="10">
-	    					<div class="invalid-feedback">Username invalid.Enter another username</div>
-	    					<h6><b><span id="status1"></span></b></h6>
-	    				</div>
-
-	    				<div class="form-group">
-	    					<label for="password">Password</label>
-	    					<input type="password" name="password" id="password" class="form-control" required="required" minlength="5"  onkeyup="passw()" >
-	    					<div class="invalid-feedback">Username invalid.Enter another username</div>
-	    					<h6><b><span id="mlength"></span></b></h6>
-	    				</div>
-
-	    				<div class="form-group">
-	    					<label for="pwdcheck1">Re-enter password</label>
-	    					<input type="password" name="pwdcheck" id="pwdcheck" class="form-control" required="required" minlength="5" onkeyup="pasc()">
-	    					<h6><b><span id="messa"></span></b></h6>
-
-	    					<div class="invalid-feedback">Username invalid.Enter another username</div>
-	    				</div>
-	    				<div class="form-group">
-	    					<label for="username">City</label>
-	    					<input type="text" name="city" id="city" class="form-control" required maxlength="10">
-	    					<div class="invalid-feedback">Username invalid.Enter another username</div>
-	    					<!-- <h6><b><span id="status1"></span></b></h6> -->
-	    				</div>
-	    				<div class="form-group">
-	    					<label for="username">Locality</label>
-	    					<input type="text" name="loc" id="loc" class="form-control" required maxlength="20">
-	    					<div class="invalid-feedback">Username invalid.Enter another username</div>
-	    					<!-- <h6><b><span id="status1"></span></b></h6> -->
-	    				</div>
-
-	    				
-
-	    				
-	    				<div class="form-check mb-4">
-	    					<input type="checkbox"  id="terms" name="terms" class="form-check-input" required="required">
-	    					<label for="rules" class="form-check-label">You agree to the rules mentioned in <a href="TandC.html">FAQs</a> section</label>
-	    				</div>
-	    				<div class="form-group text-center">
-	    					<button type="submit" name="submit" class="btn btn-primary" id="submit" >Sign Up</button>
-	    				</div>
-	    			</form>
-	    			
-	    			<div class="text-center ">
-	    				<p >Already have an account? <strong><a href="login.html">Login</a></strong></p>
-	    			</div>
-	    		</div>
-	    	</div>
-	    </div>
-	</div>
-
-
-
-
-
-	</div>
-	<!--Bootstrap components-->
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-	<!-- <script src="signup.js"></script> -->
-</body>
+  </body>
 </html>

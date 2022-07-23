@@ -1,1 +1,267 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+  }
+  
+  .navbar{
+    background-color: whitesmoke;
+    height: 70x;
+    font-size:medium;
+    top: 0;
+    
+  }
+  .navbar * {
+    /* color: rgb(71, 157, 178); */
+    color: rgb(15, 6, 198);
+   
+  }
+  
+  
+  .navbar ul {
+    float: right;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    margin-right: 80px;
+  
+  }
+  .navbar ul li {
+    float: left;
+    /* color:  rgb(71, 157, 178); */
+    
+    
+    color: rgb(15, 6, 198);
+    position: relative;
+  }
+  .navbar ul li ul {
+    position: absolute;
+    top: 66px;
+    right: 0px;
+    width: 160px;
+    display: none;
+  }
+  .navbar ul li:hover ul{
+  display: block;
+  }
+  .navbar ul li ul li{
+    width: 100%;
+  }
+  .navbar ul li ul li a{
+    padding: 5x;
+   
+    margin-left: 20px;
+    text-align: center;
+  }
+  
+  .navbar ul li ul li a.log-out{
+    margin-left: 10px;
+    color: red;
+  
+  }
+  .navbar ul li ul li a:hover{
+    /* border-bottom: 2px solid rgb(31, 74, 73); */
+    color: black;
+    font-size: larger;
+    
+  }
+  .navbar ul li a {
+    display: block;
+    padding: 21px;
+    font-size: 1.1em;
+    text-decoration: none;
+    color: rgb(15, 6, 198);
+    
+  }
+  
+  .navbar ul li a:hover{
+     /* background: rgb(213, 207, 207);  */
+    transition: 0.5s;
+    color: black;
+  
+  }
+  .navbar .logo{
+    float: left;
+    height: inherit;
+    margin-left: 2cm;
+  }
+  .navbar .logo-text{
+    font-family: 'Candal';
+    margin: 8px;
+  }
+  .navbar .logo-text span{
+    /* color: rgb(41, 105, 121); */
+    color: rgb(227, 23, 23);
+  }
+  
+  
+  
+  .navbar .menu-toggle{
+    display: none;
+  }
+  
+  body {
+    height :100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(209, 207, 207);
+    font-family: 'Lora';
+    overflow-x: hidden;
+    background: whitesmoke;
+    overflow-y: auto;
+  }
+  
+  
+  
+  .footer-bottom{
+    /* position: fixed; */
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    width: 100%;
+    /* Height of the footer*/ 
+    margin-top: 20px;
+    margin-bottom: 0px;
+    height: 140px;
+    background: rgb(209, 209, 212);
+    /* border: 1px solid red; */
+  }
+  
+  
+  /* footer */
+   .footer {
+    background: whitesmoke;
+    color: grey;
+    height: 400px;
+    position: relative;
+    bottom: 0;
+  }
+  .footer .footer-content { 
+   /* border: 1px solid red;  */
+   height: 250px;
+   border-radius: 10px;
+  display: flex;
+  margin-left: 100px;
+  margin-right: 100px;
+  background: rgb(233, 234, 239);
+  /* margin-top: 100px; */
+  
+  }
+  .footer .footer-content .footer-section {
+    flex: 1;
+    padding: 10px;
+  } 
+  .footer .footer-content .footer-section ul a li {
+    list-style: none;
+  }
+  .footer .footer-content .footer-section ul a li:hover{
+    color: rgb(15, 6, 198);
+  }
+  .footer .footer-content .about .contact{
+    
+    margin-left: 20px;
+    margin-top: 15px;
+    /* border: 1px solid black;  */
+    height: 60x;
+    padding: 5px;
+  
+  } 
+  .footer .footer-content .about .contact span {
+    
+   color: grey;
+  } 
+  .footer .footer-content .about .socials{
+    margin-left: 10px;
+  }
+  .footer .footer-content .about .socials a i{
+   
+    color: rgb(123, 120, 120);
+    padding-top: 8px;
+    border: 2px solid gray;
+    box-shadow: 1px 2px;
+    
+    width: 45px;
+    height: 41px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.3em;
+    border-radius: 100px;
+    margin-top: 10px;
+    margin-right: 5px;
+   
+  }
+  .footer .footer-content .about .socials a i:hover{
+    font-size: larger;
+    
+  } 
+  .footer .footer-content .footer-section h2{
+    margin-top: 20px;
+    font-family: 'Lora';
+    font-size: medium;
+    color: rgb(15, 6, 198);
+    margin-left: 30px;
+   
+  }
+  .footer .footer-content .footer-section ul a  {
+    text-decoration: none;
+  }
+  .footer .footer-content .footer-section ul a li {
+    color: grey;
+  }
+  .footer .footer-content .footer-section .logo-text{
+    font-family: 'Candal';
+    font-size: x-large;
+    color: rgb(15, 6, 198);
+    margin-left: 20px;
+   
+  }
+  .footer .footer-content .footer-section .logo-text span{
+    color: rgb(227, 23, 23);
+  }
+   .footer .footer-bottom {
+  text-align: center;
+  font-size: x-small;
+  height: 140px;
+  background: black;
+  } 
+  
+  /* media queries */
+  /* @media only screen and (max-width: 800px) {
+    .navbar {
+      position: relative;
+    }
+    .navbar ul {
+      width: 100%;
+      background-color: whitesmoke;
+      max-height: 0px;
+      overflow: hidden;
+    }
+    .navbar ul li {
+      width: 100%;
+      
+    }
+    .navbar ul li ul {
+      position: static;
+      width: 100%;
+      display: block;
+    }
+    .navbar ul li ul li a{
+      padding: 5x;
+      background-color: whitesmoke;
+      text-align: left;
+    }
+    
+    .navbar ul li ul li a.log-out{
+      color: red;
+    
+    }
+    .navbar .menu-toggle{
+      display: block;
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      margin-top: 10px;
+      font-size: 1.9em;
+      
+    }
+    .navbar .logo{
+      margin-left: 0.5em;
+    }
+  } */
