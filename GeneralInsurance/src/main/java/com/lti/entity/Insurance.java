@@ -20,7 +20,7 @@ public class Insurance {
 	@GeneratedValue(generator = "insurance_seq", strategy = GenerationType.SEQUENCE)
 	int insuranceId;
 	
-	@OneToMany(mappedBy = "insurance",cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "insuranceId",cascade = CascadeType.ALL)
 	List<Claim> claims;
 	
 	@OneToOne
@@ -31,6 +31,9 @@ public class Insurance {
 	@JoinColumn(name="travelInsuranceId")
 	TravelInsurance travelInsurance;
 
+	@OneToOne(mappedBy = "insuranceId" ,cascade = CascadeType.ALL)
+	InsuranceDocument insuranceDocument;
+	
 	public int getInsuranceId() {
 		return insuranceId;
 	}
