@@ -24,4 +24,54 @@ public class TravelInsurancePlan {
 	
 	@OneToMany(mappedBy = "travelInsurancePlan",cascade = CascadeType.ALL)
 	List<TravelInsurance> TravelInsurances;
+
+	public int getTravelPlanId() {
+		return travelPlanId;
+	}
+
+	public void setTravelPlanId(int travelPlanId) {
+		this.travelPlanId = travelPlanId;
+	}
+
+	public int getNumOfPeople() {
+		return numOfPeople;
+	}
+
+	public void setNumOfPeople(int numOfPeople) {
+		this.numOfPeople = numOfPeople;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public int getDuration() {
+		return duration;
+	}
+
+	public void setDuration(int duration) {
+		this.duration = duration;
+	}
+
+	public double getPlannedAmount() {
+		return plannedAmount;
+	}
+
+	public void setPlannedAmount(double plannedAmount) {
+		this.plannedAmount = plannedAmount;
+	}
+
+	public List<TravelInsurance> getTravelInsurances() {
+		return TravelInsurances;
+	}
+
+	public void setTravelInsurances(List<TravelInsurance> travelInsurances) {
+		TravelInsurances = travelInsurances;
+	}
+	
+	
 }

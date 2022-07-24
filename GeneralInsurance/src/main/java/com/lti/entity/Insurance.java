@@ -65,6 +65,14 @@ public class Insurance {
 	public void setTravelInsurance(TravelInsurance travelInsurance) {
 		this.travelInsurance = travelInsurance;
 	}
+
+	public InsuranceDocument getInsuranceDocument() {
+		return insuranceDocument;
+	}
+
+	public void setInsuranceDocument(InsuranceDocument insuranceDocument) {
+		this.insuranceDocument = insuranceDocument;
+	}
 	
 	
 }

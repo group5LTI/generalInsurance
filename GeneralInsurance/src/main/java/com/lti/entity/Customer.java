@@ -87,6 +87,14 @@ public class Customer {
 	public void setTravelInsurances(List<TravelInsurance> travelInsurances) {
 		this.travelInsurances = travelInsurances;
 	}
+
+	public List<InsuranceDocument> getDocuments() {
+		return documents;
+	}
+
+	public void setDocuments(List<InsuranceDocument> documents) {
+		this.documents = documents;
+	}
 	
 	
 	
