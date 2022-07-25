@@ -1,136 +1,235 @@
+<!-- <app-home></app-home> -->
 
-    <meta charset="UTF-8">
+
+
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <!-- META DATA -->
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 
-    <div class="navbar">
-        <div class="logo">
-            <h1 class="logo-text"><span>L&T </span>Insurance</h1>
-        </div>
-        <i class="fa fa-bars menu-toggle"></i>
-        <ul class="nav">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact us</a>
-                <!-- <i class="fa fa-chevron-down"></i>
-                <ul style="left: -20px ;">
-                    <li><a href="#"style="text-align:left;width: 50px;">Motor</a></li>
-                <li><a href="#"style="text-align:left;width: 50px;">Travel</a></li>
-                </ul> -->
-            </li>
-            <!-- <li><a href="#">Sign up</a></li>
-            <li><a href="#">Login</a></li> -->
-            <li><a href="#">
-                <i class="fa fa-user "style="font-size:1em"></i>
-                Log in
-                <!-- <i class="fa fa-chevron-down"></i> -->
-            </a>
-                <ul style="right: -30px ;">
-                    <li><a href="#" style="text-align:right;width: 180px;">Sign up</a></li>
-                </ul>
-            <!-- <ul style="right: -20px ;">
-                <li><a href="#" style="text-align:right;width: 180px;">All claims</a></li>
-            <li><a href="#" class="log-out" style="text-align:right;width: 180px;">Log out</a></li>
-            </ul> -->
-            </li>
-        </ul>
 
-    </div>
-    <!-- Add components -->
-    <!-- <app-login></app-login> -->
-    <!-- <buy-insurance></buy-insurance> -->
-    <app-admin></app-admin>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--font-family-->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
 
-<div class="footer">
-    <div class="footer-content">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-        <div class="footer-section about">
-            <h2 class="logo-text"><span>L&T</span>Insurance</h2>
-           
-                <div class="contact" style="color:  rgb(15, 6, 198);" >Reach us <br>
-                    <span><i class="fa fa-phone"></i>&nbsp;123-456-789</span><br>
-                    <span><i class="fa fa-envelope"></i>&nbsp;info@lntinsurance.com</span>
-                </div>
-                <div class="socials" style="color: rgb(15, 6, 198); padding: 8px;">Stay Connected With us <br>
-                    <a href="#"><i class ="fa fa-facebook"></i></a>
-                    <a href="#"><i class ="fa fa-twitter"></i></a>
-                    <a href="#"><i class ="fa fa-instagram"></i></a>
-                    <a href="#"><i class ="fa fa-youtube"></i></a>
-                </div> 
-        </div>
-<div class="footer-section company">
-    <h2>Company</h2>
-    <br>
-    <ul>
-        <a href="#"><li>About us</li></a>
-        <a href="#"><li>Contact us</li></a>
-        <a href="#"><li>Our Products</li></a>
-    </ul> 
-</div>
-<div class="footer-section resources">
-    <h2>Resources</h2>
-    <br>
-    <ul>
-        <a href="#"><li>Blogs</li></a>
-        <a href="#"><li>FAQs</li></a>
-    </ul> 
-</div>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
 
-<div class="footer-section services">
-    <h2>Services</h2>
-    <br>
-    <ul>
-        <a href="#"><li>Buy Insurance</li></a>
-        <a href="#"><li>Renew Insurance</li></a>
-        <a href="#"><li>Claim Insurance</li></a>
-        <a href="#"><li>Calculate Premium amount</li></a>
-        
-    </ul> 
-</div>
-<!-- <div class="footer-section contact-form">
-    <h2>Contact Us</h2>
-    <br>
-    <form action="post">
-        <input type="email" name ="email" class="text-input contact-input" placeholder="You email address">
-        <textarea name="message" class="text-input contact-input" placeholder="Enter message"></textarea>
-        <button type="submit" class="btn btn-big">Send</button>
-    </form> 
-</div> -->
-    </div>
-
-
-<div class="footer-bottom">
-    2022, L&T General Insurance Company Limited, all rights reserved. <br>
-    Registered Office : Peninsula Business Park, Tower A, 15th Floor, G.K.Marg, Lower Parel, Mumbai - 400 013, Maharashtra, India. <br>
-    CINNumber : Y58110MH2000PCL789065. <br>
-    Registered with IRDA of India Regn. No. 156. Category of Certificate of Registration: General Insurance. Insurance is the subject matter of the solicitation. <br>
-    For more details on benefits, exclusions, limitations, terms and conditions, please read sales brochure / policy wording carefully before concluding a sale. <br>
-    Toll Free Number : 1800 266 7780 / 1800 22 9966. 
-    <br> 
-    Email Id – customersupport@lntinsurance.com.
-
-   
-       <p> © 2022 Larsen & Toubro Infotech Limited</p>
     
+
+    <!--font-awesome.min.css-->
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+
+    <!--linear icon css-->
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+
+    <!--animate.css-->
+    <link rel="stylesheet" href="/assets/css/animate.css">
+
+    <!--hover.css-->
+    <link rel="stylesheet" href="/assets/css/hover-min.css">
+
+    <!--vedio player css-->
+    <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+
+    <!--owl.carousel.css-->
+    <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+    <link href="/assets/css/owl.theme.default.min.css" rel="stylesheet" />
+
+
+    <!--bootstrap.min.css-->
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+
+    <!-- bootsnav -->
+    <link href="/assets/css/bootsnav.css" rel="stylesheet" />
+
+    <!--style.css-->
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <!--responsive.css-->
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+
+
+</head>
+
+<body>
+
+ <div class="tpnav">
+    
+    <ul><a>
+
+
+    </a><a class="header1"><h1 class="demotext1"><span> L&T </span>Insurance</h1></a>
+        <li><a [routerLink]="['registerLink']">Contact</a></li>        
+        <li><a [routerLink]="['registerLink']">Register</a></li>
+        <li><a [routerLink]="['loginLink']">Login </a></li>
+        <li><a href="#about">About</a></li>
+        <li><a class="active" [routerLink]="['./homeLink']">Home</a></li>
+      </ul>
+
 </div>
+    <!-- Warning || Warning Do not edit header and footer-->
+    <!-- Start Rooting from hear -->
 
+<!-- <app-home></app-home> -->
+<router-outlet></router-outlet>
+    <!-- End your routing hear -->
 
+    
 
-<!-- footer -->
-  <!-- <div class="footer">
-    <div class="footer-content">
-<div class="footer-section about"></div>
-<div class="footer-section links"></div>
-<div class="footer-section contact-form"></div>
-</div>
-<div class="footer-bottom">
+    <!--hm-footer start-->
+    <!--hm-footer start-->
+		<section class="hm-footer">
+			<div class="container">
+				<div class="hm-footer-details">
+					<div class="row">
+						<div class="col-md-4 col-sm-6 col-xs-12">
+							<div class="hm-footer-widget">
+								<div class="hm-foot-title ">
+									<div class="logo">
+										<a href="index.html">
+											<!-- <img src="assets/images/logo/logo.png" alt="logo" /> -->
+                                            <h3><b>L&T Insurance</b></h3>
+										</a>
+									</div><!-- /.logo-->
+								</div><!--/.hm-foot-title-->
+								<div class="hm-foot-para">
+									<p>
+                                        2022, L&T General Insurance Company Limited, all rights reserved.
+                                        Registered Office : Peninsula Business Park, Tower A, 15th Floor, G.K.Marg, Lower Parel, Mumbai - 400 013, Maharashtra, India.
+                                        CINNumber : Y58110MH2000PCL789065.	
+                                    </p>
+								</div><!--/.hm-foot-para-->
+								<div class="hm-foot-icon">
+									<ul>
+										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li><!--/li-->
+										<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li><!--/li-->
+										<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li><!--/li-->
+										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li><!--/li-->
+									</ul><!--/ul-->
+								</div><!--/.hm-foot-icon-->
+							</div><!--/.hm-footer-widget-->
+						</div><!--/.col-->
+						<div class=" col-md-2 col-sm-6 col-xs-12">
+							<div class="hm-footer-widget">
+								<div class="hm-foot-title">
+									<h4>Useful Links</h4>
+								</div><!--/.hm-foot-title-->
+								<div class="footer-menu ">	  
+									<ul class="">
+										<li><a href="index.html" >Home</a></li>
+										<li><a href="about.html">About</a></li>
+										<li><a [routerLink]="['buyLink']">Buy Insurance</a></li>
+										<li><a href="portfolio.html">ReNew Insurance</a></li>
+										<li><a href="blog.html">Claim Insurance</a></li>
+										<li><a href="contact.html">Contact us</a></li> 
+									</ul>
+								</div><!-- /.footer-menu-->
+							</div><!--/.hm-footer-widget-->
+						</div><!--/.col-->
+						<div class=" col-md-3 col-sm-6 col-xs-12">
+							<div class="hm-footer-widget">
+								<div class="hm-foot-title">
+									<h4>from the news</h4>
+								</div><!--/.hm-foot-title-->
+								<div class="hm-para-news">
+									<a href="blog_single.html">
+										If there is anyone dependent on your income (Parents, Children, Relatives) 
+                                        then you need life insurance.
+									</a>
+									<span>12th June 2017</span>
+								</div><!--/.hm-para-news-->
+								<div class="footer-line">
+									<div class="border-bottom"></div>
+								</div>
+								<div class="hm-para-news">
+									<a href="blog_single.html">
+										Email Id – customersupport@lntinsurance.com.
 © 2022 Larsen & Toubro Infotech Limited
-</div>
-  </div> -->
-<!-- /footer -->
+									</a>
+									<span>12th June 2017</span>
+								</div><!--/.hm-para-news-->
+							</div><!--/.hm-footer-widget-->
+						</div><!--/.col-->
+						<div class=" col-md-3 col-sm-6  col-xs-12">
+							<div class="hm-footer-widget">
+								<div class="hm-foot-title">
+									<h4> Our Newsletter</h4>
+								</div><!--/.hm-foot-title-->
+								<div class="hm-foot-para">
+									<p class="para-news">
+										Contact us..
+									</p>
+								</div><!--/.hm-foot-para-->
+<!-- 
+								<div class="hm-foot-email">
+									<div class="foot-email-box">
+										<input type="text" class="form-control" placeholder="Email Address">
+									</div>
+									<div class="foot-email-subscribe">
+										<button type="button" >go</button>
+									</div>  
+								</div> -->
+<!--/.foot-email-icon-->
+                <!--/.hm-foot-email-->                
+							</div><!--/.hm-footer-widget-->
+						</div><!--/.col-->
+					</div><!--/.row-->
+				</div><!--/.hm-footer-details-->
+			</div><!--/.container-->
+
+		</section><!--/.hm-footer-details-->
+		<!--hm-footer end-->
+    <!--hm-footer end-->
+
+
+
+
+    <!-- jaquery link -->
+
+    <script src="/assets/js/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+    <!--modernizr.min.js-->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+
+    <!--bootstrap.min.js-->
+    <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+
+    <!-- bootsnav js -->
+    <script src="/assets/js/bootsnav.js"></script>
+
+    <!-- for manu -->
+    <script src="/assets/js/jquery.hc-sticky.min.js" type="text/javascript"></script>
+
+
+    <!-- vedio player js -->
+    <script src="/assets/js/jquery.magnific-popup.min.js"></script>
+
+
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+    <!--owl.carousel.js-->
+    <script type="text/javascript" src="/assets/js/owl.carousel.min.js"></script>
+
+    <!-- counter js -->
+    <script src="/assets/js/jquery.counterup.min.js"></script>
+    <script src="/assets/js/waypoints.min.js"></script>
+
+    <!--Custom JS-->
+    <script type="text/javascript" src="/assets/js/jak-menusearch.js"></script>
+    <script type="text/javascript" src="/assets/js/custom.js"></script>
+
+</body>
+
+</html>
