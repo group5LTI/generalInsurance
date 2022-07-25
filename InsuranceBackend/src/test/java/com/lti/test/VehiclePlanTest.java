@@ -21,13 +21,14 @@ public class VehiclePlanTest {
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
 		dao = context.getBean(VehiclePlanDao.class);
 	}
+	//8001 tested //ADDED TO CHECK 'INSURANCE' TEST
 	@Test
 	public void addOrUpdateVehiclePlantest() {
 		VehicleInsurancePlan vip = new VehicleInsurancePlan();
-		vip.setInsuranceType(InsuranceType.ThirdParty);
+		vip.setInsuranceType(InsuranceType.Comprehensive);
 		vip.setNoOfYears(1);
 		vip.setPlannedAmountV(1000);
-		vip.setVehicleType(VehicleType.twoWheeler);
+		vip.setVehicleType(VehicleType.fourWheeler);
 		
 		VehicleInsurancePlan vehiclePlan = dao.addOrUpdateVehiclePlan(vip);
 		assertNotNull(vehiclePlan);

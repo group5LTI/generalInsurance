@@ -10,7 +10,7 @@ import com.lti.entity.Claim;
 import com.lti.entity.Customer;
 
 @Component
-public class CalimDaoImpl implements ClaimDao {
+public class ClaimDaoImpl implements ClaimDao {
 
 	@PersistenceContext
 	EntityManager em;

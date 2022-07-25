@@ -18,7 +18,7 @@ public class TravelPlanTest {
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
 		dao = context.getBean(TravelPlanDao.class);
 	}
-
+	//ADDED TO CHECK 'INSURANCE' TEST
 	@Test
 	public void addTravelPlanTest() {
 		TravelInsurancePlan tip = new TravelInsurancePlan();

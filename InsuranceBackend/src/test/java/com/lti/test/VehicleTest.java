@@ -23,13 +23,13 @@ public class VehicleTest {
 		daov = context.getBean(VehicleDao.class);
 		daoc = context.getBean(CustomerDao.class);
 	}
-
+	//tested for 104 already //ADDED TO CHECK 'INSURANCE' TEST
 	@Test
 	public void addVehicleTest() {
 		Vehicle v = new Vehicle();
-		Customer customer = daoc.searchCustomer(100);
-		v.setBrand("TATA");
-		v.setChassisNumber("12345677890");
+		Customer customer = daoc.searchCustomer(104);
+		v.setBrand("BMW");
+		v.setChassisNumber("42345677891");
 		v.setDrivinglicence("ADFB134567");
 		v.setVehicleType(VehicleType.fourWheeler);
 		v.setCustomer(customer);

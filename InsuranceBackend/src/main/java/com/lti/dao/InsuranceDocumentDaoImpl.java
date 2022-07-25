@@ -1,5 +1,7 @@
 package com.lti.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -24,6 +26,20 @@ public class InsuranceDocumentDaoImpl implements InsuranceDocumentDao {
 			// TODO: handle exception
 		}
 		return insuranceDocumentPersisted;
+	}
+
+	public InsuranceDocument searchInsuranceDocumentByInsuranceDocumentId(int insuranceDocumentId) {
+		// TODO Auto-generated method stub
+		return em.find(InsuranceDocument.class, insuranceDocumentId);
+	}
+//	public InsuranceDocument searchInsuranceDocumentByInsuranceId(int insuranceId) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+
+	public List<InsuranceDocument> viewAllInsurancesDocuments() {
+		// TODO Auto-generated method stub
+		return em.createQuery("select id from InsuranceDocument id", InsuranceDocument.class).getResultList();
 	}
 
 }

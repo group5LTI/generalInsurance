@@ -1,3 +1,4 @@
+
 package com.lti.test;
 
 import static org.junit.Assert.*;
@@ -29,20 +30,26 @@ public class VehicleInsuranceTest {
 		daovp = context.getBean(VehiclePlanDao.class);
 		
 	}
-
+	//7002 tested //ADDED TO CHECK 'INSURANCE' TEST
 	@Test
 	public void addVehicleInsuranceTest() {
 		VehicleInsurance vi = new VehicleInsurance();
 		vi.setAmountPaidV(1000);
 		vi.setIssueDate(LocalDate.of(2022, 7, 25));
 		vi.setYears(1);
-		Vehicle v = daov.searchVehicleById(1000);
-		VehicleInsurancePlan vp = daovp.searchVehiclePlan(8000);
+		Vehicle v = daov.searchVehicleById(1002);
+		vi = v.getVehicleInsurance();
+		if(vi==null) {
+		VehicleInsurancePlan vp = daovp.searchVehiclePlan(8001);
 		vi.setVehicle(v);
 		vi.setVehicleInsurancePlan(vp);
 		
 		VehicleInsurance vehicleInsurance = dao.addOrUpdateVehicleInsurance(vi);
 		assertNotNull(vehicleInsurance);
+		}
+		else {
+			System.out.println("Vehicle has already been insured..Renew Insurance");
+		}
 		
 	}
 

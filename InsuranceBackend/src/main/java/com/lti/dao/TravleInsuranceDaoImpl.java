@@ -1,5 +1,7 @@
 package com.lti.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -26,5 +28,12 @@ public class TravleInsuranceDaoImpl implements TravelInsuranceDao {
 		}
 		return travelInsurancePersisted;
 	}
+
+	public TravelInsurance searchTravelInsuranceById(int travelInsuranceId) {
+		// TODO Auto-generated method stub
+		return em.find(TravelInsurance.class, travelInsuranceId);
+	}
+
+
 
 }

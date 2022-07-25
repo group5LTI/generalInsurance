@@ -2,6 +2,8 @@ package com.lti.test;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -23,19 +25,20 @@ CustomerDao dao;
 		
 	dao = context.getBean(CustomerDao.class);
 	}
-
+	//tested
 	@Test
 	public void customerAddTest() {
 		Customer c  = new Customer();
-		c.setLocation("Nerul");
-		c.setMailId("abc@gmail.com");
-		c.setMobile("9087654321");
-		c.setPassword("pass@1243");
-		c.setUserName("ABC");
+		c.setLocation("Thane");
+		c.setMailId("john@gmail.com");
+		c.setMobile("1234567890");
+		c.setPassword("pass@4567");
+		c.setUserName("John");
 		
 		Customer customer = dao.addOrUpdateCustomer(c);
 		assertNotNull(customer);
 		
 	}
+
 
 }

@@ -35,7 +35,7 @@ public class CustomerDaoImpl implements CustomerDao {
 
 	public List<Customer> viewAllCustomers() {
 		// TODO Auto-generated method stub
-		return em.createQuery("select c from tbl_customer c", Customer.class).getResultList();
+		return em.createQuery("select c from Customer c", Customer.class).getResultList();
 	}
 
 }
