@@ -110,7 +110,7 @@
   }
   
   
-  
+  /* footer part start */
   .footer-bottom{
     /* position: fixed; */
     padding: 10px 10px 0px 10px;
@@ -132,6 +132,7 @@
     height: 400px;
     position: relative;
     bottom: 0;
+    
   }
   .footer .footer-content { 
    /* border: 1px solid red;  */
@@ -142,6 +143,7 @@
   margin-right: 100px;
   background: rgb(233, 234, 239);
   /* margin-top: 100px; */
+  width: 100%;
   
   }
   .footer .footer-content .footer-section {
@@ -221,6 +223,8 @@
   height: 140px;
   background: black;
   } 
+
+  /* footer end  */
   
   /* media queries */
   /* @media only screen and (max-width: 800px) {
