@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 * {
@@ -12,6 +13,7 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
+    /* padding: 10px; */
     flex-wrap: wrap;
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
@@ -28,7 +30,7 @@ body {
 .container .title {
     font-size: 25px;
     font-weight: 500;
-    position: relative;
+    position:relative;
 }
 
 .container .title::before {
@@ -64,7 +66,6 @@ form .details {
     display: block;
     font-weight: 500;
 }
-
 .user-details .input-box input {
     height: 45px;
     width: 100%;
