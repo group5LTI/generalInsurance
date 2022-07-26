@@ -1,0 +1,49 @@
+<body>
+    <div class="container">
+        <div class="title">Travel Insurance</div><br>
+        <div class="content">
+            <form [formGroup]="exform">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Insurance ID</span>
+                        <input type="number" placeholder="Enter Insurance ID" required>
+                    </div>
+                    
+                    <div class="input-box">
+                        <span class="details">Plan ID</span>
+                        <input type="number" placeholder="Enter Plan ID" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Location</span>
+                        <input type="text" placeholder="Enter Location" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Travel Start Date</span>
+                        <input type="date" placeholder="Enter Start Date" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Travel End Date</span>
+                        <input type="date" placeholder="Enter End Date" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Amount Paid</span>
+                        <input type="number" placeholder="Enter Amount Paid" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Plan Type</span>
+                        <select name="plan" id="dropdown">
+                            <option value="00">Select Plan</option>
+                            <option value="01">Silver</option>
+                            <option value="02">Gold</option>
+                            <option value="03">Diamond</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="button">
+                    <input type="submit" value="Submit" (click)="clicksub()" disabled="exform.invalid">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
