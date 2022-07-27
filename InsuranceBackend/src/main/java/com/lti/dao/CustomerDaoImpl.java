@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Component;
@@ -35,7 +36,23 @@ public class CustomerDaoImpl implements CustomerDao {
 
 	public List<Customer> viewAllCustomers() {
 		// TODO Auto-generated method stub
-		return em.createQuery("select c from Customer c", Customer.class).getResultList();
+
+		//return em.createQuery("select c from tbl_customer c", Customer.class).getResultList();
+		String jpql="select c from Customer c";
+		TypedQuery<Customer> query=em.createQuery(jpql,Customer.class);
+		return query.getResultList();
+		
+	}
+	public boolean login(int userId, String password) {
+		String jpql="select c from Customer c where c.userId=:cid and c.password=:pwd";
+		TypedQuery<Customer> query=em.createQuery(jpql,Customer.class);
+		query.setParameter("cid", userId);
+		query.setParameter("pwd", password);
+		Customer customer=query.getSingleResult();
+		return customer!=null?true:false;
+
+		
+
 	}
 
 }

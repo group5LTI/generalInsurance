@@ -2,3 +2,22 @@
     height: 100vh;
     background: whitesmoke;
 }
+
+/* .we-do-comment .project-btn li:hover{
+	border: 1px solid red;
+    display: block;
+}
+
+ .we-do-comment .project-btn .project-view{
+    border:1px solid red;
+    list-style: none;
+}
+*/
+.we-do-comment .project-btn .project-view li{
+    /* display: none; */
+    background-color: aqua;
+}
+.we-do-comment .project-btn .project-view:hover +.we-do-comment .project-btn .project-view li ul{
+    background-color: rgb(255, 0, 132);
+}
+

@@ -9,4 +9,5 @@ public interface CustomerDao {
 	Customer addOrUpdateCustomer(Customer customer);
 	Customer searchCustomer(int customerId);
 	List<Customer> viewAllCustomers();
+	boolean login(int userId,String password);
 }

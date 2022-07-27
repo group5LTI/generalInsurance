@@ -2,6 +2,8 @@ package com.lti.test;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -38,6 +40,29 @@ public class VehicleTest {
 //		
 		assertNotNull(vehicle);
 		
+	}
+	@Test
+	public void searchVehicleById()
+	{
+		Vehicle vehicle=daov.searchVehicleById(1002);
+		//assertNotNull(vehicle);
+		System.out.println(vehicle.getBrand());
+	}
+	@Test
+	public void viewAllVehicle()
+	{
+		List<Vehicle> vehicle=daov.viewAllVehicles();
+		for(Vehicle v:vehicle)
+		{
+			System.out.println(v.getBrand());
+		}
+	}
+	@Test
+	public void viewAllCustomerDetails()
+	{
+		Vehicle vehicle=daov.searchVehicleById(1002);
+		Customer cust=vehicle.getCustomer();
+		System.out.println(cust.getUserName()+" "+cust.getMailId()+" "+cust.getMobile());
 	}
 
 }
