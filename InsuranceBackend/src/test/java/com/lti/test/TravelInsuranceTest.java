@@ -56,6 +56,12 @@ public class TravelInsuranceTest {
 		TravelInsurance ti = dao.searchTravelInsuranceById(5001);
 		assertNotNull(ti);
 	}
+	
+	@Test
+	public void viewAllTravelInsurance() {
+		List<TravelInsurance> lists = dao.viewAllTravelInsurances();
+		assertNotEquals(0, lists.size());
+	}
 
 
 }

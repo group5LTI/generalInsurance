@@ -34,6 +34,11 @@ public class TravleInsuranceDaoImpl implements TravelInsuranceDao {
 		return em.find(TravelInsurance.class, travelInsuranceId);
 	}
 
+	public List<TravelInsurance> viewAllTravelInsurances() {
+		// TODO Auto-generated method stub
+		return em.createQuery("select t from TravelInsurance t", TravelInsurance.class).getResultList();
+	}
+
 
 
 }

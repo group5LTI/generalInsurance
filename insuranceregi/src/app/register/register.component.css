@@ -9,7 +9,7 @@ body{
   margin: 0;
   padding: 0;
   background: whitesmoke;
-  height: 110vh;
+  height: 100vh;
   overflow: hidden;
 }
 .center{
@@ -21,10 +21,12 @@ body{
   background: white;
   border-radius: 10px;
   box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
-  border: 1px solid red;
-  margin-top: 100px;
+  /* border: 1px solid red; */
+  /* margin-top: 100px; */
+  margin-bottom: 10px;
 }
 .center h1{
+  font-family: "lora";
   text-align: center;
   padding: 20px 0;
   border-bottom: 1px solid silver;
