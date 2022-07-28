@@ -3,6 +3,7 @@ package com.lti.test;
 import static org.junit.Assert.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -16,10 +17,10 @@ import com.lti.entity.Claim;
 import com.lti.entity.Insurance;
 
 public class ClaimTest {
-	
+
 	ClaimDao dao;
 	InsuranceDao daoi;
-	
+
 	@Before
 	public void initializeDao() {
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
@@ -36,12 +37,29 @@ public class ClaimTest {
 		c.setClaimAmount(6000);
 		c.setClaimDate(LocalDate.of(2022, 7, 1));
 		c.setReason("Timepass");
-		
-		Insurance i = daoi.searchInsurance(11000);
+
+		Insurance i = daoi.searchInsurance(11003);
 		c.setInsurance(i);
-		
+
 		Claim claim = dao.AddOrUpdateClaim(c);
 		assertNotNull(claim);
 	}
 
+	@Test
+	public void searchClaimById() {
+		Claim claim = dao.searchClaimById(10020);
+		assertNotNull(claim);
+		System.out.println(claim.getClaimId());
+	}
+
+	@Test
+	public void viewAllClaims() {
+
+		List<Claim> claims = dao.viewAllClaims();
+		assertFalse(claims.isEmpty());
+		for (Claim c : claims) {
+			System.out.println(c.getAccountNo());
+
+		}
+	}
 }

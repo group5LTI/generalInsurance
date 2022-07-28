@@ -4,6 +4,7 @@ package com.lti.test;
 import static org.junit.Assert.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -51,6 +52,18 @@ public class VehicleInsuranceTest {
 			System.out.println("Vehicle has already been insured..Renew Insurance");
 		}
 		
+	}
+	//tested
+	@Test
+	public void TestSearchVehicleInsuranceById() {
+		VehicleInsurance vi = dao.searchVehicleInsuraceById(7002);
+		assertNotNull(vi);
+	}
+	//tested
+	@Test
+	public void TestViewAllVehicleInsurances() {
+		List<VehicleInsurance> lists = dao.viewAllVehicleInsurance();
+		assertNotEquals(0, lists.size());
 	}
 
 }
