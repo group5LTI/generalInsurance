@@ -1,5 +1,7 @@
 package com.lti.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -30,6 +32,11 @@ public class VehiclePlanDaoImpl implements VehiclePlanDao {
 	public VehicleInsurancePlan searchVehiclePlan(int vehiclePlanId) {
 		// TODO Auto-generated method stub
 		return em.find(VehicleInsurancePlan.class, vehiclePlanId);
+	}
+	
+	public List<VehicleInsurancePlan> viewAllVehicleInsurancePlans() {
+		// TODO Auto-generated method stub
+		return em.createQuery("select vip from VehicleInsurancePlan vip", VehicleInsurancePlan.class).getResultList();
 	}
 
 }

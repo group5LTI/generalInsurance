@@ -2,6 +2,8 @@ package com.lti.test;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -32,6 +34,16 @@ public class VehiclePlanTest {
 		
 		VehicleInsurancePlan vehiclePlan = dao.addOrUpdateVehiclePlan(vip);
 		assertNotNull(vehiclePlan);
+	}
+	@Test
+	public void searchVehicleInsuracePlanById() {
+		VehicleInsurancePlan vip = dao.searchVehiclePlan(8001);
+		assertNotNull(vip);
+	}
+	@Test
+	public void viewAllVehicleInsurancePlans() {
+		List<VehicleInsurancePlan> lists = dao.viewAllVehicleInsurancePlans();
+		assertNotEquals(0, lists.size());
 	}
 
 }
