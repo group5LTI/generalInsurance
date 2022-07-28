@@ -29,6 +29,19 @@ public class CustomerServiceImpl implements CustomerService{
 		}
 		return "Sign Up Successful Your UserId:"+customer.getUserId();
 	}
+
+	@Override
+	public Customer findcustomerById(int userId) {
+		return customerDao.searchCustomer(userId);
+		
+	}
+
+	@Override
+	public boolean userlogin(String userName, String password) {
+		return customerDao.login(userName, password);
+	}
+	
+	
 	
 	
 }

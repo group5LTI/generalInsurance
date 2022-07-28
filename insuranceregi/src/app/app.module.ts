@@ -5,17 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+
 import { BuyComponent } from './buy-insurance/buy-insurance.component';
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
+import { HttpClientModule} from "@angular/common/http";
+import { ContactComponent } from './contact/contact.component';
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
-import { HomeMenuComponent } from './home-menu/home-menu.component';
 import { DashboardNavComponent } from './dashboard-nav/dashboard-nav.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { TravelPageComponent } from './travel-page/travel-page.component';
-import { ContactComponent } from './contact/contact.component';
+import { HomeMenuComponent } from './home-menu/home-menu.component';
 import { TravelComponent } from './travel-insurance/travel-insurance.component';
+import { TravelPageComponent } from './travel-page/travel-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +40,8 @@ import { TravelComponent } from './travel-insurance/travel-insurance.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
