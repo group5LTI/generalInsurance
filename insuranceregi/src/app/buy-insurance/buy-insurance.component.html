@@ -1,8 +1,9 @@
+<app-dashboard-nav></app-dashboard-nav>
 <body>
     <div class="container">
         <div class="title">Vehicle Insurance</div><br>
         <div class="content">
-            <form [formGroup]="exform">
+            <form  #buyvehicleinsuranceForm="ngForm">
                 <div class="travel-details">
                     <input type="radio" name="Vehicle" id="dot-1" value="1">
                     <input type="radio" name="Vehicle" id="dot-2" value="2">

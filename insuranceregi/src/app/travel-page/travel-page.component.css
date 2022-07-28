@@ -1,0 +1,23 @@
+.project-view {
+    background: #d87070;
+    border: 1px solid #d87070;
+    width:185px;
+    height:52px;
+    line-height: 50px;
+    white-space: nowrap;
+   	text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -ms-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+}
+.project-view:hover {
+	color: #d87070;
+	background: transparent;
+}/*project-btn*/
+.center1{
+    justify-content:center;
+}

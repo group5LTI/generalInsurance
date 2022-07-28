@@ -5,12 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
+
 import { BuyComponent } from './buy-insurance/buy-insurance.component';
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule} from "@angular/common/http";
+import { ContactComponent } from './contact/contact.component';
+import { AdminNavComponent } from './admin-nav/admin-nav.component';
+import { DashboardNavComponent } from './dashboard-nav/dashboard-nav.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HomeMenuComponent } from './home-menu/home-menu.component';
+import { TravelComponent } from './travel-insurance/travel-insurance.component';
+import { TravelPageComponent } from './travel-page/travel-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RenewInsuranceComponent } from './renew-insurance/renew-insurance.component';
+
 
 @NgModule({
   declarations: [
@@ -20,14 +29,20 @@ import { RenewInsuranceComponent } from './renew-insurance/renew-insurance.compo
     BuyComponent,
     AdminComponent,
     HomeComponent,
-    RenewInsuranceComponent
+    AdminNavComponent,
+    HomeMenuComponent,
+    DashboardNavComponent,
+    DashboardComponent,
+    TravelPageComponent,
+    ContactComponent,
+    TravelComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
