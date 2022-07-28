@@ -18,6 +18,11 @@ public class VehicleController {
 	@Autowired
 	VehicleService vehicleService;
 	
+	@RequestMapping(value="/buyvehicleinsurance")
+	public String buyVehicleInsurance(@RequestBody VehicleInsurance vehicleInsurance) {
+		String message = vehicleService.buyInsurance(vehicleInsurance);
+		return message;
+	}
 	@RequestMapping(value="/renew")
 	public RenewVehicleInsurance renewVehicleInsurance(@RequestBody VehicleInsurance vehicleInsurance) {
 		RenewVehicleInsurance renewed = vehicleService.renewVehicleInsurance(vehicleInsurance);

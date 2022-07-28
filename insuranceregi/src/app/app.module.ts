@@ -10,6 +10,7 @@ import { BuyComponent } from './buy-insurance/buy-insurance.component';
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule} from "@angular/common/http";
+import { RenewInsuranceComponent } from './renew-insurance/renew-insurance.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule} from "@angular/common/http";
     RegisterComponent,
     BuyComponent,
     AdminComponent,
-    HomeComponent
+    HomeComponent,
+    RenewInsuranceComponent
   ],
   imports: [
     BrowserModule,

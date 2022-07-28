@@ -5,6 +5,9 @@ import com.lti.entity.VehicleInsurance;
 
 public interface VehicleService {
 	
+	
+	String buyInsurance(VehicleInsurance vehicleInsurance);
+	
 	RenewVehicleInsurance renewVehicleInsurance(VehicleInsurance vehicleInsurance);
 	
 	

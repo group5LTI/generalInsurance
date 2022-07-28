@@ -25,7 +25,7 @@ public class CustomerServiceImpl implements CustomerService{
 			emailService.sendEmailForSignup(email, text, subject);
 			System.out.println("Email Sent");
 		} catch (Exception e) {
-			return "SignUp Failed";
+			return e.getMessage();
 		}
 		return "Sign Up Successful Your UserId:"+customer.getUserId();
 	}

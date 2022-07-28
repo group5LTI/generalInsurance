@@ -8,6 +8,8 @@ import com.lti.dto.RenewVehicleInsurance;
 import com.lti.entity.VehicleInsurance;
 import com.lti.exception.IdMissingException;
 import com.lti.exception.InsuranceNotFound;
+import com.lti.exception.InsurancePlanNotFound;
+import com.lti.exception.VehicleNotFound;
 
 @Service
 public class VehicleServiceImpl implements VehicleService {
@@ -15,6 +17,23 @@ public class VehicleServiceImpl implements VehicleService {
 	@Autowired
 	VehicleInsuranceDao vehicleInsuranceDao;
 	
+	@Override
+	public String buyInsurance(VehicleInsurance vehicleInsurance) {
+		VehicleInsurance buyVehicleInsurance;
+		try {
+			buyVehicleInsurance = vehicleInsuranceDao.addOrUpdateVehicleInsurance(vehicleInsurance);
+			if(buyVehicleInsurance.getVehicle()==null) {
+				throw new VehicleNotFound("No vehicle Found");
+			}
+			else if (buyVehicleInsurance.getVehicleInsurancePlan()==null) {
+				
+				throw new InsurancePlanNotFound("No plan available");
+			}
+		} catch (Exception e) {
+			return e.getMessage();
+		}
+		return "Congratulations! Your Vehicle insurance Id is:"+vehicleInsurance.getVehicleInsuranceId();
+	}
 	@Override
 	public RenewVehicleInsurance renewVehicleInsurance(VehicleInsurance vehicleInsurance) {
 		RenewVehicleInsurance dto = new RenewVehicleInsurance();
@@ -35,5 +54,7 @@ public class VehicleServiceImpl implements VehicleService {
 			return dto;
 		}
 	}
+
+	
 
 }
