@@ -43,16 +43,20 @@ public class CustomerDaoImpl implements CustomerDao {
 		return query.getResultList();
 		
 	}
-	public boolean login(int userId, String password) {
-		String jpql="select c from Customer c where c.userId=:cid and c.password=:pwd";
-		TypedQuery<Customer> query=em.createQuery(jpql,Customer.class);
-		query.setParameter("cid", userId);
-		query.setParameter("pwd", password);
-		Customer customer=query.getSingleResult();
-		return customer!=null?true:false;
+	public boolean login(String userName ,String password) {
+        // TODO Auto-generated method stub
+        String jpql = "select u from Customer u where u.userName=:uname and u.password=:pwd";
+        TypedQuery<Customer> qry = em.createQuery(jpql, Customer.class);
+        qry.setParameter("uname", userName);
+        qry.setParameter("pwd", password);
 
-		
+        Customer customer;
+        try {
+            customer=qry.getSingleResult();
+        } catch (Exception e) {
+            return false;
+        }return true;
 
-	}
 
+    }
 }
