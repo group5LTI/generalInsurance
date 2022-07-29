@@ -19,11 +19,11 @@ public class CustomerServiceImpl implements CustomerService{
 		Customer customer;
 		try {
 			customer = customerDao.addOrUpdateCustomer(newCustomer);
-			String email=customer.getMailId();
-			String text = "Registration Successful. Your user id is "+customer.getUserId();
-			String subject = "Registration Confirmation";
-			emailService.sendEmailForSignup(email, text, subject);
-			System.out.println("Email Sent");
+//			String email=customer.getMailId();
+//			String text = "Registration Successful. Your user id is "+customer.getUserId();
+//			String subject = "Registration Confirmation";
+//			emailService.sendEmailForSignup(email, text, subject);
+//			System.out.println("Email Sent");
 		} catch (Exception e) {
 			return e.getMessage();
 		}

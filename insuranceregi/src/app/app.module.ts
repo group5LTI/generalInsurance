@@ -21,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RenewInsuranceComponent } from './renew-insurance/renew-insurance.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { RenewInsuranceComponent } from './renew-insurance/renew-insurance.compo
     DashboardComponent,
     TravelPageComponent,
     ContactComponent,
-    TravelComponent
+    TravelComponent,
+    RenewInsuranceComponent
   ],
   imports: [
     BrowserModule,

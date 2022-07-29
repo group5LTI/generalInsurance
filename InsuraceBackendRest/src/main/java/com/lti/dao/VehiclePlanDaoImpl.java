@@ -4,10 +4,12 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Component;
 
+import com.lti.entity.Customer;
 import com.lti.entity.TravelInsurancePlan;
 import com.lti.entity.VehicleInsurancePlan;
 
@@ -29,7 +31,7 @@ public class VehiclePlanDaoImpl implements VehiclePlanDao {
 		return vehiclePlanPersisted;
 	}
 
-	public VehicleInsurancePlan searchVehiclePlan(int vehiclePlanId) {
+	public VehicleInsurancePlan searchVehiclePlanById(int vehiclePlanId) {
 		// TODO Auto-generated method stub
 		return em.find(VehicleInsurancePlan.class, vehiclePlanId);
 	}
@@ -37,6 +39,25 @@ public class VehiclePlanDaoImpl implements VehiclePlanDao {
 	public List<VehicleInsurancePlan> viewAllVehicleInsurancePlans() {
 		// TODO Auto-generated method stub
 		return em.createQuery("select vip from VehicleInsurancePlan vip", VehicleInsurancePlan.class).getResultList();
+	}
+
+	@Override
+	public VehicleInsurancePlan searchVehiclePlan(String vType, String iType, String pType ,int years) {
+		// TODO Auto-generated method stub
+		String jpql = "select vp from VehicleInsurancePlan vp where vp.vehicleType=:vType and vp.insuranceType=:iType and vp.planType=:pType and vp.noOfYears=:years";
+        TypedQuery<VehicleInsurancePlan> qry = em.createQuery(jpql, VehicleInsurancePlan.class);
+        qry.setParameter("vType", vType);
+        qry.setParameter("iType", iType);
+        qry.setParameter("pType", pType);
+        qry.setParameter("years", years);
+//		return qry.C;
+        VehicleInsurancePlan vip;
+        try {
+            vip=qry.getSingleResult();
+        } catch (Exception e) {
+            return null;
+        }return vip;
+
 	}
 
 }

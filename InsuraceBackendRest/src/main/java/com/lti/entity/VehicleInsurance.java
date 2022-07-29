@@ -22,7 +22,7 @@ public class VehicleInsurance {
 @GeneratedValue(generator = "vehicle_insu_seq" ,strategy = GenerationType.SEQUENCE)
 
 int vehicleInsuranceId;
-LocalDate issueDate;
+String issueDate;
 int years;
 double amountPaidV;
 
@@ -46,11 +46,11 @@ public void setVehicleInsuranceId(int vehicleInsuranceId) {
 	this.vehicleInsuranceId = vehicleInsuranceId;
 }
 
-public LocalDate getIssueDate() {
+public String getIssueDate() {
 	return issueDate;
 }
 
-public void setIssueDate(LocalDate issueDate) {
+public void setIssueDate(String issueDate) {
 	this.issueDate = issueDate;
 }
 

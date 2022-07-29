@@ -3,9 +3,13 @@ package com.lti.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.lti.dao.VehicleDao;
 import com.lti.dao.VehicleInsuranceDao;
+import com.lti.dao.VehiclePlanDao;
 import com.lti.dto.RenewVehicleInsurance;
+import com.lti.entity.Vehicle;
 import com.lti.entity.VehicleInsurance;
+import com.lti.entity.VehicleInsurancePlan;
 import com.lti.exception.IdMissingException;
 import com.lti.exception.InsuranceNotFound;
 import com.lti.exception.InsurancePlanNotFound;
@@ -16,6 +20,12 @@ public class VehicleServiceImpl implements VehicleService {
 
 	@Autowired
 	VehicleInsuranceDao vehicleInsuranceDao;
+	
+	@Autowired 
+	VehiclePlanDao vehiclePlanDao;
+	
+	@Autowired
+	VehicleDao vehicleDao;
 	
 	@Override
 	public String buyInsurance(VehicleInsurance vehicleInsurance) {
@@ -53,6 +63,29 @@ public class VehicleServiceImpl implements VehicleService {
 			dto.setMessage(e.getMessage());
 			return dto;
 		}
+	}
+	
+	@Override
+	public String RegisterVehiclePlan(VehicleInsurancePlan vehicleInsurancePlan) {
+		
+		VehicleInsurancePlan vehicleinsplan;
+		try {
+			vehicleinsplan=vehiclePlanDao.addOrUpdateVehiclePlan(vehicleInsurancePlan);
+		} catch (Exception e) {
+			
+			return e.getMessage();
+		}
+		return "Added successfully vehicleInsurancePlan vehicle plan Id: "+vehicleinsplan.getVehiclePlanId();
+	}
+	@Override
+	public String ResgisterVehicle(Vehicle vehicle) {
+		Vehicle vehicle1;
+		try {
+			vehicle1=vehicleDao.addOrUpdateVehicle(vehicle);
+		} catch (Exception e) {
+			return e.getMessage();
+		}
+		return "Vehicle Registered vehicleId "+vehicle.getVehicleId();
 	}
 
 	

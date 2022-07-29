@@ -8,8 +8,10 @@ public interface VehiclePlanDao {
 
 	VehicleInsurancePlan addOrUpdateVehiclePlan(VehicleInsurancePlan vip);
 
-	VehicleInsurancePlan searchVehiclePlan(int vehiclePlanId);
+	VehicleInsurancePlan searchVehiclePlanById(int vehiclePlanId);
 	
 	List<VehicleInsurancePlan> viewAllVehicleInsurancePlans();
+	
+	VehicleInsurancePlan searchVehiclePlan(String vehicleType,String insuranceType,String planType ,int years);
 
 }

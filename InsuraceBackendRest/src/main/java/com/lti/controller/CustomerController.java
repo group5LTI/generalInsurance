@@ -22,7 +22,7 @@ public class CustomerController {
 
 	@Autowired
 	CustomerService customerService;
-	//http://localhost:9191/InsuranceBackendRest/myapp/customers/register
+	//http://localhost:9090/InsuranceBackendRest/myapp/customers/register
 	@RequestMapping(value="/register" , method=RequestMethod.POST)
 	public String signup(@RequestBody Customer customer) {
 		String message = customerService.RegisterCustomer(customer);

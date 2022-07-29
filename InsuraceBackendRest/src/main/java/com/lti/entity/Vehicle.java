@@ -1,5 +1,6 @@
 package com.lti.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,15 +20,15 @@ public class Vehicle {
 	@GeneratedValue(generator = "vehicle_seq",strategy = GenerationType.SEQUENCE)
 	int vehicleId;
 	String brand;
-	VehicleType vehicleType;
+	String vehicleType;
 	String chassisNumber;
-	String drivinglicence;
+	String drivingLicence;
 	
 	@ManyToOne
 	@JoinColumn(name = "customer_id")
 	Customer customer;
 	
-	@OneToOne(mappedBy = "vehicle")
+	@OneToOne(mappedBy = "vehicle" ,cascade = CascadeType.ALL)
 	VehicleInsurance vehicleInsurance;
 
 	public int getVehicleId() {
@@ -46,11 +47,11 @@ public class Vehicle {
 		this.brand = brand;
 	}
 
-	public VehicleType getVehicleType() {
+	public String getVehicleType() {
 		return vehicleType;
 	}
 
-	public void setVehicleType(VehicleType vehicleType) {
+	public void setVehicleType(String vehicleType) {
 		this.vehicleType = vehicleType;
 	}
 
@@ -63,11 +64,11 @@ public class Vehicle {
 	}
 
 	public String getDrivinglicence() {
-		return drivinglicence;
+		return drivingLicence;
 	}
 
-	public void setDrivinglicence(String drivinglicence) {
-		this.drivinglicence = drivinglicence;
+	public void setDrivinglicence(String drivingLicence) {
+		this.drivingLicence = drivingLicence;
 	}
 
 	public Customer getCustomer() {

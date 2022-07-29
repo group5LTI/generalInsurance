@@ -1,12 +1,17 @@
 <app-dashboard-nav></app-dashboard-nav>
 <body>
+
+    <!-- vehicleInsuranceId:number;
+issueDate:string;
+years:number;
+amountPaidV:number; -->
     <div class="container">
         <div class="title">Vehicle Insurance</div><br>
         <div class="content">
             <form  #buyvehicleinsuranceForm="ngForm">
                 <div class="travel-details">
-                    <input type="radio" name="Vehicle" id="dot-1" value="1">
-                    <input type="radio" name="Vehicle" id="dot-2" value="2">
+                    <input type="radio" name="Vehicle" id="dot-1" value="twoWheeler">
+                    <input type="radio" name="Vehicle" id="dot-2" value="fourWheeler">
                     <span class="details">Vehicle Type</span>
                     <div class="category">
                         <label for="dot-1">
