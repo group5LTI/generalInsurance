@@ -1,0 +1,27 @@
+package com.lti.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.lti.dao.VehiclePlanDao;
+import com.lti.entity.VehicleInsurancePlan;
+
+@Service
+public class VehicleServiceImpl implements VehicleService {
+
+	@Autowired 
+	VehiclePlanDao vehicleplandoa;
+	@Override
+	public String RegisterVehiclePlan(VehicleInsurancePlan vehicleinsuranceplan) {
+		
+		VehicleInsurancePlan vehicleinsplan;
+		try {
+			vehicleinsplan=vehicleplandoa.addOrUpdateVehiclePlan(vehicleinsuranceplan);
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+		return "Added successfully vehicleInsurancePlan";
+	}
+
+}
