@@ -27,79 +27,78 @@ public class VehicleServiceImpl implements VehicleService {
 
 	@Autowired
 	VehicleInsuranceDao vehicleInsuranceDao;
-	
-	@Autowired 
+
+	@Autowired
 	VehiclePlanDao vehiclePlanDao;
-	
+
 	@Autowired
 	VehicleDao vehicleDao;
-	
+
 	@Autowired
 	InsuranceDao insuranceDao;
-	
+
 	@Override
 	public VehicleInsurance buyInsurance(VehicleInsurance vehicleInsurance) {
 		VehicleInsurance buyVehicleInsurance;
 		try {
 			buyVehicleInsurance = vehicleInsuranceDao.addOrUpdateVehicleInsurance(vehicleInsurance);
-		
+
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			return null;
 		}
 		return buyVehicleInsurance;
 	}
-	@Override
-	public RenewVehicleInsurance renewVehicleInsurance(RenewVInsuranceDto vehicleInsurance) {
-		RenewVehicleInsurance dto = new RenewVehicleInsurance();
-		try {
-			if(vehicleInsurance.getVehicleInsuranceId()==0) {
-				throw new IdMissingException("Enter Insurance ID");
-			}
-			else if (vehicleInsuranceDao.searchVehicleInsuraceById(vehicleInsurance.getVehicleInsuranceId())==null) {
-				throw new InsuranceNotFound("Insurance record not found");
-				
-			}
-			
-			VehicleInsurance vehicleInsurance2 = vehicleInsuranceDao.searchVehicleInsuraceById(vehicleInsurance.getVehicleInsuranceId());
-			VehicleInsurance update = vehicleInsuranceDao.addOrUpdateVehicleInsurance(vehicleInsurance2);
-			dto.setMessage("Vehicle Insurance with Id:"+vehicleInsurance.getVehicleInsuranceId()+" renewed");
-			dto.setVehicleInsurance(vehicleInsurance2);
-			return dto;
-		} catch (Exception e) {
-			dto.setMessage(e.getMessage());
-			return dto;
-		}
-	}
-	
+//	@Override
+//	public boolean renewVehicleInsurance(RenewVInsuranceDto vehicleInsurance) {
+//		RenewVehicleInsurance dto = new RenewVehicleInsurance();
+//		try {
+//			if(vehicleInsurance.getVehicleInsuranceId()==0) {
+//				throw new IdMissingException("Enter Insurance ID");
+//			}
+//			else if (vehicleInsuranceDao.searchVehicleInsuraceById(vehicleInsurance.getVehicleInsuranceId())==null) {
+//				throw new InsuranceNotFound("Insurance record not found");
+//				
+//			}
+//			VehicleInsurance v = vehicleInsuranceDao.searchVehicleInsuraceById(vehicleInsurance.getVehicleInsuranceId());
+//
+//			return true;
+//		} catch (Exception e) {
+//			dto.setMessage(e.getMessage());
+//			return false;
+//		}
+	// }
+
 	@Override
 	public String RegisterVehiclePlan(VehicleInsurancePlan vehicleInsurancePlan) {
-		
+
 		VehicleInsurancePlan vehicleinsplan;
 		try {
-			vehicleinsplan=vehiclePlanDao.addOrUpdateVehiclePlan(vehicleInsurancePlan);
+			vehicleinsplan = vehiclePlanDao.addOrUpdateVehiclePlan(vehicleInsurancePlan);
 		} catch (Exception e) {
-			
+
 			return e.getMessage();
 		}
-		return "Added successfully vehicleInsurancePlan vehicle plan Id: "+vehicleinsplan.getVehiclePlanId();
+		return "Added successfully vehicleInsurancePlan vehicle plan Id: " + vehicleinsplan.getVehiclePlanId();
 	}
-	@Override //u
+
+	@Override // u
 	public Vehicle ResgisterVehicle(Vehicle vehicle) {
 		BuyVInsuranceDto dto = null;
 		Vehicle vehicle1 = null;
 		try {
-			vehicle1=vehicleDao.addOrUpdateVehicle(vehicle);
+			vehicle1 = vehicleDao.addOrUpdateVehicle(vehicle);
 			return vehicle1;
 		} catch (Exception e) {
 			return null;
 		}
-		
+
 //		return "Vehicle Registered vehicleId "+vehicle1.getVehicleId();
 	}
+
 	@Override
 	public VehicleInsurancePlan searchPlanById(int planId) {
-		VehicleInsurancePlan vehiclePlan; 
+		VehicleInsurancePlan vehiclePlan;
 		try {
 			vehiclePlan = vehiclePlanDao.searchVehiclePlanById(planId);
 		} catch (Exception e) {
@@ -107,9 +106,10 @@ public class VehicleServiceImpl implements VehicleService {
 		}
 		return vehiclePlan;
 	}
+
 	@Override
-	public VehicleInsurancePlan searchPlanByDurationType(String vehicleType, String planType,int planDuration) {
-		VehicleInsurancePlan vehiclePlan; 
+	public VehicleInsurancePlan searchPlanByDurationType(String vehicleType, String planType, int planDuration) {
+		VehicleInsurancePlan vehiclePlan;
 		try {
 			vehiclePlan = vehiclePlanDao.searchVehiclePlan(vehicleType, planType, planDuration);
 		} catch (Exception e) {
@@ -117,6 +117,7 @@ public class VehicleServiceImpl implements VehicleService {
 		}
 		return vehiclePlan;
 	}
+
 	@Override
 	public Insurance addVehicleInsurance(Insurance vi) {
 		Insurance in;
@@ -127,9 +128,13 @@ public class VehicleServiceImpl implements VehicleService {
 			System.out.println(e.getMessage());
 			return null;
 		}
-		
+
 	}
 
-	
+	@Override
+	public VehicleInsurance searchVehicleInsuranceById(int vehicleInsuranceId) {
+		VehicleInsurance vi = vehicleInsuranceDao.searchVehicleInsuraceById(vehicleInsuranceId);
+		return vi;
+	}
 
 }

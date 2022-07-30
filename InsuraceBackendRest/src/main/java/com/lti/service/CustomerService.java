@@ -6,6 +6,7 @@ public interface CustomerService {
 
 	String RegisterCustomer(Customer newCustomer);
 	Customer searchUserByUsername(String userName);
+	Customer searchCustomerByuserId(int userId);
 	boolean searchUserByMailId(String mailId);
 	Customer findcustomerById(int userId);
 	boolean userlogin(String string,String password);

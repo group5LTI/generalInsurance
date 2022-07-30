@@ -44,10 +44,14 @@ public class CustomerController {
 		boolean isvalid=customerService.userlogin(loginData.getUserName(),loginData.getPassword());
 		return isvalid;
 	}
-	@GetMapping("/customer")
-	public Customer searchCustomerByUsername(@RequestParam("userName") String uName) {
-		return customerService.searchUserByUsername(uName);
+	@GetMapping("/customer/{userId}")
+	public Customer searchCustomerByUsername(@PathVariable int userId) {
+		return customerService.searchCustomerByuserId(userId);
 	}
+	@GetMapping("/customer")
+    public Customer searchCustomerByUsername(@RequestParam("userName") String uName) {
+        return customerService.searchUserByUsername(uName);
+    }
 	
 	@PutMapping("/update")
 	public boolean updateProfile(@RequestBody Customer customer) {

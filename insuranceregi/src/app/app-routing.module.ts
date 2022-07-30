@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { RenewInsuranceComponent } from './renew-insurance/renew-insurance.component';
 import { TravelComponent } from './travel-insurance/travel-insurance.component';
 import { TravelPageComponent } from './travel-page/travel-page.component';
 
@@ -40,7 +41,11 @@ const routes: Routes = [
 },
 {
   path:'travelLink',component:TravelComponent
-}
+},
+{
+  path:'renewVLink',component:RenewInsuranceComponent
+},
+
 
 
 ];

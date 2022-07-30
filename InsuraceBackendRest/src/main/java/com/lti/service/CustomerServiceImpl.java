@@ -60,6 +60,12 @@ public class CustomerServiceImpl implements CustomerService{
 		Customer cr = customerDao.addOrUpdateCustomer(c);
 		return "Done";
 	}
+
+	@Override
+	public Customer searchCustomerByuserId(int userId) {
+		// TODO Auto-generated method stub
+		return customerDao.searchCustomer(userId);
+	}
 	
 	
 	

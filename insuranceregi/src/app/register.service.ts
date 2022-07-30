@@ -21,8 +21,12 @@ export class RegisterService {
     return this.httpClient.post<boolean>("http://localhost:9191/customers/login",login);
   }
   getUser(userName:string):Observable<User>{
+
     // return this.httpClient.get<User>("http://localhost:9191/users/user/"+userId);
+
     return this.httpClient.get<User>("http://localhost:9191/customers/customer?userName="+userName);
+
     // return this.httpClient.get<User>("http://localhost:9191/users/profile?userId="+userName);
+
   }
 }

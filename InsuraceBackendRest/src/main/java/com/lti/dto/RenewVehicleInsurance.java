@@ -3,19 +3,26 @@ package com.lti.dto;
 import com.lti.entity.VehicleInsurance;
 
 public class RenewVehicleInsurance {
-	String message;
-	VehicleInsurance vehicleInsurance;
-	public String getMessage() {
-		return message;
+	int vehicleInsuranceId;
+	int planDuration;
+	String planType;
+	public int getVehicleInsuranceId() {
+		return vehicleInsuranceId;
 	}
-	public void setMessage(String message) {
-		this.message = message;
+	public void setVehicleInsuranceId(int vehicleInsuranceId) {
+		this.vehicleInsuranceId = vehicleInsuranceId;
 	}
-	public VehicleInsurance getVehicleInsurance() {
-		return vehicleInsurance;
+	public int getPlanDuration() {
+		return planDuration;
 	}
-	public void setVehicleInsurance(VehicleInsurance vehicleInsurance) {
-		this.vehicleInsurance = vehicleInsurance;
+	public void setPlanDuration(int planDuration) {
+		this.planDuration = planDuration;
+	}
+	public String getPlanType() {
+		return planType;
+	}
+	public void setPlanType(String planType) {
+		this.planType = planType;
 	}
 	
 }

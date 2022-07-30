@@ -13,7 +13,9 @@ public interface VehicleService {
 	
 	VehicleInsurance buyInsurance(VehicleInsurance vehicleInsurance);
 	
-	RenewVehicleInsurance renewVehicleInsurance(RenewVInsuranceDto vehicleInsurance);
+	VehicleInsurance searchVehicleInsuranceById(int vehicleInsuranceId);
+	
+//	boolean renewVehicleInsurance(RenewVInsuranceDto vehicleInsurance);
 	
 	String RegisterVehiclePlan(VehicleInsurancePlan vehicleInsurancePlan);
 	
