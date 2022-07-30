@@ -1,55 +1,64 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { BuyVInsuranceDto } from '../buy-vinsurance-dto';
+import { Login } from '../login';
+import { RegisterService } from '../register.service';
+import { VehicleInsurance } from '../vehicle-insurance';
+import { VehicleServiceService } from '../vehicle-service.service';
+// import { Vehicle } from '../vehicle';
+
+
 
 @Component({
   selector: 'buy-insurance',
   templateUrl: './buy-insurance.component.html',
   styleUrls: ['./buy-insurance.component.css']
 })
+
 export class BuyComponent implements OnInit {
 
-  exform: FormGroup;
-
-  ngOnInit() {
-
-  this.exform = new FormGroup({
-    'manufacture' : new FormControl(null, Validators.required),
-    'model' : new FormControl(null, [Validators.required]),
-    'licence' : new FormControl(null, Validators.required),
-    'registrationNo' : new FormControl(null, [Validators.required]),
-    'engineNo' : new FormControl(null, Validators.required),
-    'chaassisNo' : new FormControl(null, [Validators.required]),
-    'planduration' : new FormControl(null, [Validators.required]),
-
-    '' : new FormControl(
-      null,
-      [
-        Validators.required,
-        Validators.pattern('^\\s*(?:\\+?(\\d{1,3}))?[-. (]*(\\d{3})[-. )]*(\\d{3})[-. ]*(\\d{4})(?: *x(\\d+))?\\s*$')
-      ]),
-  });
+  // buyRegDto:BuyRegisterVInsuranceDto=new BuyRegisterVInsuranceDto();
+  buyDto:BuyVInsuranceDto = new BuyVInsuranceDto();
+  plan = ['Silver','Gold','Diamond']
+  planHasError = true;
+  login:Login=new Login();
+  vehicleInsurance:VehicleInsurance=new VehicleInsurance();
+  isValid:boolean;
+  msg:string;
+  // vehicleModel = new vehicle('','','','','','','','','default');
+  constructor(private vehicleService:VehicleServiceService,private registerService:RegisterService,private router:Router) {}
+  ngOnInit(): void {
+    // throw new Error('Method not implemented.');
   }
 
-  clicksub() {
-    console.log(this.exform.value);
-    this.exform.reset();
+  addVehicleInsurance() {
+
+    this.buyDto.userId = 106;
+    console.log(this.buyDto);
+    console.log(this.login);
+    this.vehicleService.addVehicleInsurance(this.buyDto)
+    .subscribe(
+      buyVehicleInsurance=>{
+        this.isValid=buyVehicleInsurance;
+        console.log(this.isValid);
+        if(this.isValid){
+          alert("Congratulations you have choosed "+this.buyDto.planType+" for your "+this.buyDto.vehicleType+" for "+this.buyDto.planDuration+" year/s");
+          this.router.navigate(['dbLink'])
+        }
+        else{
+          alert("Right now "+this.buyDto.planType+" plan is not available for "+this.buyDto.vehicleType +" for "+this.buyDto.planDuration+" years");
+        }
+      }
+    )
+  }   
+
+  validatePlan(value:string) {
+    if(value == 'default') {
+      this.planHasError = true;
+    }else {
+      this.planHasError = false;
+    }
   }
-  get manufacture() {
-    return this.exform.get('manufacture');
-  }
-  get model() {
-    return this.exform.get('model');
-  }
-  get licence() {
-    return this.exform.get('licence');
-  }
-  get registrationNo() {
-    return this.exform.get('registrationNo');
-  }
-  get engineNo() {
-    return this.exform.get('engineNo');
-  }
-  get chassisNo() {
-    return this.exform.get('chassisNo');
-  }
- }
+
+  
+}
