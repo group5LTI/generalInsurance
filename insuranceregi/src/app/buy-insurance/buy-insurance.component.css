@@ -122,10 +122,32 @@ form input[type="radio"] {
 }
 
 form .button {
-    height: 45px;
-    margin: 35px 0
+    height: 50px;
+    width: 450px;
+    margin: 35px 0;
+    margin-left: 85px;
 }
 
+form .buttonVehicle{
+height: 45px;
+margin-top: 25px;
+margin-right: 65px;
+margin-left: 230px;
+width: 190px;
+}
+form .buttonVehicle input {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
 form .button input {
     height: 100%;
     width: 100%;
@@ -141,6 +163,10 @@ form .button input {
 }
 
 form .button input:hover {
+    /* transform: scale(0.99); */
+    background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+}
+form .buttonVehicle input:hover {
     /* transform: scale(0.99); */
     background: linear-gradient(-135deg, #71b7e6, #9b59b6);
 }
