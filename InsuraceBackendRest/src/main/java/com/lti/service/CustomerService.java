@@ -1,5 +1,6 @@
 package com.lti.service;
 
+import com.lti.dto.UpdateCustomer;
 import com.lti.entity.Customer;
 
 public interface CustomerService {
@@ -10,5 +11,5 @@ public interface CustomerService {
 	boolean searchUserByMailId(String mailId);
 	Customer findcustomerById(int userId);
 	boolean userlogin(String string,String password);
-	String updateProfile(Customer c);
+	UpdateCustomer updateProfile(Customer c);
 }

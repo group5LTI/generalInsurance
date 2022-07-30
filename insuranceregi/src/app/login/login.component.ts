@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Login } from '../login';
 import { RegisterService } from '../register.service';
 import { User } from '../user';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 login:Login=new Login();
+user:User=new User();
 message:string;
 isValid:boolean;
 validatedUser:User=new User();
@@ -18,6 +20,7 @@ validatedUser:User=new User();
 
   ngOnInit(): void {
   }
+<<<<<<< HEAD
   checkLogin()
 
   {
@@ -69,6 +72,39 @@ forgetPassword() {
  
 
 
-
+=======
+checkLogin()
+{
+console.log(JSON.stringify(this.login));
+this.registerService.loginUser(this.login)
+.subscribe(
+msg=>{
+  this.isValid=msg;
+  if(this.isValid)
+  {
+    this.registerService.getUser(this.login.userName)
+    .subscribe(
+      user=>{
+        //console.log(JSON.stringify(user));
+        
+        this.validatedUser=user;
+        sessionStorage.setItem("userDetails",JSON.stringify(this.validatedUser));
+        console.log(JSON.stringify(this.validatedUser));
+      }
+    );
+    // sessionStorage.setItem("userId",this.login.)
+    alert("Login Successful"+" Redirectiong to home page");
+    this.router.navigate(['dbLink'])
+  }
+  else{
+    // this.message="login failed";
+    alert("Login failed"+"\nEither username or password incorrect");
+    // this.router.navigate(['registerLink'])
+  }
 }
 
+);
+}
+>>>>>>> 84c78046578fa07d8f6c9090d5c8a1b3dee8c8c2
+
+}

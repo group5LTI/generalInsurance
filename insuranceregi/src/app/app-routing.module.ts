@@ -4,12 +4,15 @@ import { AdminComponent } from './admin/admin.component';
 import { BuyComponent } from './buy-insurance/buy-insurance.component';
 import { ContactComponent } from './contact/contact.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { RegisterComponent } from './register/register.component';
 import { RenewInsuranceComponent } from './renew-insurance/renew-insurance.component';
 import { TravelComponent } from './travel-insurance/travel-insurance.component';
 import { TravelPageComponent } from './travel-page/travel-page.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 const routes: Routes = [
   {
@@ -43,9 +46,14 @@ const routes: Routes = [
   path:'travelLink',component:TravelComponent
 },
 {
-  path:'renewVLink',component:RenewInsuranceComponent
+  path:'paymentLink',component:PaymentPageComponent
 },
-
+{
+  path:'updateProfileLink',component:UpdateProfileComponent
+},
+{
+  path:'forgotLink',component:ForgotpasswordComponent
+}
 
 
 ];

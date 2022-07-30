@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.lti.dao.CustomerDao;
+import com.lti.dto.UpdateCustomer;
 import com.lti.entity.Customer;
 
 @Service
@@ -30,6 +31,22 @@ public class CustomerServiceImpl implements CustomerService{
 			return e.getMessage();
 		}
 		
+
+	}
+	
+	public UpdateCustomer updateProfile(Customer customer)
+	{
+		UpdateCustomer updateCustomer=new UpdateCustomer();
+		try {
+			Customer cust2=customerDao.addOrUpdateCustomer(customer);
+			updateCustomer.setMessage("profile updated");
+			updateCustomer.setCustomer(cust2);
+			return updateCustomer;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			updateCustomer.setMessage(e.getMessage());
+			return updateCustomer;
+		}
 	}
 
 	@Override
@@ -55,6 +72,7 @@ public class CustomerServiceImpl implements CustomerService{
 		return customerDao.searchCustomerByEmail(mailId);
 	}
 
+<<<<<<< HEAD
 	@Override
 	public String updateProfile(Customer c) {
 		Customer cr = customerDao.addOrUpdateCustomer(c);
@@ -68,6 +86,8 @@ public class CustomerServiceImpl implements CustomerService{
 	}
 	
 	
+=======
+>>>>>>> 84c78046578fa07d8f6c9090d5c8a1b3dee8c8c2
 	
 	
 }

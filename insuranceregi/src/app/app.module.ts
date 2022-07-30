@@ -19,6 +19,9 @@ import { TravelComponent } from './travel-insurance/travel-insurance.component';
 import { TravelPageComponent } from './travel-page/travel-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RenewInsuranceComponent } from './renew-insurance/renew-insurance.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { PaymentPageComponent } from './payment-page/payment-page.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,9 @@ import { RenewInsuranceComponent } from './renew-insurance/renew-insurance.compo
     TravelPageComponent,
     ContactComponent,
     TravelComponent,
-    RenewInsuranceComponent
+    RenewInsuranceComponent,
+    PaymentPageComponent,
+    UpdateProfileComponent
   ],
   imports: [
     BrowserModule,

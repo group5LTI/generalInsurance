@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lti.dto.LoginDto;
+import com.lti.dto.UpdateCustomer;
 import com.lti.entity.Customer;
 import com.lti.service.CustomerService;
 
@@ -48,6 +49,7 @@ public class CustomerController {
 	public Customer searchCustomerByUsername(@PathVariable int userId) {
 		return customerService.searchCustomerByuserId(userId);
 	}
+<<<<<<< HEAD
 	@GetMapping("/customer")
     public Customer searchCustomerByUsername(@RequestParam("userName") String uName) {
         return customerService.searchUserByUsername(uName);
@@ -65,5 +67,13 @@ public class CustomerController {
 		}
 		
 	
+=======
+>>>>>>> 84c78046578fa07d8f6c9090d5c8a1b3dee8c8c2
 
-}}
+	@PostMapping("/update")
+	public UpdateCustomer updateProfile(@RequestBody Customer customer)
+	{
+		return customerService.updateProfile(customer);
+	}
+
+}

@@ -46,7 +46,7 @@ export class BuyComponent implements OnInit {
         console.log(this.isValid);
         if(this.isValid){
           alert("Congratulations you have choosed "+this.buyDto.planType+" for your "+this.buyDto.vehicleType+" for "+this.buyDto.planDuration+" year/s");
-          this.router.navigate(['dbLink'])
+          this.router.navigate(['paymentLink'])
         }
         else{
           alert("Right now "+this.buyDto.planType+" plan is not available for "+this.buyDto.vehicleType +" for "+this.buyDto.planDuration+" years");
