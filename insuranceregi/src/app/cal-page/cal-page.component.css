@@ -1,0 +1,25 @@
+/*project-btn*/
+.project-btn{
+	margin-top: 49px;
+	letter-spacing: 1.2px;
+}
+.project-view1 {
+    background: #7370d8;
+    border: 1px solid #7370d8;
+    width: 212px;
+    height:52px;
+    line-height: 50px;
+    white-space: nowrap;
+   	text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -ms-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+}
+.project-view1:hover {
+	color: #7370d8;
+	background: transparent;
+}/*project-btn*/

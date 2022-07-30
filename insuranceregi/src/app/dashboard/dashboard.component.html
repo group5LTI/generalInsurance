@@ -23,8 +23,8 @@
                                         <button type="button" class="slide-btn">
                                             get started
                                         </button>
-                                        <button type="button" class="slide-btn">
-                                            Calculate Premium
+                                        <button type="button" class="slide-btn" [routerLink]="['/calpage']">
+                                           <a [routerLink]="['/calPage']"> Calculate Premium</a>
                                         </button>
 
                                     </div><!-- /.single-slide-item-content-->
@@ -109,7 +109,7 @@
                                         <!--/.we-do-img-->
                                         <div class="we-do-topics">
                                             <h2>
-                                                <a href="#">
+                                                <a [routerLink]="['/renewLink']">
                                                     Re-new Insurance
                                                 </a>
                                             </h2>
@@ -123,7 +123,7 @@
                                         </p>
 
                                         <div class="project-btn pricing-btn text-center">
-                                            <a href="project.html" class="project-view">
+                                            <a [routerLink]="['/renewLink']" class="project-view">
                                                 Re-New Insurance
                                             </a>
                                         </div>
@@ -147,7 +147,7 @@
                                         <!--/.we-do-img-->
                                         <div class="we-do-topics">
                                             <h2>
-                                                <a href="#">
+                                                <a [routerLink]="['/claimLink']">
                                                     Had an accident? 
                                                 </a>
 
@@ -162,7 +162,7 @@
                                              without you having to leave your home.
                                              </p>
                                         <div class="project-btn pricing-btn text-center">
-                                            <a [routerLink]="['loginLink']" class="project-view">
+                                            <a [routerLink]="['claimLink']" class="project-view">
                                                 Claim Insurance
                                             </a>
                                         </div>

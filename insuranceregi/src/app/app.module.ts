@@ -19,6 +19,11 @@ import { TravelComponent } from './travel-insurance/travel-insurance.component';
 import { TravelPageComponent } from './travel-page/travel-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RenewInsuranceComponent } from './renew-insurance/renew-insurance.component';
+import { ClaimInsuranceComponent } from './claim-insurance/claim-insurance.component';
+import { CalPageComponent } from './cal-page/cal-page.component';
+import { TravelCalculatorComponent } from './travel-calculator/travel-calculator.component';
+import { TravelPremiumComponent } from './travel-premium/travel-premium.component';
+import { VehicleCalculatorComponent } from './vehicle-calculator/vehicle-calculator.component';
 
 
 @NgModule({
@@ -35,7 +40,12 @@ import { RenewInsuranceComponent } from './renew-insurance/renew-insurance.compo
     DashboardComponent,
     TravelPageComponent,
     ContactComponent,
-    TravelComponent
+    TravelComponent,
+    ClaimInsuranceComponent,
+    CalPageComponent,
+    TravelCalculatorComponent,
+    TravelPremiumComponent,
+    VehicleCalculatorComponent
   ],
   imports: [
     BrowserModule,
