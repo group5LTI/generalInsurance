@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<app-home-menu></app-home-menu>
 <!-- Coding By CodingNepal - youtube.com/codingnepal -->
 <html lang="en" dir="ltr">
   <head>
@@ -11,28 +12,28 @@
       <h1>Registration</h1>
       <form #regForm="ngForm" (ngSubmit)="register()">
         <div class="txt_field">
-          <input type="text" name="userName" [(ngModel)]="user.userName" required>
+          <input type="text" name="userName" [(ngModel)]="user.userName"  required>
           <span></span>
           <label>Username</label>
         </div>
         <div class="txt_field">
-          <input type="password" name="password" [(ngModel)]="user.password" required>
+          <input type="password" name="password" [(ngModel)]="user.password"  required>
           <span></span>
           <label>Password</label>
         </div>
 	
 	<div class="txt_field">
-          <input type="text" name="mailId" [(ngModel)]="user.mailId" required>
+          <input type="text" name="mailId" [(ngModel)]="user.mailId"  required>
           <span></span>
           <label>Email Id</label>
         </div>
         <div class="txt_field">
-          <input type="password" name="mobile" [(ngModel)]="user.mobile" required>
+          <input type="password" name="mobile" [(ngModel)]="user.mobile"  required>
           <span></span>
           <label>Enter Mobile Number</label>
         </div>
 	<div class="txt_field">
-          <input type="text" name="location" [(ngModel)]="user.location" required>
+          <input type="text" name="location" [(ngModel)]="user.location"  required>
           <span></span>
           <label>Locality</label>
         </div>

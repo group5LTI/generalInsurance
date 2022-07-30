@@ -8,6 +8,7 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class RegisterService {
+  
 
   constructor(private httpClient:HttpClient) { }
 
@@ -19,5 +20,14 @@ export class RegisterService {
   loginUser(login:Login)
   {
     return this.httpClient.post<boolean>("http://localhost:9090/customers/login",login);
+  }
+
+  forgetPassword(mailId: string):Observable<any> {
+    let url="http://localhost:9090/forgot_password/"+mailId;
+    return this.httpClient.get(url,{responseType: 'text'});
+  }
+  updatePassword(login:Login):Observable<any>{
+    let url = "http://localhost:9090/updatePassword";
+    return this.httpClient.post(url, login);  
   }
 }

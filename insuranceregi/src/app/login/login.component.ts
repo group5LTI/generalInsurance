@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Login } from '../login';
 import { RegisterService } from '../register.service';
 import { User } from '../user';
@@ -10,10 +11,11 @@ import { User } from '../user';
 })
 export class LoginComponent implements OnInit {
 login:Login=new Login();
+user:User=new User();
 message:string;
 isValid:boolean;
 validatedUser:User=new User();
-  constructor(private registerService:RegisterService) { }
+  constructor(private registerService:RegisterService,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -26,17 +28,22 @@ msg=>{
   this.isValid=msg;
   if(this.isValid)
   {
-    this.message="Login Successful";
+    //this.message="Login Successful";
+    this.router.navigate(['dbLink'])
   }
   else{
-    this.message="login failed";
+    //this.message="login failed";
+    this.router.navigate(['registerLink'])
   }
 }
 
 );
 
+}
 
-
-
+forgetPassword() {
+// this.registerService.forgetPassword(this.user.mailId).subscribe(response => {alert("We have sent you an email for setting your new password!")});
+//   sessionStorage.setItem("isAuthenticated", "true");
+this.router.navigate(['forgotLink'])
 }
 }

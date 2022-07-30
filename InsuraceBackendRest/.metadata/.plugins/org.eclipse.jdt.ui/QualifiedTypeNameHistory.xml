@@ -2,7 +2,10 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
     <fullyQualifiedTypeName name="com.lti.dao.VehiclePlanDao"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="com.lti.service.VehicleService"/>
     <fullyQualifiedTypeName name="com.lti.entity.VehicleInsurancePlan"/>
+    <fullyQualifiedTypeName name="org.springframework.mail.MailException"/>
+    <fullyQualifiedTypeName name="org.springframework.mail.SimpleMailMessage"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="org.springframework.mail.MailSender"/>
 </qualifiedTypeNameHistroy>
