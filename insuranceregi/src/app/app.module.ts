@@ -21,7 +21,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RenewInsuranceComponent } from './renew-insurance/renew-insurance.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +36,7 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
     TravelPageComponent,
     ContactComponent,
     TravelComponent,
-    ForgotpasswordComponent
+    RenewInsuranceComponent
   ],
   imports: [
     BrowserModule,

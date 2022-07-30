@@ -42,6 +42,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+<<<<<<< HEAD
 			<item value="D:\spring-boot-workspace\InsuraceBackendRest"/>
 			<item value="D:\generalInsurance\InsuraceBackendRest"/>
 		</list>
@@ -52,6 +53,9 @@
 	</section>
 	<section name="WORKBENCH_SETTINGS">
 		<list key="ENABLED_TRANSFERS">
+=======
+			<item value="C:\insuranceregi\InsuraceBackendRest"/>
+>>>>>>> 205dba0150977904143287d9acabc1c21c541d14
 		</list>
 	</section>
 </section>

@@ -1,11 +1,12 @@
-<!-- <body>
+<app-dashboard-nav></app-dashboard-nav>
+<body>
     <div class="container">
         <div class="title">Vehicle Insurance</div><br>
         <div class="content">
-            <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+            <form #userForm="ngForm" (ngSubmit)="addVehicleInsurance()" novalidate>
                 <div class="travel-details">
-                    <input type="radio" name="vehicletype" id="dot-1" value="1" [(ngModel)]="vehicleModel.vehicletype">
-                    <input type="radio" name="vehicletype" id="dot-2" value="2" [(ngModel)]="vehicleModel.vehicletype">
+                    <input type="radio" name="vehicleType" id="dot-1" value="twoWheeler" [(ngModel)]="buyDto.vehicleType">
+                    <input type="radio" name="vehicleType" id="dot-2" value="fourWheeler" [(ngModel)]="buyDto.vehicleType">
                     <span class="details">Vehicle Type</span>
                     <div class="category">
                         <label for="dot-1">
@@ -22,29 +23,29 @@
                     <div class="input-box">
                         <span class="details">Vehicle Manufacture</span>
                         <input type="text" #manufacture="ngModel"
-                            [class.is-invalid]="manufacture.invalid && manufacture.touched" name="manufacture"
-                            placeholder="Enter Manufacture" required [(ngModel)]="vehicleModel.manufacture">
+                            [class.is-invalid]="manufacture.invalid && manufacture.touched" name="vehicleBrand"
+                            placeholder="Enter Manufacture" required [(ngModel)]="buyDto.vehicleBrand">
                         <small class="text-danger"
                             [class.d-none]="manufacture.valid || manufacture.untouched">Manufacture Name is
                             Required</small>
                     </div>
-                    <div class="input-box">
+                    <!-- <div class="input-box">
                         <span class="details">Vehicle Model</span>
                         <input type="text" name="model" #model="ngModel"
                             [class.is-invalid]="model.invalid && model.touched" placeholder="Enter Model" required
                             [(ngModel)]="vehicleModel.model">
                         <small class="text-danger" [class.d-none]="model.valid || model.untouched">Model Name is
                             Required</small>
-                    </div>
+                    </div> -->
                     <div class="input-box">
                         <span class="details">Driving Licence</span>
-                        <input type="text" name="licence" #licence="ngModel"
+                        <input type="text" name="dLicence" #licence="ngModel"
                             [class.is-invalid]="licence.invalid && licence.touched" placeholder="Enter Driving Licence"
-                            required [(ngModel)]="vehicleModel.licence">
+                            required [(ngModel)]="buyDto.dLicence">
                         <small class="text-danger" [class.d-none]="licence.valid || licence.untouched">Driving Licence
                             is Required</small>
                     </div>
-                    <div class="input-box">
+                    <!-- <div class="input-box">
                         <span class="details">Registration Number</span>
                         <input type="text" name="registrationNo" #registrationNo="ngModel"
                             [class.is-invalid]="registrationNo.invalid && registrationNo.touched"
@@ -52,41 +53,41 @@
                         <small class="text-danger"
                             [class.d-none]="registrationNo.valid || registrationNo.untouched">RegistrationNo is
                             Required</small>
-                    </div>
-                    <div class="input-box">
+                    </div> -->
+                    <!-- <div class="input-box">
                         <span class="details">Engine Number</span>
                         <input type="text" name="engineNo" #engineNo="ngModel"
                             [class.is-invalid]="engineNo.invalid && engineNo.touched" placeholder="Enter Engine Number"
                             required [(ngModel)]="vehicleModel.engineNo">
                         <small class="text-danger" [class.d-none]="engineNo.valid || engineNo.untouched">EngineNo is
                             Required</small>
-                    </div>
+                    </div> -->
                     <div class="input-box">
                         <span class="details" id="Chassis">Chassis Number</span>
                         <input type="text" name="chassisNo" #chassisNo="ngModel"
                             [class.is-invalid]="chassisNo.invalid && chassisNo.touched"
-                            placeholder="Enter Chassis Number" required [(ngModel)]="vehicleModel.chassisNo">
+                            placeholder="Enter Chassis Number" required [(ngModel)]="buyDto.chassisNo">
                         <small class="text-danger" [class.d-none]="chassisNo.valid || chassisNo.untouched">ChassisNo is
                             Required</small>
                     </div>
                     <div class="input-box">
                         <span class="details">Plan Duration</span>
-                        <input type="number" name="planduration" #planduration="ngModel"
+                        <input type="number" name="planDuration" #planduration="ngModel"
                             [class.is-invalid]="planduration.invalid && planduration.touched"
-                            placeholder="Enter Plan Duration" required [(ngModel)]="vehicleModel.planduration">
+                            placeholder="Enter Plan Duration" required [(ngModel)]="buyDto.planDuration">
                         <small class="text-danger"
                             [class.d-none]="planduration.valid || planduration.untouched">PlanDuration is
                             Required</small>
                     </div>
                     <div class="input-box">
                         <span class="details">Plan Type</span>
-                        <select (blur)="validatePlan(plan.value)" (change)="validatePlan(plan.value)" name="plan"
+                        <select (blur)="validatePlan(plan.value)" (change)="validatePlan(plan.value)" name="planType"
                             #plan="ngModel" [class.is-invalid]="planHasError && plan.touched" id="dropdown"
-                            [(ngModel)]="vehicleModel.plantype">
+                            [(ngModel)]="buyDto.planType">
                             <option value="default">Select Plan</option>
-                            <option value="01">Silver</option>
-                            <option value="02">Gold</option>
-                            <option value="03">Diamond</option>
+                            <option value="Silver">Silver</option>
+                            <option value="Gold">Gold</option>
+                            <option value="Diamond">Diamond</option>
                         </select>
                         <small class="text-danger" [class.d-none]="!planHasError || plan.untouched">Please Choose a
                             Plan</small>
@@ -99,4 +100,4 @@
             </form>
         </div>
     </div>
-</body> -->
+</body>
