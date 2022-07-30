@@ -29,9 +29,18 @@ msg=>{
   this.isValid=msg;
   if(this.isValid)
   {
-    // this.message="Login Successful";
-    alert("Login Successful"+" Redirectiong to home page");
+    this.registerService.getUser(this.login.userName)
+    .subscribe(
+      user=>{
+        //console.log(JSON.stringify(user));
+        
+        this.validatedUser=user;
+        sessionStorage.setItem("userDetails",JSON.stringify(this.validatedUser));
+        console.log(JSON.stringify(this.validatedUser));
+      }
+    );
     // sessionStorage.setItem("userId",this.login.)
+    alert("Login Successful"+" Redirectiong to home page");
     this.router.navigate(['dbLink'])
   }
   else{

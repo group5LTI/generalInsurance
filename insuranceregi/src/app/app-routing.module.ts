@@ -11,6 +11,7 @@ import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { RegisterComponent } from './register/register.component';
 import { TravelComponent } from './travel-insurance/travel-insurance.component';
 import { TravelPageComponent } from './travel-page/travel-page.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 const routes: Routes = [
   {
@@ -45,6 +46,9 @@ const routes: Routes = [
 },
 {
   path:'paymentLink',component:PaymentPageComponent
+},
+{
+  path:'updateProfileLink',component:UpdateProfileComponent
 },
 {
   path:'forgotLink',component:ForgotpasswordComponent

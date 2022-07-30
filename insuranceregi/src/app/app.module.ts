@@ -21,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RenewInsuranceComponent } from './renew-insurance/renew-insurance.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { PaymentPageComponent } from './payment-page/payment-page.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { PaymentPageComponent } from './payment-page/payment-page.component';
     ContactComponent,
     TravelComponent,
     RenewInsuranceComponent,
-    PaymentPageComponent
+    PaymentPageComponent,
+    UpdateProfileComponent
   ],
   imports: [
     BrowserModule,
