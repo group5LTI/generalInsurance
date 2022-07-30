@@ -1,5 +1,7 @@
 package com.lti.service;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +12,7 @@ import com.lti.dao.VehiclePlanDao;
 import com.lti.dao.VehiclePlanDaoImpl;
 import com.lti.dto.RenewVehicleInsurance;
 import com.lti.dto.BuyVInsuranceDto;
+import com.lti.dto.RenewVInsuranceDto;
 import com.lti.entity.Insurance;
 import com.lti.entity.Vehicle;
 import com.lti.entity.VehicleInsurance;
@@ -47,7 +50,7 @@ public class VehicleServiceImpl implements VehicleService {
 		return buyVehicleInsurance;
 	}
 	@Override
-	public RenewVehicleInsurance renewVehicleInsurance(VehicleInsurance vehicleInsurance) {
+	public RenewVehicleInsurance renewVehicleInsurance(RenewVInsuranceDto vehicleInsurance) {
 		RenewVehicleInsurance dto = new RenewVehicleInsurance();
 		try {
 			if(vehicleInsurance.getVehicleInsuranceId()==0) {
@@ -57,7 +60,9 @@ public class VehicleServiceImpl implements VehicleService {
 				throw new InsuranceNotFound("Insurance record not found");
 				
 			}
-			VehicleInsurance vehicleInsurance2 = vehicleInsuranceDao.addOrUpdateVehicleInsurance(vehicleInsurance);
+			
+			VehicleInsurance vehicleInsurance2 = vehicleInsuranceDao.searchVehicleInsuraceById(vehicleInsurance.getVehicleInsuranceId());
+			VehicleInsurance update = vehicleInsuranceDao.addOrUpdateVehicleInsurance(vehicleInsurance2);
 			dto.setMessage("Vehicle Insurance with Id:"+vehicleInsurance.getVehicleInsuranceId()+" renewed");
 			dto.setVehicleInsurance(vehicleInsurance2);
 			return dto;

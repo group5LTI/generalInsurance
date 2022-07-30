@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.lti.dto.RenewVehicleInsurance;
 import com.lti.dto.BuyRegisterVInsuranceDto;
 import com.lti.dto.BuyVInsuranceDto;
+import com.lti.dto.RenewVInsuranceDto;
 import com.lti.entity.Insurance;
 import com.lti.entity.Vehicle;
 import com.lti.entity.VehicleInsurance;
@@ -75,7 +76,7 @@ public class VehicleController {
 	}
 
 	@PutMapping(value = "/renew")
-	public RenewVehicleInsurance renewVehicleInsurance(@RequestBody VehicleInsurance vehicleInsurance) {
+	public RenewVehicleInsurance renewVehicleInsurance(@RequestBody RenewVInsuranceDto vehicleInsurance) {
 		RenewVehicleInsurance renewed = vehicleService.renewVehicleInsurance(vehicleInsurance);
 		return renewed;
 	}
