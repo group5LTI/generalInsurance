@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { RegisterComponent } from './register/register.component';
 import { TravelComponent } from './travel-insurance/travel-insurance.component';
 import { TravelPageComponent } from './travel-page/travel-page.component';
@@ -41,6 +42,9 @@ const routes: Routes = [
 },
 {
   path:'travelLink',component:TravelComponent
+},
+{
+  path:'paymentLink',component:PaymentPageComponent
 },
 {
   path:'forgotLink',component:ForgotpasswordComponent

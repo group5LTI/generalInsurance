@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Login } from '../login';
 import { RegisterService } from '../register.service';
 import { User } from '../user';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -29,14 +29,6 @@ msg=>{
   this.isValid=msg;
   if(this.isValid)
   {
-<<<<<<< HEAD
-    //this.message="Login Successful";
-    this.router.navigate(['dbLink'])
-  }
-  else{
-    //this.message="login failed";
-    this.router.navigate(['registerLink'])
-=======
     // this.message="Login Successful";
     alert("Login Successful"+" Redirectiong to home page");
     // sessionStorage.setItem("userId",this.login.)
@@ -46,27 +38,10 @@ msg=>{
     // this.message="login failed";
     alert("Login failed"+"\nEither username or password incorrect");
     // this.router.navigate(['registerLink'])
->>>>>>> 205dba0150977904143287d9acabc1c21c541d14
   }
 }
 
 );
-<<<<<<< HEAD
-
-}
-=======
-}
-forgetPassword() {
-  // this.registerService.forgetPassword(this.user.mailId).subscribe(response => {alert("We have sent you an email for setting your new password!")});
-  //   sessionStorage.setItem("isAuthenticated", "true");
-  this.router.navigate(['forgotLink'])
-  }
- 
->>>>>>> 205dba0150977904143287d9acabc1c21c541d14
-
-forgetPassword() {
-// this.registerService.forgetPassword(this.user.mailId).subscribe(response => {alert("We have sent you an email for setting your new password!")});
-//   sessionStorage.setItem("isAuthenticated", "true");
-this.router.navigate(['forgotLink'])
 }
 
+}

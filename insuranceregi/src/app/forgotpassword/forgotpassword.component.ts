@@ -15,16 +15,16 @@ export class ForgotpasswordComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  updatePassword(){
-      // sessionStorage.setItem("isAuthenticated","false");
-    // if(sessionStorage.getItem("isAuthenticated")=="true")
-    // {
-      this.registerService.updatePassword(this.login).subscribe(response=>{
-        alert(JSON.stringify(response.message));
-        this.router.navigate(['']);
-      });
-    // }
-    // else{
-      // alert("You are not authenticated to update your password!\nPlease make sure you came here through the link that we sent you.");
-  }
+//   updatePassword(){
+//       // sessionStorage.setItem("isAuthenticated","false");
+//     // if(sessionStorage.getItem("isAuthenticated")=="true")
+//     // {
+//       this.registerService.updatePassword(this.login).subscribe(response=>{
+//         alert(JSON.stringify(response.message));
+//         this.router.navigate(['']);
+//       });
+//     // }
+//     // else{
+//       // alert("You are not authenticated to update your password!\nPlease make sure you came here through the link that we sent you.");
+//   }
 }

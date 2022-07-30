@@ -20,6 +20,7 @@ import { TravelPageComponent } from './travel-page/travel-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RenewInsuranceComponent } from './renew-insurance/renew-insurance.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { PaymentPageComponent } from './payment-page/payment-page.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
     TravelPageComponent,
     ContactComponent,
     TravelComponent,
-    RenewInsuranceComponent
+    RenewInsuranceComponent,
+    PaymentPageComponent
   ],
   imports: [
     BrowserModule,
