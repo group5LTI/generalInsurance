@@ -1,5 +1,3 @@
-import { VehicleType } from "./vehicle-type";
-
 export class Vehicle {
     vehicleId:number;
     brand:string;

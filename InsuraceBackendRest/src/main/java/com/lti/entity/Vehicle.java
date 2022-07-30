@@ -63,11 +63,13 @@ public class Vehicle {
 		this.chassisNumber = chassisNumber;
 	}
 
-	public String getDrivinglicence() {
+	
+
+	public String getDrivingLicence() {
 		return drivingLicence;
 	}
 
-	public void setDrivinglicence(String drivingLicence) {
+	public void setDrivingLicence(String drivingLicence) {
 		this.drivingLicence = drivingLicence;
 	}
 

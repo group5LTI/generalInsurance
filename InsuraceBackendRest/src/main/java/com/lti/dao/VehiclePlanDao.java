@@ -12,6 +12,6 @@ public interface VehiclePlanDao {
 	
 	List<VehicleInsurancePlan> viewAllVehicleInsurancePlans();
 	
-	VehicleInsurancePlan searchVehiclePlan(String vehicleType,String insuranceType,String planType ,int years);
+	VehicleInsurancePlan searchVehiclePlan(String vehicleType,String planType ,int years);
 
 }

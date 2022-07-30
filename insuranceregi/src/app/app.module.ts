@@ -20,8 +20,6 @@ import { TravelPageComponent } from './travel-page/travel-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RenewInsuranceComponent } from './renew-insurance/renew-insurance.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,

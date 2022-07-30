@@ -3,10 +3,14 @@ package com.lti.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.lti.dao.InsuranceDao;
 import com.lti.dao.VehicleDao;
 import com.lti.dao.VehicleInsuranceDao;
 import com.lti.dao.VehiclePlanDao;
+import com.lti.dao.VehiclePlanDaoImpl;
 import com.lti.dto.RenewVehicleInsurance;
+import com.lti.dto.BuyVInsuranceDto;
+import com.lti.entity.Insurance;
 import com.lti.entity.Vehicle;
 import com.lti.entity.VehicleInsurance;
 import com.lti.entity.VehicleInsurancePlan;
@@ -27,22 +31,20 @@ public class VehicleServiceImpl implements VehicleService {
 	@Autowired
 	VehicleDao vehicleDao;
 	
+	@Autowired
+	InsuranceDao insuranceDao;
+	
 	@Override
-	public String buyInsurance(VehicleInsurance vehicleInsurance) {
+	public VehicleInsurance buyInsurance(VehicleInsurance vehicleInsurance) {
 		VehicleInsurance buyVehicleInsurance;
 		try {
 			buyVehicleInsurance = vehicleInsuranceDao.addOrUpdateVehicleInsurance(vehicleInsurance);
-			if(buyVehicleInsurance.getVehicle()==null) {
-				throw new VehicleNotFound("No vehicle Found");
-			}
-			else if (buyVehicleInsurance.getVehicleInsurancePlan()==null) {
-				
-				throw new InsurancePlanNotFound("No plan available");
-			}
+		
 		} catch (Exception e) {
-			return e.getMessage();
+			System.out.println(e.getMessage());
+			return null;
 		}
-		return "Congratulations! Your Vehicle insurance Id is:"+vehicleInsurance.getVehicleInsuranceId();
+		return buyVehicleInsurance;
 	}
 	@Override
 	public RenewVehicleInsurance renewVehicleInsurance(VehicleInsurance vehicleInsurance) {
@@ -77,15 +79,50 @@ public class VehicleServiceImpl implements VehicleService {
 		}
 		return "Added successfully vehicleInsurancePlan vehicle plan Id: "+vehicleinsplan.getVehiclePlanId();
 	}
-	@Override
-	public String ResgisterVehicle(Vehicle vehicle) {
-		Vehicle vehicle1;
+	@Override //u
+	public Vehicle ResgisterVehicle(Vehicle vehicle) {
+		BuyVInsuranceDto dto = null;
+		Vehicle vehicle1 = null;
 		try {
 			vehicle1=vehicleDao.addOrUpdateVehicle(vehicle);
+			return vehicle1;
 		} catch (Exception e) {
-			return e.getMessage();
+			return null;
 		}
-		return "Vehicle Registered vehicleId "+vehicle.getVehicleId();
+		
+//		return "Vehicle Registered vehicleId "+vehicle1.getVehicleId();
+	}
+	@Override
+	public VehicleInsurancePlan searchPlanById(int planId) {
+		VehicleInsurancePlan vehiclePlan; 
+		try {
+			vehiclePlan = vehiclePlanDao.searchVehiclePlanById(planId);
+		} catch (Exception e) {
+			return null;
+		}
+		return vehiclePlan;
+	}
+	@Override
+	public VehicleInsurancePlan searchPlanByDurationType(String vehicleType, String planType,int planDuration) {
+		VehicleInsurancePlan vehiclePlan; 
+		try {
+			vehiclePlan = vehiclePlanDao.searchVehiclePlan(vehicleType, planType, planDuration);
+		} catch (Exception e) {
+			return null;
+		}
+		return vehiclePlan;
+	}
+	@Override
+	public Insurance addVehicleInsurance(Insurance vi) {
+		Insurance in;
+		try {
+			in = insuranceDao.addInsurance(vi);
+			return in;
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		}
+		
 	}
 
 	

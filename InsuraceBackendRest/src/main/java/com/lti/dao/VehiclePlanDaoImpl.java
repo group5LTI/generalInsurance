@@ -42,12 +42,11 @@ public class VehiclePlanDaoImpl implements VehiclePlanDao {
 	}
 
 	@Override
-	public VehicleInsurancePlan searchVehiclePlan(String vType, String iType, String pType ,int years) {
+	public VehicleInsurancePlan searchVehiclePlan(String vType, String pType ,int years) {
 		// TODO Auto-generated method stub
-		String jpql = "select vp from VehicleInsurancePlan vp where vp.vehicleType=:vType and vp.insuranceType=:iType and vp.planType=:pType and vp.noOfYears=:years";
+		String jpql = "select vp from VehicleInsurancePlan vp where vp.vehicleType=:vType and vp.planType=:pType and vp.noOfYears=:years";
         TypedQuery<VehicleInsurancePlan> qry = em.createQuery(jpql, VehicleInsurancePlan.class);
         qry.setParameter("vType", vType);
-        qry.setParameter("iType", iType);
         qry.setParameter("pType", pType);
         qry.setParameter("years", years);
 //		return qry.C;

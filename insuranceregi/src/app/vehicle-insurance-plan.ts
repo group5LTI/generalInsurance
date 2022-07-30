@@ -1,5 +1,4 @@
 import { InsuranceType } from "./insurance-type";
-import { VehicleType } from "./vehicle-type";
 
 export class VehicleInsurancePlan {
     vehiclePlanId:number;

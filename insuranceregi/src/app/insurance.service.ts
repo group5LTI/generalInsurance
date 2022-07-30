@@ -11,6 +11,7 @@ export class InsuranceService {
 
   constructor(private httpClient:HttpClient) { }
 
+  
   renewinsurance(vinsurance:VehicleInsurance):Observable<RenewVehicleInsurance>{
     return this.httpClient.put<RenewVehicleInsurance>("http://localhost:9090/vehicles/renew",vinsurance);
   }

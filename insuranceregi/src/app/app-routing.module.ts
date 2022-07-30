@@ -12,7 +12,7 @@ import { TravelPageComponent } from './travel-page/travel-page.component';
 
 const routes: Routes = [
   {
-    path:'',component:DashboardComponent
+    path:'',component:HomeComponent
   },
 {
   path:'homeLink',component:HomeComponent
