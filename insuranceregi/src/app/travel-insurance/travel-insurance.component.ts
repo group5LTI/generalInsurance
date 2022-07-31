@@ -33,8 +33,8 @@ export class TravelComponent implements OnInit {
 
   addTravelInsurance() {
     console.log(this.user.userId);
+    console.log(this.buyTDto)
     this.buyTDto.userId = this.user.userId;
-    
     this.travelService.addTravelInsurance(this.buyTDto).subscribe(
       buytravelInsurance=> {
         this.isValid = buytravelInsurance.valid;

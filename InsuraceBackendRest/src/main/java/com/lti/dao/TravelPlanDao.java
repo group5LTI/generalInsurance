@@ -12,7 +12,7 @@ public interface TravelPlanDao {
 
 	TravelInsurancePlan searchTravelPlanById(int travelPlanId);
 	
-	TravelInsurancePlan searchPlanByPeoplePlanLocationDurationType(TravelSearchDto dtol);
+	TravelInsurancePlan searchPlanByPeoplePlanLocationDurationType(String planType,int noOfPeople,String location,int duration);
 	
 	List<TravelInsurancePlan> viewAllTravelPlans();
 }

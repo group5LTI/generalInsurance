@@ -44,13 +44,13 @@ public class TravlePlanDaoImpl implements TravelPlanDao {
 	}
 
 	@Override
-	public TravelInsurancePlan searchPlanByPeoplePlanLocationDurationType(TravelSearchDto dto1) {
+	public TravelInsurancePlan searchPlanByPeoplePlanLocationDurationType(String planType,int noOfPeople,String location,int duration) {
 		String jpql = "select tp from TravelInsurancePlan tp where tp.planType=:pType and tp.noOfPeople >=:p  and LOWER(tp.travelLocation)= LOWER(:loc) and tp.travleDuration>=:d";
         TypedQuery<TravelInsurancePlan> qry = em.createQuery(jpql, TravelInsurancePlan.class);
-        qry.setParameter("pType", dto1.getPlanType());
-        qry.setParameter("p", dto1.getNoOfPeople());
-        qry.setParameter("loc", dto1.getLocation());
-        qry.setParameter("d", dto1.getDuration());
+        qry.setParameter("pType", planType);
+        qry.setParameter("p", noOfPeople);
+        qry.setParameter("loc",location);
+        qry.setParameter("d",duration);
 		TravelInsurancePlan tip;
 		try {
 			tip=qry.getSingleResult();
