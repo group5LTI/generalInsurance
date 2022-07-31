@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { TravelServiceService } from '../travel-service.service';
 import { Router } from '@angular/router';
-import { TravelInsurance } from '../travel-insurance';
-import { BuyTInsuranceDto } from '../buy-tinsurance-dto';
+import { BuyTinsuranceDto } from '../buy-tinsurance-dto';
 import { Login } from '../login';
 import { User } from '../user';
+import { TravelInsurance } from '../travel-insurance';
 
 @Component({
   selector: 'travel-insurance',
@@ -13,7 +13,7 @@ import { User } from '../user';
 })
 export class TravelComponent implements OnInit {
 
-  buyTDto:BuyTInsuranceDto = new BuyTInsuranceDto();
+  buyTDto:BuyTinsuranceDto = new BuyTinsuranceDto();
   plan = ['Silver','Gold','Diamond']
   planHasError = true;
   login:Login = new Login();
@@ -27,7 +27,7 @@ export class TravelComponent implements OnInit {
 
 
   ngOnInit(): void {
-    // this.user = JSON.parse(sessionStorage.getItem("UserDetails"));
+    this.user = JSON.parse(sessionStorage.getItem("UserDetails"));
    }
 
   addTravelInsurance() {
@@ -35,19 +35,19 @@ export class TravelComponent implements OnInit {
     console.log(this.buyTDto); 
     console.log(this.login);
     console.log(this.user);
-    this.travelService.addTravelInsurance(this.buyTDto).subscribe(
-      buytravelInsurance=> {
-        this.isValid = buytravelInsurance;
-        // console.log(this.isValid);
-        if(this.isValid) {
-          alert("Congratulations you have choosed " + this.buyTDto.planType+" for "+this.buyTDto.planDuration+" years/s");
-          this.router.navigate(['paymentLink'])
-        }
-        else {
-          alert("Right now "+this.buyTDto.planType+" plan is not available");
-        }
-      }
-    )
+    // this.travelService.addTravelInsurance(this.buyTDto).subscribe(
+    //   buytravelInsurance=> {
+    //     this.isValid = buytravelInsurance;
+    //     // console.log(this.isValid);
+    //     if(this.isValid) {
+    //       alert("Congratulations you have choosed " + this.buyTDto.planType+" for "+this.buyTDto.planDuration+" years/s");
+    //       this.router.navigate(['paymentLink'])
+    //     }
+    //     else {
+    //       alert("Right now "+this.buyTDto.planType+" plan is not available");
+    //     }
+    //   }
+    // )
   }
   validatePlan(value:String) {
     if(value == 'default') {
