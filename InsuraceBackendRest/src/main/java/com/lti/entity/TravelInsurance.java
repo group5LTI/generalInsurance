@@ -22,8 +22,9 @@ public class TravelInsurance {
 	int travelInsuranceId;
 
 	String location;
-	LocalDate travelStartDate;
-	LocalDate travelEndDate;
+	String travelStartDate;
+	String travelEndDate;
+	int noOfPeople;
 	double amountPaid;
 
 	@ManyToOne
@@ -53,19 +54,19 @@ public class TravelInsurance {
 		this.location = location;
 	}
 
-	public LocalDate getTravelStartDate() {
+	public String getTravelStartDate() {
 		return travelStartDate;
 	}
 
-	public void setTravelStartDate(LocalDate travelStartDate) {
+	public void setTravelStartDate(String travelStartDate) {
 		this.travelStartDate = travelStartDate;
 	}
 
-	public LocalDate getTravelEndDate() {
+	public String getTravelEndDate() {
 		return travelEndDate;
 	}
 
-	public void setTravelEndDate(LocalDate travelEndDate) {
+	public void setTravelEndDate(String travelEndDate) {
 		this.travelEndDate = travelEndDate;
 	}
 
@@ -100,6 +101,14 @@ public class TravelInsurance {
 
 	public void setInsurance(Insurance insurance) {
 		this.insurance = insurance;
+	}
+
+	public int getNoOfPeople() {
+		return noOfPeople;
+	}
+
+	public void setNoOfPeople(int noOfPeople) {
+		this.noOfPeople = noOfPeople;
 	}
 	
 	

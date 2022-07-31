@@ -1,18 +1,10 @@
+<app-dashboard-nav></app-dashboard-nav>
 <body>
     <div class="container">
         <div class="title">Travel Insurance</div><br>
         <div class="content">
             <form #regForm="ngForm" (ngSubmit)="addTravelInsurance()" novalidate>
                 <div class="user-details">
-                    <!-- <div class="input-box">
-                        <span class="details">Insurance ID</span>
-                        <input type="number" placeholder="Enter Insurance ID" required>
-                    </div> -->
-
-                    <!-- <div class="input-box">
-                        <span class="details">Plan ID</span>
-                        <input type="number" placeholder="Enter Plan ID" required>
-                    </div> -->
                     <div class="input-box">
                         <span class="details">Location</span>
                         <input type="text" name="location" #location="ngModel"
@@ -49,6 +41,15 @@
                         </select>
                         <small class="text-danger" [class.d-none]="!planHasError || planType.untouched">Please Choose a
                             Plan</small>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">NoOfPeople</span>
+                        <input type="number" name="noOfPeople" #people="ngModel"
+                            placeholder="Enter no Of people traveling" [(ngModel)]="buyTDto.noOfPeople" required
+                            [class.is-invali]="people.invalid && people.touched">
+                        <small class="text-danger" [class.d-none]="people.valid || people.untouched">No of people is
+                            Required</small>
                     </div>
 
                 </div>

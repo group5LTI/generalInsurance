@@ -51,9 +51,6 @@ const routes: Routes = [
   path:'travelLink',component:TravelComponent
 },
 {
-  path:'travelLinkA',component:TravelComponent
-},
-{
   path:'paymentLink',component:PaymentPageComponent
 },
 {
