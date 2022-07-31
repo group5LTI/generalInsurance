@@ -20,7 +20,11 @@ export class AddTravelPlanComponent implements OnInit {
     console.log(JSON.stringify(this.addtravelPlan));
     this.planService.AddTravelPlan(this.addtravelPlan)
     .subscribe(
-
+      msg=>{
+        this.message=msg;
+        alert(this.message);
+        
+      }
     );
   }
 }

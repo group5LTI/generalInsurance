@@ -4,4 +4,5 @@ export class TravelInsurancePlan {
     noOfYears:number;
     insuranceType:string;
     planType:string;
+    
 }

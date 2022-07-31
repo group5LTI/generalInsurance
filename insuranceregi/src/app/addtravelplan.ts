@@ -1,7 +1,7 @@
 export class Addtravelplan {
     noOfPeople:number;
     travelLocation:string;
-    travelDuration:number;
+    travleDuration:number;
     plannedAmount:number;
     planType:string;
 }

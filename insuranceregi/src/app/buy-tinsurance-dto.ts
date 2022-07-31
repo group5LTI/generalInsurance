@@ -1,8 +1,9 @@
 export class BuyTinsuranceDto {
+
     userId:number;
     location:string;
-    travelstartDate:string;
-    travelendDate:string;
+    travelStartDate:string;
+    travelEndDate:string;
     planType:string;
-    planDuration:string;
+    noOfPeople:number;
 }

@@ -5,6 +5,7 @@ import { BuyTinsuranceDto } from '../buy-tinsurance-dto';
 import { Login } from '../login';
 import { User } from '../user';
 import { TravelInsurance } from '../travel-insurance';
+import { RegisterService } from '../register.service';
 
 @Component({
   selector: 'travel-insurance',
@@ -23,31 +24,31 @@ export class TravelComponent implements OnInit {
   user:User = new User();
 
   // travelModel = new Travel('','','','default');
-  constructor(private travelService:TravelServiceService,private router:Router) {}
+  constructor(private travelService:TravelServiceService,private router:Router,private registerService:RegisterService) {}
 
 
   ngOnInit(): void {
-    this.user = JSON.parse(sessionStorage.getItem("UserDetails"));
+    this.user = JSON.parse(sessionStorage.getItem("userDetails"));
    }
 
   addTravelInsurance() {
+    console.log(this.user.userId);
     this.buyTDto.userId = this.user.userId;
-    console.log(this.buyTDto); 
-    console.log(this.login);
-    console.log(this.user);
-    // this.travelService.addTravelInsurance(this.buyTDto).subscribe(
-    //   buytravelInsurance=> {
-    //     this.isValid = buytravelInsurance;
-    //     // console.log(this.isValid);
-    //     if(this.isValid) {
-    //       alert("Congratulations you have choosed " + this.buyTDto.planType+" for "+this.buyTDto.planDuration+" years/s");
-    //       this.router.navigate(['paymentLink'])
-    //     }
-    //     else {
-    //       alert("Right now "+this.buyTDto.planType+" plan is not available");
-    //     }
-    //   }
-    // )
+    
+    this.travelService.addTravelInsurance(this.buyTDto).subscribe(
+      buytravelInsurance=> {
+        this.isValid = buytravelInsurance.valid;
+        this.msg=buytravelInsurance.message;
+        // console.log(this.isValid);
+        if(this.isValid) {
+          alert(this.msg);
+          this.router.navigate(['paymentLink'])
+        }
+        else {
+          alert(this.msg);
+        }
+      }
+    )
   }
   validatePlan(value:String) {
     if(value == 'default') {
