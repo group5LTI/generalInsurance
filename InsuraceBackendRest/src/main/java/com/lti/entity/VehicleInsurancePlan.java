@@ -10,6 +10,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "tbl_vehicle_plan")
 public class VehicleInsurancePlan {
@@ -40,6 +42,7 @@ public class VehicleInsurancePlan {
 		return plannedAmountV;
 	}
 
+	
 	public void setPlannedAmountV(double plannedAmountV) {
 		this.plannedAmountV = plannedAmountV;
 	}
@@ -67,7 +70,8 @@ public class VehicleInsurancePlan {
 	public void setInsuranceType(String insuranceType) {
 		this.insuranceType = insuranceType;
 	}
-
+	
+	
 	public List<VehicleInsurance> getVehicleInsurances() {
 		return vehicleInsurances;
 	}

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { BuyVInsuranceDto } from '../buy-vinsurance-dto';
 import { Login } from '../login';
 import { RegisterService } from '../register.service';
+import { User } from '../user';
 import { VehicleInsurance } from '../vehicle-insurance';
 import { VehicleServiceService } from '../vehicle-service.service';
 // import { Vehicle } from '../vehicle';
@@ -25,17 +26,19 @@ export class BuyComponent implements OnInit {
   vehicleInsurance:VehicleInsurance=new VehicleInsurance();
   isValid:boolean;
   msg:string;
+  user:User=new User();
   // vehicleModel = new vehicle('','','','','','','','','default');
   constructor(private vehicleService:VehicleServiceService,private registerService:RegisterService,private router:Router) {}
   ngOnInit(): void {
-    // throw new Error('Method not implemented.');
+    this.user=JSON.parse(sessionStorage.getItem("userDetails"));
   }
 
   addVehicleInsurance() {
 
-    this.buyDto.userId = 106;
+    this.buyDto.userId = this.user.userId;
+    console.log(this.user.userId);
     console.log(this.buyDto);
-    console.log(this.login);
+    console.log(this.user);
     this.vehicleService.addVehicleInsurance(this.buyDto)
     .subscribe(
       buyVehicleInsurance=>{
@@ -43,7 +46,7 @@ export class BuyComponent implements OnInit {
         console.log(this.isValid);
         if(this.isValid){
           alert("Congratulations you have choosed "+this.buyDto.planType+" for your "+this.buyDto.vehicleType+" for "+this.buyDto.planDuration+" year/s");
-          this.router.navigate(['dbLink'])
+          this.router.navigate(['paymentLink'])
         }
         else{
           alert("Right now "+this.buyDto.planType+" plan is not available for "+this.buyDto.vehicleType +" for "+this.buyDto.planDuration+" years");

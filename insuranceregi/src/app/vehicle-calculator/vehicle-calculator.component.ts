@@ -57,19 +57,17 @@ console.log(JSON.stringify(this.vehiclePlan));
 this.vehicleService.getvehiclePlan(this.planDto.vehiclePlanId)
 .subscribe(
 msg=>{
-  
+   
   if(this.isValid)
   {
-    // this.message="Login Successful";
-    alert("Login Successful"+" Redirectiong to home page");
-    // sessionStorage.setItem("userId",this.login.)
-    // this.router.navigate(['dbLink'])
+    // this.message="feactched";
+    
     this.msg=msg;
 //     console.log(this.data)
   }
   else{
     // this.message="login failed";
-    alert("Login failed"+"\nEither username or password incorrect");
+    alert("plan not applicable");
     // this.router.navigate(['registerLink'])
   }
 }

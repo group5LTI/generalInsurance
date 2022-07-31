@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { InsuranceService } from '../insurance.service';
-import { RenewVehicleInsurance } from '../renew-vehicle-insurance';
+import { RenewRegisterVInsuranceDto } from '../renew-register-vinsurance-dto';
+import { User } from '../user';
 import { VehicleInsurance } from '../vehicle-insurance';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-renew-insurance',
@@ -10,19 +12,22 @@ import { VehicleInsurance } from '../vehicle-insurance';
 })
 export class RenewInsuranceComponent implements OnInit {
 
-  renewVehcileInsurance:RenewVehicleInsurance=new RenewVehicleInsurance();
   msg:string;
   constructor(private renewInsuranceService:InsuranceService) { }
   buyInsurance:VehicleInsurance=new VehicleInsurance();
+  user:User=new User();
+  renewDto:RenewRegisterVInsuranceDto=new RenewRegisterVInsuranceDto();
   ngOnInit(): void {
-    this.buyInsurance=JSON.parse(sessionStorage.getItem("insuranceDetails"));
+    this.user=JSON.parse(sessionStorage.getItem("userDetails"));
   }
   renewInsurance(){
-this.renewInsuranceService.renewinsurance(this.buyInsurance)
-.subscribe(
-  renewVehcileInsurance=>{
-    this.buyInsurance=renewVehcileInsurance.vehicleInsurance;
-    this.msg=renewVehcileInsurance.message;
+    this.renewDto.userId=this.user.userId;
+    console.log(this.renewDto);
+    this.renewInsuranceService.renewinsurance(this.renewDto)
+    .subscribe(message=>{
+    this.msg=message
+    alert(this.msg);
+    console.log(this.msg);
   }
 )
   }

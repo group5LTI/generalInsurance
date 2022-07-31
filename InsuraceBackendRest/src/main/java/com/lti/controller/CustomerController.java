@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lti.dto.LoginDto;
+import com.lti.dto.UpdateCustomer;
 import com.lti.entity.Customer;
 import com.lti.service.CustomerService;
 
@@ -44,22 +45,25 @@ public class CustomerController {
 		boolean isvalid=customerService.userlogin(loginData.getUserName(),loginData.getPassword());
 		return isvalid;
 	}
-	@GetMapping("/customer")
-	public Customer searchCustomerByUsername(@RequestParam("userName") String uName) {
-		return customerService.searchUserByUsername(uName);
+	@GetMapping("/customer/{userId}")
+	public Customer searchCustomerByUsername(@PathVariable int userId) {
+		return customerService.searchCustomerByuserId(userId);
 	}
-	
-	@PutMapping("/update")
-	public boolean updateProfile(@RequestBody Customer customer) {
-		try {
-			String c = customerService.updateProfile(customer);
-			System.out.println(c);
-			return true;
-			
-		} catch (Exception e) {
-			return false;
-		}
-		
-	
 
-}}
+	
+	@PostMapping("/update")
+    public UpdateCustomer updateProfile(@RequestBody Customer customer)
+    {
+        return customerService.updateProfile(customer);
+    }
+	
+	
+	 @GetMapping("/customer")
+	    public Customer searchCustomerByUsername(@RequestParam("userName") String uName) {
+	        return customerService.searchUserByUsername(uName);
+	    }
+	 
+	 
+}
+
+

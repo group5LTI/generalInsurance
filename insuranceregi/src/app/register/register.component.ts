@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { RegisterService } from '../register.service';
 import { User } from '../user';
 
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -14,7 +15,9 @@ user:User=new User();
 isValid:boolean;
   constructor(private registerService:RegisterService,private router:Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() : void{
+
+   
   }
 register()
 {

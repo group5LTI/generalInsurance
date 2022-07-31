@@ -1,6 +1,7 @@
 package com.lti.service;
 
-import com.lti.dto.RenewVehicleInsurance;
+import java.util.List;
+
 import com.lti.dto.BuyVInsuranceDto;
 import com.lti.dto.RenewVInsuranceDto;
 import com.lti.entity.Insurance;
@@ -13,11 +14,15 @@ public interface VehicleService {
 	
 	VehicleInsurance buyInsurance(VehicleInsurance vehicleInsurance);
 	
-	RenewVehicleInsurance renewVehicleInsurance(RenewVInsuranceDto vehicleInsurance);
+	VehicleInsurance searchVehicleInsuranceById(int vehicleInsuranceId);
+	
+//	boolean renewVehicleInsurance(RenewVInsuranceDto vehicleInsurance);
 	
 	String RegisterVehiclePlan(VehicleInsurancePlan vehicleInsurancePlan);
 	
 	Vehicle ResgisterVehicle(Vehicle vehicle);
+	
+	Vehicle searchVehicleByVehicleId(int vehicleId);
 	
 	VehicleInsurancePlan searchPlanById(int planId);
 	
@@ -25,5 +30,10 @@ public interface VehicleService {
 
 	Insurance addVehicleInsurance(Insurance vi);
 	
+//	VehicleInsurance updateBuyInsurance(VehicleInsurance vehicleInsurance);
+
 //	String RegisterVehiclePlan(VehicleInsurancePlan vehicleInsurancePlan);
+
+	
+	
 }

@@ -15,7 +15,7 @@
       <h1>Login</h1>
       <form #loginForm="ngForm" (ngSubmit)="checkLogin()">
         <div class="txt_field">
-          <input type="text" name="userName" [(ngModel)]="login.userName" #uname =ngModel pattern="^[a-zA-Z]+(\s[a-zA-Z]+)?$" required>
+          <input type="text" name="userName" [(ngModel)]="login.userName" #uname =ngModel pattern="^^\w[a-zA-Z@#0-9.]*$" required>
           <span></span>
           <div *ngIf="uname.invalid && (uname.dirty || uname.touched)">
             <div *ngIf = "uname.errors?.['required']" style="color:red">Enter name</div>
@@ -34,7 +34,7 @@
           
           <label style="font-family: 'Lora';">Password</label>
         </div>
-        <div class="pass" style="font-family: 'Lora';" (click)="forgetPassword()">Forgot Password?</div>
+        <div class="pass" style="font-family: 'Lora';">Forgot Password?</div>
         <input type="submit" value="Login">
         <div class="signup_link" style="font-family: 'Lora';">
           Not a member? <a [routerLink]="['/registerLink']">Signup</a>

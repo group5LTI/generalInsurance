@@ -13,7 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    /* background: linear-gradient(135deg, #71b7e6, #9b59b6); */
 }
 
 .container {
@@ -23,6 +23,7 @@ body {
     padding: 25px 30px;
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    /* opacity: 0.8; */
 }
 
 .container .title {

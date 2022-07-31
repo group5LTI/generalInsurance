@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!-- <app-home-menu></app-home-menu> -->
+<!-- <app-dashboard-nav></app-dashboard-nav> -->
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<div class="tpnav">
+
+    <ul>
+        <a class="header1">
+            <h1 class="demotext1"><span> L&T </span>Insurance</h1>
+        </a>
+        <li><a [routerLink]="['./contactLink']">Contact</a></li>
+        <li><a [routerLink]="['/homeLink']">LogOut </a></li>
+        <li><a href="#aboutnull">About</a></li>
+        <!-- <li><a class="active" [routerLink]="['/updateProfileLink']">Profile</a></li> -->
+        <li><a class="active" [routerLink]="['/dbLink']">Home</a></li>
+    </ul>
+
+</div>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Animated Login Form | CodingNepal</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+  </head>
+  <body>
+    
+    <div class="center">
+      <h1>Update Profile</h1>
+      <form #regForm="ngForm" (ngSubmit)="updateProfile()">
+        <span></span>
+        
+        <div class="txt_field">
+          <input type="text" name="userName" [(ngModel)]="user.userName"  [disabled]="true">
+        </div>
+        <div class="txt_field">
+          <input type="password" name="password" [(ngModel)]="user.password" #upass=ngModel pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+          <span></span>
+          <div *ngIf="upass.invalid && (upass.dirty || upass.touched)">
+            <div *ngIf = "upass.errors?.['required']" style="color:red">Enter password</div>
+            <div *ngIf = "upass.errors?.['pattern']" style="color:red">Invalid password</div>
+          </div>
+          
+          <label>Password</label>
+        </div>
+	
+	<div class="txt_field">
+          <input type="text" name="mailId" [(ngModel)]="user.mailId" #uemail="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+          <span></span>
+          <div *ngIf="uemail.invalid && (uemail.dirty || uemail.touched)">
+            <div *ngIf = "uemail.errors?.['required']" style="color:red">Enter password</div>
+            <div *ngIf = "uemail.errors?.['pattern']" style="color:red">Invalid password</div>
+          </div>
+          
+          <label>Email Id</label>
+        </div>
+        <div class="txt_field">
+          <input type="tel" name="mobile" [(ngModel)]="user.mobile" #umobile="ngModel" pattern="[a0-9]{10}$" required>
+          <span></span>
+          <div *ngIf="umobile.invalid && (umobile.dirty || umobile.touched)">
+            <div *ngIf = "umobile.errors?.['required']" style="color:red">Enter mobile</div>
+            <div *ngIf = "umobile.errors?.['pattern']" style="color:red">Invalid mobile</div>
+          </div>
+          
+          <label>Enter Mobile Number</label>
+        </div>
+	<div class="txt_field">
+          <input type="text" name="location" [(ngModel)]="user.location" #ucity="ngModel" pattern="[a-zA-Z]*$" required>
+          <span></span>
+          <div *ngIf="ucity.invalid && (ucity.dirty || ucity.touched)">
+            <div *ngIf = "ucity.errors?.['required']" style="color:red">Enter city</div>
+            <div *ngIf = "ucity.errors?.['pattern']" style="color:red">Invalid city</div>
+          </div>
+          <label>Locality</label>
+        </div>
+        <!-- <div class="pass">Forgot Password?</div> -->
+        <input type="submit" value="Update" >
+      </form>
+    </div>
+
+  </body>
+</html>

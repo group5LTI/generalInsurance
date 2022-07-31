@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.lti.dto.VehicleSearchDto;
 import com.lti.entity.Customer;
 import com.lti.entity.TravelInsurancePlan;
 import com.lti.entity.VehicleInsurancePlan;
@@ -62,6 +63,21 @@ public class VehiclePlanDaoImpl implements VehiclePlanDao {
 
 	}
 	
+	@Override
+	public VehicleInsurancePlan searchPlanByVehicleTypeYear(VehicleSearchDto dto1) {
+		String jpql = "select vp from VehicleInsurancePlan vp where vp.planType=:vType and vp.noOfYears >=:p  and LOWER(tp.travelLocation)= LOWER(:loc) and tp.travleDuration>=:d";
+        TypedQuery<VehicleInsurancePlan> qry = em.createQuery(jpql,VehicleInsurancePlan.class);
+        qry.setParameter("vType", dto1.getVehicleType());
+        qry.setParameter("NoYear", dto1.getNoOfYears());
+        qry.setParameter("iType", dto1.getInsuranceType());
+		VehicleInsurancePlan vip;
+		try {
+			vip=qry.getSingleResult();
+		} catch (Exception e) {
+			return null;
+		}return vip;
+	}
+
 	
 
 }

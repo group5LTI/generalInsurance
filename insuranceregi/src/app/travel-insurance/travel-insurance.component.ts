@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { TravelServiceService } from '../travel-service.service';
+import { Router } from '@angular/router';
+import { BuyTinsuranceDto } from '../buy-tinsurance-dto';
+import { Login } from '../login';
+import { User } from '../user';
+import { TravelInsurance } from '../travel-insurance';
 
 @Component({
   selector: 'travel-insurance',
@@ -8,48 +13,47 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class TravelComponent implements OnInit {
 
-  exform: FormGroup;
+  buyTDto:BuyTinsuranceDto = new BuyTinsuranceDto();
+  plan = ['Silver','Gold','Diamond']
+  planHasError = true;
+  login:Login = new Login();
+  TravelInsurance:TravelInsurance = new TravelInsurance();
+  isValid:boolean;
+  msg:string;
+  user:User = new User();
 
-  ngOnInit() {
+  // travelModel = new Travel('','','','default');
+  constructor(private travelService:TravelServiceService,private router:Router) {}
 
-  this.exform = new FormGroup({
-    'manufacture' : new FormControl(null, Validators.required),
-    'model' : new FormControl(null, [Validators.required]),
-    'licence' : new FormControl(null, Validators.required),
-    'registrationNo' : new FormControl(null, [Validators.required]),
-    'engineNo' : new FormControl(null, Validators.required),
-    'chaassisNo' : new FormControl(null, [Validators.required]),
-    'planduration' : new FormControl(null, [Validators.required]),
 
-    '' : new FormControl(
-      null,
-      [
-        Validators.required,
-        Validators.pattern('^\\s*(?:\\+?(\\d{1,3}))?[-. (]*(\\d{3})[-. )]*(\\d{3})[-. ]*(\\d{4})(?: *x(\\d+))?\\s*$')
-      ]),
-  });
-  }
+  ngOnInit(): void {
+    this.user = JSON.parse(sessionStorage.getItem("UserDetails"));
+   }
 
-  clicksub() {
-    console.log(this.exform.value);
-    this.exform.reset();
+  addTravelInsurance() {
+    this.buyTDto.userId = this.user.userId;
+    console.log(this.buyTDto); 
+    console.log(this.login);
+    console.log(this.user);
+    // this.travelService.addTravelInsurance(this.buyTDto).subscribe(
+    //   buytravelInsurance=> {
+    //     this.isValid = buytravelInsurance;
+    //     // console.log(this.isValid);
+    //     if(this.isValid) {
+    //       alert("Congratulations you have choosed " + this.buyTDto.planType+" for "+this.buyTDto.planDuration+" years/s");
+    //       this.router.navigate(['paymentLink'])
+    //     }
+    //     else {
+    //       alert("Right now "+this.buyTDto.planType+" plan is not available");
+    //     }
+    //   }
+    // )
   }
-  get insuranceId() {
-    return this.exform.get('insuranceId');
+  validatePlan(value:String) {
+    if(value == 'default') {
+      this.planHasError = true;
+    }else {
+      this.planHasError = false;
+    }
   }
-  get userId() {
-    return this.exform.get('userId');
-  }
-  get planId() {
-    return this.exform.get('planId');
-  }
-  get location() {
-    return this.exform.get('location');
-  }
-  get startDate() {
-    return this.exform.get('startDate');
-  }
-  get endDate() {
-    return this.exform.get('endDate');
-  }
- }
+}

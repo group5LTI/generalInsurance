@@ -1,18 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddTravelPlanComponent } from './add-travel-plan/add-travel-plan.component';
+import { AddVehiclePlanComponent } from './add-vehicle-plan/add-vehicle-plan.component';
+import { AdminVerifyClaimComponent } from './admin-verify-claim/admin-verify-claim.component';
 import { AdminComponent } from './admin/admin.component';
 import { BuyComponent } from './buy-insurance/buy-insurance.component';
 import { CalPageComponent } from './cal-page/cal-page.component';
 import { ClaimInsuranceComponent } from './claim-insurance/claim-insurance.component';
 import { ContactComponent } from './contact/contact.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { RegisterComponent } from './register/register.component';
 import { RenewInsuranceComponent } from './renew-insurance/renew-insurance.component';
 import { TravelCalculatorComponent } from './travel-calculator/travel-calculator.component';
 import { TravelComponent } from './travel-insurance/travel-insurance.component';
 import { TravelPageComponent } from './travel-page/travel-page.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { VehicleCalculatorComponent } from './vehicle-calculator/vehicle-calculator.component';
 
 const routes: Routes = [
@@ -24,6 +30,9 @@ const routes: Routes = [
 },
 {
   path:'buyLink',component:BuyComponent
+},
+{
+  path:'renewLink',component:RenewInsuranceComponent
 },
 {
   path:'adminLink',component:AdminComponent
@@ -59,14 +68,37 @@ const routes: Routes = [
   path:'travelCal',component:TravelCalculatorComponent
 },
 {
-  path:'vehicleCal',component:VehicleCalculatorComponent
+  path:'vehicleCal',component:VehicleCalculatorComponent},{
+  path:'travelLinkA',component:TravelComponent
+},
+{
+  path:'paymentLink',component:PaymentPageComponent
+},
+{
+  path:'updateProfileLink',component:UpdateProfileComponent
+},
+{
+  path:'forgotLink',component:ForgotpasswordComponent
+},
+{
+  path:'addVehiclePlan',component:AddVehiclePlanComponent
+},
+{
+  path:'addTravelPlan',component:AddTravelPlanComponent
+},
+{
+  path:'adminclaimLink',component:AdminVerifyClaimComponent
 }
+
 
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes ,{
+    scrollPositionRestoration: 'enabled',
+    anchorScrolling: 'enabled',
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

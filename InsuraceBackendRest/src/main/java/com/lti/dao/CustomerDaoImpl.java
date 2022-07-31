@@ -61,8 +61,8 @@ public class CustomerDaoImpl implements CustomerDao {
     }
 
 	@Override
-	public Customer searchCustomerByUsername(String userName) {
-		String jpql = "select u from Customer u where u.userName=:uname";
+    public Customer searchCustomerByUsername(String userName) {
+        String jpql = "select u from Customer u where u.userName=:uname";
         TypedQuery<Customer> qry = em.createQuery(jpql, Customer.class);
         qry.setParameter("uname", userName);
         Customer customer;
@@ -71,7 +71,7 @@ public class CustomerDaoImpl implements CustomerDao {
         } catch (Exception e) {
             return null;
         }return customer;
-	}
+    }
 
 	@Override
 	public boolean searchCustomerByEmail(String mailId) {
@@ -86,4 +86,6 @@ public class CustomerDaoImpl implements CustomerDao {
             return false;
         }
 	}
+
+	
 }

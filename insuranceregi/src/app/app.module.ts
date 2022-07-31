@@ -19,11 +19,18 @@ import { TravelComponent } from './travel-insurance/travel-insurance.component';
 import { TravelPageComponent } from './travel-page/travel-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RenewInsuranceComponent } from './renew-insurance/renew-insurance.component';
-import { ClaimInsuranceComponent } from './claim-insurance/claim-insurance.component';
-import { CalPageComponent } from './cal-page/cal-page.component';
+// import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { PaymentPageComponent } from './payment-page/payment-page.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { AddVehiclePlanComponent } from './add-vehicle-plan/add-vehicle-plan.component';
+import { AddTravelPlanComponent } from './add-travel-plan/add-travel-plan.component';
 import { TravelCalculatorComponent } from './travel-calculator/travel-calculator.component';
-import { TravelPremiumComponent } from './travel-premium/travel-premium.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { ClaimInsuranceComponent } from './claim-insurance/claim-insurance.component';
 import { VehicleCalculatorComponent } from './vehicle-calculator/vehicle-calculator.component';
+import { TravelInsurance } from './travel-insurance';
+import { TravelPremiumComponent } from './travel-premium/travel-premium.component';
+import { CalPageComponent } from './cal-page/cal-page.component';
 import { AdminVerifyClaimComponent } from './admin-verify-claim/admin-verify-claim.component';
 
 @NgModule({
@@ -41,13 +48,20 @@ import { AdminVerifyClaimComponent } from './admin-verify-claim/admin-verify-cla
     TravelPageComponent,
     ContactComponent,
     TravelComponent,
-    ClaimInsuranceComponent,
-    CalPageComponent,
-    TravelCalculatorComponent,
     TravelPremiumComponent,
-    VehicleCalculatorComponent,
     RenewInsuranceComponent,
-    AdminVerifyClaimComponent,
+    PaymentPageComponent,
+    UpdateProfileComponent,
+    AddVehiclePlanComponent,
+    AddTravelPlanComponent,
+    TravelCalculatorComponent,
+    ForgotpasswordComponent,
+    ClaimInsuranceComponent,
+    VehicleCalculatorComponent,
+    CalPageComponent,
+    AdminVerifyClaimComponent
+
+
   ],
   imports: [
     BrowserModule,
@@ -55,8 +69,11 @@ import { AdminVerifyClaimComponent } from './admin-verify-claim/admin-verify-cla
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+ 
+ }

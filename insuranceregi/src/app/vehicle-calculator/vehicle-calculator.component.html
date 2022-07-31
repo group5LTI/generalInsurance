@@ -40,7 +40,7 @@
 
                                         </div>
                                         <div class="project-btn pricing-btn">
-                                            <input type="submit" value="submit" class="project-view1">
+                                            <input type="submit" [routerLink]="['/registerLink']" value="submit" class="project-view1">
 
 
                                         </div>
@@ -80,20 +80,20 @@
                         <!--/.we-do-info-->
                         <div class="we-do-comment">
 
-                            <h1>{{ data.planType}}</h1>
+                            <h1>{{ msg.planType}}</h1>
                             <ul class="plan-lists">
                                 <li>Cost
-                                    rs {{ data.plannedAmountV }}</li>
+                                    rs {{ msg.plannedAmountV }}</li>
                                 <li>Damage cover: 40,000</li>
-                                <li>validity {{ data.noOfYears }} year</li>
-                                <li>Insurance Type{{ data.insuranceType }} </li>
+                                <li>validity {{ msg.noOfYears }} year</li>
+                                <li>Insurance Type{{ msg.insuranceType }} </li>
                                 <li>Loss of Passport
                                     Not Covered</li>
                                 <li>E-Mail support</li>
                             </ul>
 
                             <div class="project-btn pricing-btn text-center">
-                                <a class="project-view2">
+                                <a class="project-view2" >
                                     Calculate Travel Insurance
                                 </a>
                             </div>
