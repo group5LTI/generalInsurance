@@ -22,6 +22,7 @@ import { RenewInsuranceComponent } from './renew-insurance/renew-insurance.compo
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
     TravelComponent,
     RenewInsuranceComponent,
     PaymentPageComponent,
-    UpdateProfileComponent
+    UpdateProfileComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
