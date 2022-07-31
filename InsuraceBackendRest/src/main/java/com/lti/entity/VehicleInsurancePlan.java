@@ -20,9 +20,10 @@ public class VehicleInsurancePlan {
 	int vehiclePlanId;
 	
 	double plannedAmountV;
-	VehicleType vehicleType;
+	String vehicleType;
 	int noOfYears;
-	InsuranceType insuranceType;
+	String insuranceType;
+	String planType;
 	
 	@OneToMany(mappedBy = "vehicleInsurancePlan")
 	List<VehicleInsurance> vehicleInsurances;
@@ -43,11 +44,11 @@ public class VehicleInsurancePlan {
 		this.plannedAmountV = plannedAmountV;
 	}
 
-	public VehicleType getVehicleType() {
+	public String getVehicleType() {
 		return vehicleType;
 	}
 
-	public void setVehicleType(VehicleType vehicleType) {
+	public void setVehicleType(String vehicleType) {
 		this.vehicleType = vehicleType;
 	}
 
@@ -59,11 +60,11 @@ public class VehicleInsurancePlan {
 		this.noOfYears = noOfYears;
 	}
 
-	public InsuranceType getInsuranceType() {
+	public String getInsuranceType() {
 		return insuranceType;
 	}
 
-	public void setInsuranceType(InsuranceType insuranceType) {
+	public void setInsuranceType(String insuranceType) {
 		this.insuranceType = insuranceType;
 	}
 
@@ -73,6 +74,14 @@ public class VehicleInsurancePlan {
 
 	public void setVehicleInsurances(List<VehicleInsurance> vehicleInsurances) {
 		this.vehicleInsurances = vehicleInsurances;
+	}
+
+	public String getPlanType() {
+		return planType;
+	}
+
+	public void setPlanType(String planType) {
+		this.planType = planType;
 	}
 
 	

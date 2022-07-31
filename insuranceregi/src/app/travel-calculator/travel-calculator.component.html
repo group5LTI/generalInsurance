@@ -15,13 +15,11 @@
                                     <div class="container">
                                         <div class="title">Travel Insurance</div><br>
                                         <div class="content">
-                                            <form>
+                                            <form #calTravel="ngForm" >
                                                 <div class="user-details ">
-
-
                                                     <div class="input-box">
                                                         <span class="details">Location</span>
-                                                        <input type="text" name="location" placeholder="Enter Location" required>
+                                                        <input type="text"  name="location" placeholder="Enter Location" required>
                                                     </div>
                                                     <div class="input-box">
                                                         <span class="details">No of People</span>
@@ -39,10 +37,11 @@
 
                                                 </div>
                                                 <div class="project-btn pricing-btn">
-                                                    <input type="submit" value="submit" class="project-view1">
+                                                    <input type="submit" value="submit" class="project-view1" >
                                                         
                                                 
                                                 </div>
+                                                <div>{{clickmsg}}</div>
 
                                             </form>
                                         </div>

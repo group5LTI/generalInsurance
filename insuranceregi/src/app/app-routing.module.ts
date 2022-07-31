@@ -13,10 +13,11 @@ import { RenewInsuranceComponent } from './renew-insurance/renew-insurance.compo
 import { TravelCalculatorComponent } from './travel-calculator/travel-calculator.component';
 import { TravelComponent } from './travel-insurance/travel-insurance.component';
 import { TravelPageComponent } from './travel-page/travel-page.component';
+import { VehicleCalculatorComponent } from './vehicle-calculator/vehicle-calculator.component';
 
 const routes: Routes = [
   {
-    path:'',component:DashboardComponent
+    path:'',component:HomeComponent
   },
 {
   path:'homeLink',component:HomeComponent
@@ -56,6 +57,9 @@ const routes: Routes = [
 },
 {
   path:'travelCal',component:TravelCalculatorComponent
+},
+{
+  path:'vehicleCal',component:VehicleCalculatorComponent
 }
 
 

@@ -1,7 +1,6 @@
 package com.lti.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.mail.MailSenderAutoConfiguration;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Component;
@@ -15,7 +14,7 @@ public class EmailService {
 	
 		SimpleMailMessage message = new SimpleMailMessage();
 		message.setTo(email);
-		message.setFrom("ashleshaJagtap13@outlook.com");
+		message.setFrom("ltinusrance@gmail.com");
 		message.setSubject(subject);
 		message.setText(text);
 		

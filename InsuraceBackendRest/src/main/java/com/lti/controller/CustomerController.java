@@ -5,9 +5,11 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lti.dto.LoginDto;
@@ -22,11 +24,17 @@ public class CustomerController {
 
 	@Autowired
 	CustomerService customerService;
-	//http://localhost:9191/InsuranceBackendRest/myapp/customers/register
+	//http://localhost:9090/InsuranceBackendRest/myapp/customers/register
 	@RequestMapping(value="/register" , method=RequestMethod.POST)
-	public String signup(@RequestBody Customer customer) {
+	public boolean signup(@RequestBody Customer customer) {
+		Customer c = customerService.searchUserByUsername(customer.getUserName());
+		if(c==null) {
 		String message = customerService.RegisterCustomer(customer);
-		return message;
+		return true;
+	}
+		else {
+			return false;
+		}
 	}
 	
 	@PostMapping("/login")
@@ -36,5 +44,22 @@ public class CustomerController {
 		boolean isvalid=customerService.userlogin(loginData.getUserName(),loginData.getPassword());
 		return isvalid;
 	}
+	@GetMapping("/customer")
+	public Customer searchCustomerByUsername(@RequestParam("userName") String uName) {
+		return customerService.searchUserByUsername(uName);
+	}
+	
+	@PutMapping("/update")
+	public boolean updateProfile(@RequestBody Customer customer) {
+		try {
+			String c = customerService.updateProfile(customer);
+			System.out.println(c);
+			return true;
+			
+		} catch (Exception e) {
+			return false;
+		}
+		
+	
 
-}
+}}

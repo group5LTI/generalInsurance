@@ -24,7 +24,7 @@ import { CalPageComponent } from './cal-page/cal-page.component';
 import { TravelCalculatorComponent } from './travel-calculator/travel-calculator.component';
 import { TravelPremiumComponent } from './travel-premium/travel-premium.component';
 import { VehicleCalculatorComponent } from './vehicle-calculator/vehicle-calculator.component';
-
+import { AdminVerifyClaimComponent } from './admin-verify-claim/admin-verify-claim.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +45,9 @@ import { VehicleCalculatorComponent } from './vehicle-calculator/vehicle-calcula
     CalPageComponent,
     TravelCalculatorComponent,
     TravelPremiumComponent,
-    VehicleCalculatorComponent
+    VehicleCalculatorComponent,
+    RenewInsuranceComponent,
+    AdminVerifyClaimComponent,
   ],
   imports: [
     BrowserModule,

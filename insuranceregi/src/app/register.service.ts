@@ -11,13 +11,18 @@ export class RegisterService {
 
   constructor(private httpClient:HttpClient) { }
 
-  registerUser(user:User):Observable<string>
+  registerUser(user:User):Observable<boolean>
   {
-    return this.httpClient.post("http://localhost:9090/customers/register", user,{responseType:'text'});
+    return this.httpClient.post<boolean>("http://localhost:9191/customers/register", user);
   }
 
   loginUser(login:Login)
   {
-    return this.httpClient.post<boolean>("http://localhost:9090/customers/login",login);
+    return this.httpClient.post<boolean>("http://localhost:9191/customers/login",login);
+  }
+  getUser(userName:string):Observable<User>{
+    // return this.httpClient.get<User>("http://localhost:9191/users/user/"+userId);
+    return this.httpClient.get<User>("http://localhost:9191/customers/customer?userName="+userName);
+    // return this.httpClient.get<User>("http://localhost:9191/users/profile?userId="+userName);
   }
 }

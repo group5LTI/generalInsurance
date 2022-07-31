@@ -3,26 +3,29 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Lora';
+
 }
 body{
   margin: 0;
   padding: 0;
   background: whitesmoke;
-  height: 100vh;
+  height: 110vh;
   overflow: hidden;
+  
 }
 .center{
   position: absolute;
-  top: 52%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
+  height: 85%;
   background: white;
   border-radius: 10px;
   box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
   /* border: 1px solid red; */
-  /* margin-top: 100px; */
+  margin-top: 0px;
   margin-bottom: 10px;
 }
 .center h1{
@@ -34,6 +37,7 @@ body{
 .center form{
   padding: 0 40px;
   box-sizing: border-box;
+  
 }
 form .txt_field{
   position: relative;
