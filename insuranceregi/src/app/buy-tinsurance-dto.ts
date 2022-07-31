@@ -1,9 +1,11 @@
+import { DatePipe } from "@angular/common";
+
 export class BuyTinsuranceDto {
 
     userId:number;
-    location:string;
-    travelstartDate:string;
-    travelendDate:string;
     planType:string;
     noOfPeople:number;
+    location:string;
+    travelStartDate:string;
+    travelEndDate:string; 
 }

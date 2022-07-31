@@ -28,13 +28,13 @@ export class TravelComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.user = JSON.parse(sessionStorage.getItem("UserDetails"));
+    this.user = JSON.parse(sessionStorage.getItem("userDetails"));
    }
 
   addTravelInsurance() {
     console.log(this.user.userId);
+    console.log(this.buyTDto)
     this.buyTDto.userId = this.user.userId;
-    
     this.travelService.addTravelInsurance(this.buyTDto).subscribe(
       buytravelInsurance=> {
         this.isValid = buytravelInsurance.valid;

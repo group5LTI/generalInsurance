@@ -42,17 +42,20 @@ public class TravelController {
 		TravelInsurance travelIn = new TravelInsurance();
 		TravelSearchDto trdto = new TravelSearchDto();
 		ReturnMessageWhileBuying returnMessage = new ReturnMessageWhileBuying();
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		System.out.println(travelInsurance.getTravelEndDate());
 		LocalDate end = LocalDate.parse(travelInsurance.getTravelEndDate(),formatter);
 		LocalDate start = LocalDate.parse(travelInsurance.getTravelStartDate(),formatter);
 		Period months = Period.between(start, end);
 		int month = (int)((months.getYears()*12)+months.getMonths()+(int)(months.getDays()/12));
-		System.out.println(month);
-		trdto.setDuration(month);
-		trdto.setLocation(travelInsurance.getLocation());
-		trdto.setNoOfPeople(travelInsurance.getNoOfPeople());
-		trdto.setPlanType(travelInsurance.getPlanType());
-		TravelInsurancePlan trp = travelService.searchPlanByPeoplePlanLocationDurationType(trdto);
+		System.out.println("Months ="+month);
+		String planType =travelInsurance.getPlanType();
+		System.out.println("Plan type"+planType);
+		int people =travelInsurance.getNoOfPeople();
+		System.out.println("No of people "+people);
+		String location =travelInsurance.getLocation();
+		System.out.println("Location :"+location);
+		TravelInsurancePlan trp = travelService.searchPlanByPeoplePlanLocationDurationType(planType,people,location,month);
 		try {
 			if(trp!=null) {
 				travelIn.setAmountPaid(trp.getPlannedAmount());
@@ -96,9 +99,9 @@ public class TravelController {
 		return travelService.RegisterTravelPlan(travelInsurancePlan);
 	}
 	
-	@GetMapping(value="/searchbytype")
-	public TravelInsurancePlan searchByDto(@RequestBody TravelSearchDto travelSearchDto) {
-	return travelService.searchPlanByPeoplePlanLocationDurationType(travelSearchDto);
-	}
+//	@GetMapping(value="/searchbytype")
+//	public TravelInsurancePlan searchByDto(@RequestBody TravelSearchDto travelSearchDto) {
+//	return travelService.searchPlanByPeoplePlanLocationDurationType(travelSearchDto);
+//	}
 
 }
