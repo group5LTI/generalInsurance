@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,12 @@ public class VehicleInsuranceDaoImpl implements VehicleInsuranceDao {
 	public List<VehicleInsurance> viewAllVehicleInsurance() {
 		// TODO Auto-generated method stub
 		return em.createQuery("select vi from VehicleInsurance vi", VehicleInsurance.class).getResultList();
+	}
+
+	@Override
+	public List<VehicleInsurance> viewAllVehicleInsuranceByName(String userName) {
+	
+		return null;
 	}
 
 }

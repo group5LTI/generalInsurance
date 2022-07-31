@@ -10,6 +10,7 @@ public interface VehicleDao {
 
 	Vehicle searchVehicleById(int vehicleId);
 
+
 	List<Vehicle> viewAllVehicles();
 
 }

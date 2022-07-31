@@ -1,6 +1,7 @@
 package com.lti.service;
 
-import com.lti.dto.RenewVehicleInsurance;
+import java.util.List;
+
 import com.lti.dto.BuyVInsuranceDto;
 import com.lti.dto.RenewVInsuranceDto;
 import com.lti.entity.Insurance;
@@ -21,9 +22,15 @@ public interface VehicleService {
 	
 	Vehicle ResgisterVehicle(Vehicle vehicle);
 	
+	Vehicle searchVehicleByVehicleId(int vehicleId);
+	
 	VehicleInsurancePlan searchPlanById(int planId);
 	
 	VehicleInsurancePlan searchPlanByDurationType(String vehicleType,String planType,int planDuration);
 
 	Insurance addVehicleInsurance(Insurance vi);
+	
+	
+	
+	
 }

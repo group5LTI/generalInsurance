@@ -12,4 +12,5 @@ public interface CustomerService {
 	Customer findcustomerById(int userId);
 	boolean userlogin(String string,String password);
 	UpdateCustomer updateProfile(Customer c);
+	Customer searchCustomerByVehicleId();
 }

@@ -9,26 +9,30 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lti.dto.RenewVehicleInsurance;
 import com.lti.dto.BuyRegisterVInsuranceDto;
 import com.lti.dto.BuyVInsuranceDto;
 import com.lti.dto.InsuranceDocumentDto;
 import com.lti.dto.RenewVInsuranceDto;
+import com.lti.dto.RenewedVInsurance;
 import com.lti.entity.Customer;
 import com.lti.entity.Insurance;
 import com.lti.entity.InsuranceDocument;
 import com.lti.entity.Vehicle;
 import com.lti.entity.VehicleInsurance;
 import com.lti.entity.VehicleInsurancePlan;
+import com.lti.exception.CheckIdException;
 import com.lti.exception.InsurancePlanNotFound;
 import com.lti.exception.RegistrationError;
+import com.lti.exception.VehicleNotFound;
 import com.lti.service.CustomerService;
 import com.lti.service.InsuranceService;
 import com.lti.service.VehicleService;
@@ -89,25 +93,38 @@ public class VehicleController {
 	}
 
 	@PutMapping(value = "/renew")
-	public boolean renewVehicleInsurance(@RequestBody RenewVInsuranceDto vehicleInsurance) {
+	public String renewVehicleInsurance(@RequestBody RenewVInsuranceDto vehicleInsurance) {
 //		boolean renewed = vehicleService.renewVehicleInsurance(vehicleInsurance);
-		VehicleInsurance v = vehicleService.searchVehicleInsuranceById(vehicleInsurance.getVehicleInsuranceId());
-		VehicleInsurancePlan vp = vehicleService.searchPlanByDurationType(v.getVehicle().getVehicleType(),
-				vehicleInsurance.getPlanType(), vehicleInsurance.getPlanDuration());
+		Vehicle vehicle = vehicleService.searchVehicleByVehicleId(vehicleInsurance.getVehicleId());
 		try {
-			if (vp != null) {
-				v.setVehicleInsurancePlan(vp);
-				VehicleInsurance vp1 = vehicleService.buyInsurance(v);
-				if (vp != null) {
-					return true;
+			if (vehicle != null) {
+				if (vehicle.getCustomer().getUserId() == vehicleInsurance.getUserId()) {
+					VehicleInsurance v = vehicleService.searchVehicleInsuranceById(vehicle.getVehicleInsurance().getVehicleInsuranceId());
+					VehicleInsurancePlan vp = vehicleService.searchPlanByDurationType(v.getVehicle().getVehicleType(),
+							vehicleInsurance.getPlanType(), vehicleInsurance.getPlanDuration());
+
+					if (vp != null) {
+						v.setVehicleInsurancePlan(vp);
+						VehicleInsurance vp1 = vehicleService.buyInsurance(v);
+						if (vp1 != null) {
+
+							//renew.setVi(vp1);
+							return "Updated Successfully";
+						} else {
+							throw new RegistrationError("Error while renewing Insurance");
+						}
+					} else {
+						throw new InsurancePlanNotFound("No plan available");
+					}
 				} else {
-					throw new RegistrationError("Error while renewing Insurance");
+					throw new CheckIdException("No such Vehicle registered for your account");
 				}
 			} else {
-				throw new InsurancePlanNotFound("No plan available");
+				throw new VehicleNotFound("No such vehicle ID available!First buy insurance");
 			}
+
 		} catch (Exception e) {
-			return false;
+			return e.getMessage();
 		}
 
 	}
@@ -119,7 +136,7 @@ public class VehicleController {
 		return message;
 	}
 
-	@PostMapping(value = "/upload-document")
+	@PostMapping(value = "/upload-document", consumes = { "*/*" })
 //	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.ALL_VALUE ,value = "/upload-document")
 	public String uploadDocument(@RequestBody InsuranceDocumentDto dto) {
 
@@ -149,11 +166,14 @@ public class VehicleController {
 		}
 
 	}
+//	@GetMapping("/vehicle")
+//    public List<VehicleInsurance> searchVehicleIdByUsername(@RequestParam("userName") String uName) {
+//        return vehicleService.;
+	// }
 //	@PostMapping(value="/addvehicle")
 //	public Vehicle registervehicle(@RequestBody Vehicle vehicle) {
 //		Vehicle  message = vehicleService.ResgisterVehicle(vehicle);
 //		return message;
 //		
 //	}
-
 }

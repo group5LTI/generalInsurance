@@ -11,6 +11,6 @@ export class VehicleServiceService {
   constructor(private httpClient:HttpClient) { }
 
   addVehicleInsurance(buyDto:BuyVInsuranceDto):Observable<boolean>{
-    return this.httpClient.post<boolean>("http://localhost:9191/vehicles/buyvehicleinsurance",buyDto)
+    return this.httpClient.post<boolean>("http://localhost:9090/vehicles/buyvehicleinsurance",buyDto)
   }
 }

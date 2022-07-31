@@ -49,31 +49,21 @@ public class CustomerController {
 	public Customer searchCustomerByUsername(@PathVariable int userId) {
 		return customerService.searchCustomerByuserId(userId);
 	}
-<<<<<<< HEAD
-	@GetMapping("/customer")
-    public Customer searchCustomerByUsername(@RequestParam("userName") String uName) {
-        return customerService.searchUserByUsername(uName);
+
+	
+	@PostMapping("/update")
+    public UpdateCustomer updateProfile(@RequestBody Customer customer)
+    {
+        return customerService.updateProfile(customer);
     }
 	
-	@PutMapping("/update")
-	public boolean updateProfile(@RequestBody Customer customer) {
-		try {
-			String c = customerService.updateProfile(customer);
-			System.out.println(c);
-			return true;
-			
-		} catch (Exception e) {
-			return false;
-		}
-		
 	
-=======
->>>>>>> 84c78046578fa07d8f6c9090d5c8a1b3dee8c8c2
-
-	@PostMapping("/update")
-	public UpdateCustomer updateProfile(@RequestBody Customer customer)
-	{
-		return customerService.updateProfile(customer);
-	}
-
+	 @GetMapping("/customer")
+	    public Customer searchCustomerByUsername(@RequestParam("userName") String uName) {
+	        return customerService.searchUserByUsername(uName);
+	    }
+	 
+	 
 }
+
+

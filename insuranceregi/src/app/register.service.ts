@@ -15,18 +15,18 @@ export class RegisterService {
 
   registerUser(user:User):Observable<boolean>
   {
-    return this.httpClient.post<boolean>("http://localhost:9191/customers/register", user);
+    return this.httpClient.post<boolean>("http://localhost:9090/customers/register", user);
   }
 
   loginUser(login:Login)
   {
-    return this.httpClient.post<boolean>("http://localhost:9191/customers/login",login);
+    return this.httpClient.post<boolean>("http://localhost:9090/customers/login",login);
   }
   getUser(userName:string):Observable<User>{
 
     // return this.httpClient.get<User>("http://localhost:9191/users/user/"+userId);
 
-    return this.httpClient.get<User>("http://localhost:9191/customers/customer?userName="+userName);
+    return this.httpClient.get<User>("http://localhost:9090/customers/customer?userName="+userName);
 
     // return this.httpClient.get<User>("http://localhost:9191/users/profile?userId="+userName);
 
@@ -38,7 +38,7 @@ export class RegisterService {
   // }
   updateProfile(user:User):Observable<UpdateUser>{
 
-    return this.httpClient.post<UpdateUser>("http://localhost:9191/customers/update",user);
+    return this.httpClient.post<UpdateUser>("http://localhost:9090/customers/update",user);
     }
   // updatePassword(login:Login):Observable<any>{
   //   let url = "http://localhost:9090/updatePassword";

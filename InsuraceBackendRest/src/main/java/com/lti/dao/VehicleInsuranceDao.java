@@ -11,5 +11,7 @@ public interface VehicleInsuranceDao {
 	VehicleInsurance searchVehicleInsuraceById(int vehicleInsuranceId);
 
 	List<VehicleInsurance> viewAllVehicleInsurance();
+	
+	List<VehicleInsurance> viewAllVehicleInsuranceByName(String userName);
 }
 //

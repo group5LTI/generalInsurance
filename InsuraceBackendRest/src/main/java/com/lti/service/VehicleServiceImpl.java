@@ -1,6 +1,7 @@
 package com.lti.service;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +11,7 @@ import com.lti.dao.VehicleDao;
 import com.lti.dao.VehicleInsuranceDao;
 import com.lti.dao.VehiclePlanDao;
 import com.lti.dao.VehiclePlanDaoImpl;
-import com.lti.dto.RenewVehicleInsurance;
+
 import com.lti.dto.BuyVInsuranceDto;
 import com.lti.dto.RenewVInsuranceDto;
 import com.lti.entity.Insurance;
@@ -136,5 +137,15 @@ public class VehicleServiceImpl implements VehicleService {
 		VehicleInsurance vi = vehicleInsuranceDao.searchVehicleInsuraceById(vehicleInsuranceId);
 		return vi;
 	}
+
+	@Override
+	public Vehicle searchVehicleByVehicleId(int vehicleId) {
+		// TODO Auto-generated method stub
+		return vehicleDao.searchVehicleById(vehicleId);
+	}
+
+	
+
+	
 
 }

@@ -12,6 +12,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "tbl_customer")
 public class Customer {
@@ -83,7 +85,8 @@ public class Customer {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-
+	
+	@JsonIgnore
 	public List<Vehicle> getVehicles() {
 		return vehicles;
 	}
@@ -91,7 +94,7 @@ public class Customer {
 	public void setVehicles(List<Vehicle> vehicles) {
 		this.vehicles = vehicles;
 	}
-
+	@JsonIgnore
 	public List<TravelInsurance> getTravelInsurances() {
 		return travelInsurances;
 	}
@@ -99,7 +102,7 @@ public class Customer {
 	public void setTravelInsurances(List<TravelInsurance> travelInsurances) {
 		this.travelInsurances = travelInsurances;
 	}
-
+	@JsonIgnore
 	public List<InsuranceDocument> getInsuranceDocuments() {
 		return insuranceDocuments;
 	}
