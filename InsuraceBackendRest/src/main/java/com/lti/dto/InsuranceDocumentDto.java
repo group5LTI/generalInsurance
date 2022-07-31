@@ -4,26 +4,20 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class InsuranceDocumentDto {
 
-	int vehicleInsuranceId;
-	int customerId;
-	MultipartFile insuranceDocument;
-	public int getVehicleInsuranceId() {
-		return vehicleInsuranceId;
+	private int insuranceId;
+	private MultipartFile document;
+	public int getInsuranceId() {
+		return insuranceId;
 	}
-	public void setVehicleInsuranceId(int vehicleInsuranceId) {
-		this.vehicleInsuranceId = vehicleInsuranceId;
+	public void setInsuranceId(int insuranceId) {
+		this.insuranceId = insuranceId;
 	}
-	public int getCustomerId() {
-		return customerId;
+	public MultipartFile getDocument() {
+		return document;
 	}
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
-	}
-	public MultipartFile getInsuranceDocument() {
-		return insuranceDocument;
-	}
-	public void setInsuranceDocument(MultipartFile insuranceDocument) {
-		this.insuranceDocument = insuranceDocument;
+	public void setDocument(MultipartFile document) {
+		this.document = document;
+
 	}
 	
 	

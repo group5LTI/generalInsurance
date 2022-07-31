@@ -34,8 +34,8 @@
           <input type="text" name="mailId" [(ngModel)]="user.mailId" #uemail="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
           <span></span>
           <div *ngIf="uemail.invalid && (uemail.dirty || uemail.touched)">
-            <div *ngIf = "uemail.errors?.['required']" style="color:red">Enter password</div>
-            <div *ngIf = "uemail.errors?.['pattern']" style="color:red">Invalid password</div>
+            <div *ngIf = "uemail.errors?.['required']" style="color:red">Enter emailID</div>
+            <div *ngIf = "uemail.errors?.['pattern']" style="color:red">Invalid emailID</div>
           </div>
           
           <label>Email Id</label>

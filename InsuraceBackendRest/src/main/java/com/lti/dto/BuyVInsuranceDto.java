@@ -1,5 +1,7 @@
 package com.lti.dto;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class BuyVInsuranceDto {
 
 	int userId;
@@ -10,8 +12,6 @@ public class BuyVInsuranceDto {
 	int planDuration;
 	String planType;
 	
-	
-
 	public int getUserId() {
 		return userId;
 	}
@@ -67,5 +67,7 @@ public class BuyVInsuranceDto {
 	public void setPlanType(String planType) {
 		this.planType = planType;
 	}
+
+	
 
 }

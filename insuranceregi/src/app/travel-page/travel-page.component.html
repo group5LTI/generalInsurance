@@ -1,7 +1,7 @@
 <!-- dashboard start -->
 <app-dashboard-nav></app-dashboard-nav>
 
-    <!-- header-slider-area start -->
+    <!-- header-slider-area start home cha link la admin link and logout and update profile -->
     <section class="header-slider-area">
         <div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel">
 
@@ -37,8 +37,8 @@
                                         <!--/.we-do-img-->
                                         <div class="we-do-topics">
                                             <h2>
-                                                <a [routerLink]="['/buyLink']">
-                                                    Vehicle Buy insurance
+                                                <a [routerLink]="[]" (click)="checkVUser()">
+                                                    Vehicle Insurance
                                                 </a>
                                             </h2>
                                         </div>
@@ -52,8 +52,8 @@
                                             our services from anywhere.
                                         </p>
                                         <div class="project-btn pricing-btn text-center">
-                                            <a  class="project-view" [routerLink]="['/buyLink']">
-                                                Buy insurance
+                                            <a  class="project-view" [routerLink]="[]" (click)="checkVUser()">
+                                                Vehicle Insurance
                                             </a>
                                         </div>
                                         <!-- button close -->
@@ -75,7 +75,7 @@
                                         <!--/.we-do-img-->
                                         <div class="we-do-topics">
                                             <h2>
-                                                <a href="#">
+                                                <a [routerLink]="[]" (click)="checkTUser()">
                                                     Travel Insurance
                                                 </a>
                                             </h2>
@@ -90,8 +90,8 @@
                                             our services from anywhere.</p>
 
                                         <div class="project-btn pricing-btn text-center">
-                                            <a [routerLink]="['/travelLink']" class="project-view">
-                                                Buy Travel Insurance
+                                            <a [routerLink]="[]" (click)="checkTUser()" class="project-view">
+                                                Travel Insurance
                                             </a>
                                         </div>
                                         <!-- button close -->

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { AddTravelPlanComponent } from './add-travel-plan/add-travel-plan.component';
+import { AddVehiclePlanComponent } from './add-vehicle-plan/add-vehicle-plan.component';
 import { AdminComponent } from './admin/admin.component';
 import { BuyComponent } from './buy-insurance/buy-insurance.component';
 import { ContactComponent } from './contact/contact.component';
@@ -10,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { RegisterComponent } from './register/register.component';
+import { RenewInsuranceComponent } from './renew-insurance/renew-insurance.component';
 import { TravelComponent } from './travel-insurance/travel-insurance.component';
 import { TravelPageComponent } from './travel-page/travel-page.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
@@ -23,6 +26,9 @@ const routes: Routes = [
 },
 {
   path:'buyLink',component:BuyComponent
+},
+{
+  path:'renewLink',component:RenewInsuranceComponent
 },
 {
   path:'adminLink',component:AdminComponent
@@ -56,13 +62,23 @@ const routes: Routes = [
 },
 {
   path:'forgotLink',component:ForgotpasswordComponent
+},
+{
+  path:'addVehiclePlan',component:AddVehiclePlanComponent
+},
+{
+  path:'addTravelPlan',component:AddTravelPlanComponent
 }
+
 
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes ,{
+    scrollPositionRestoration: 'enabled',
+    anchorScrolling: 'enabled',
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

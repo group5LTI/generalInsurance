@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RegisterService } from '../register.service';
+import { UpdateUser } from '../update-user';
 import { User } from '../user';
 
 @Component({
@@ -12,6 +13,7 @@ export class UpdateProfileComponent implements OnInit {
 
   constructor(private registerService:RegisterService,private router:Router) { }
   user:User=new User();
+  updateUser:UpdateUser=new UpdateUser();
   updatemessage:string;
   ngOnInit(): void {
     this.user=JSON.parse(sessionStorage.getItem("userDetails"));

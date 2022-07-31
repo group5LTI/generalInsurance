@@ -34,20 +34,21 @@ public class CustomerServiceImpl implements CustomerService{
 
 	}
 	
+	
 	public UpdateCustomer updateProfile(Customer customer)
-	{
-		UpdateCustomer updateCustomer=new UpdateCustomer();
-		try {
-			Customer cust2=customerDao.addOrUpdateCustomer(customer);
-			updateCustomer.setMessage("profile updated");
-			updateCustomer.setCustomer(cust2);
-			return updateCustomer;
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			updateCustomer.setMessage(e.getMessage());
-			return updateCustomer;
-		}
-	}
+    {
+        UpdateCustomer updateCustomer=new UpdateCustomer();
+        try {
+            Customer cust2=customerDao.addOrUpdateCustomer(customer);
+            updateCustomer.setMessage("profile updated");
+            updateCustomer.setCustomer(cust2);
+            return updateCustomer;
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            updateCustomer.setMessage(e.getMessage());
+            return updateCustomer;
+        }
+    }
 
 	@Override
 	public Customer findcustomerById(int userId) {
@@ -60,11 +61,11 @@ public class CustomerServiceImpl implements CustomerService{
 		return customerDao.login(userName, password);
 	}
 
-	@Override
-	public Customer searchUserByUsername(String userName) {
-		// TODO Auto-generated method stub
-		return customerDao.searchCustomerByUsername(userName);
-	}
+	 @Override
+	    public Customer searchUserByUsername(String userName) {
+	        // TODO Auto-generated method stub
+	        return customerDao.searchCustomerByUsername(userName);
+	    }
 
 	@Override
 	public boolean searchUserByMailId(String mailId) {
@@ -72,6 +73,21 @@ public class CustomerServiceImpl implements CustomerService{
 		return customerDao.searchCustomerByEmail(mailId);
 	}
 
+
+
+	@Override
+	public Customer searchCustomerByuserId(int userId) {
+		// TODO Auto-generated method stub
+		return customerDao.searchCustomer(userId);
+	}
+
+
+	@Override
+	public Customer searchCustomerByVehicleId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	
 	
 }

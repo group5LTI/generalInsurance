@@ -2,22 +2,25 @@
 <body>
     
     <div class="container">
-        <div class="title">Vehicle Insurance</div><br>
+        <div class="title">Vehicle Renew Insurance</div><br>
         <div class="content">
-            <form  #renewvehicleinsuranceForm="ngForm" (ngSubmit)="renewInsurance()">
+            <form  #renewvehicleinsuranceForm="ngForm" (ngSubmit)="renewInsurance()" novalidate>
                 <div class="travel-details">
-                    <input type="number" name="vehicleInsuranceId" [(ngModel)]="buyInsurance.vehicleInsuranceId" placeholder={{buyInsurance.vehicleInsuranceId}} disabled=true>
+                    <div class="input-box">
+                        <span class="details">Enter Vehicle ID</span>
+                        <input type="number" name="vehicleId" min="1000" [(ngModel)]="renewDto.vehicleId" placeholder="Enter Plan Duration" required>
+                    </div>
                     <div class="input-box">
                         <span class="details">Plan Duration</span>
-                        <input type="number" placeholder="Enter Plan Duration" required>
+                        <input type="number" name="planDuration" min="1"  [(ngModel)]="renewDto.planDuration" placeholder="Enter Plan Duration" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Plan Type</span>
-                        <select name="planType" id="dropdown" [(ngModel)]="buyInsurance.vehiclePlan.planType">
-                            <option value="00">Select Plan</option>
-                            <option value="01">Silver</option>
-                            <option value="02">Gold</option>
-                            <option value="03">Diamond</option>
+                        <select name="planType" id="dropdown" [(ngModel)]="renewDto.planType">
+                            <option value="default">Select Plan</option>
+                            <option value="Silver">Silver</option>
+                            <option value="Gold">Gold</option>
+                            <option value="Diamond">Diamond</option>
                         </select>
                     </div>
                 </div>

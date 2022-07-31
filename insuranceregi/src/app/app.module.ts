@@ -22,7 +22,9 @@ import { RenewInsuranceComponent } from './renew-insurance/renew-insurance.compo
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
-import { AboutUsComponent } from './about-us/about-us.component';
+import { AddVehiclePlanComponent } from './add-vehicle-plan/add-vehicle-plan.component';
+import { AddTravelPlanComponent } from './add-travel-plan/add-travel-plan.component';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { AboutUsComponent } from './about-us/about-us.component';
     RenewInsuranceComponent,
     PaymentPageComponent,
     UpdateProfileComponent,
-    AboutUsComponent
+    AddVehiclePlanComponent,
+    AddTravelPlanComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -50,8 +54,11 @@ import { AboutUsComponent } from './about-us/about-us.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+ 
+ }

@@ -45,15 +45,25 @@ public class CustomerController {
 		boolean isvalid=customerService.userlogin(loginData.getUserName(),loginData.getPassword());
 		return isvalid;
 	}
-	@GetMapping("/customer")
-	public Customer searchCustomerByUsername(@RequestParam("userName") String uName) {
-		return customerService.searchUserByUsername(uName);
+	@GetMapping("/customer/{userId}")
+	public Customer searchCustomerByUsername(@PathVariable int userId) {
+		return customerService.searchCustomerByuserId(userId);
 	}
 
+	
 	@PostMapping("/update")
-	public UpdateCustomer updateProfile(@RequestBody Customer customer)
-	{
-		return customerService.updateProfile(customer);
-	}
-
+    public UpdateCustomer updateProfile(@RequestBody Customer customer)
+    {
+        return customerService.updateProfile(customer);
+    }
+	
+	
+	 @GetMapping("/customer")
+	    public Customer searchCustomerByUsername(@RequestParam("userName") String uName) {
+	        return customerService.searchUserByUsername(uName);
+	    }
+	 
+	 
 }
+
+
