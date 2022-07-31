@@ -22,7 +22,6 @@ import { RenewInsuranceComponent } from './renew-insurance/renew-insurance.compo
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
-import { TravelAComponent } from './travel-a/travel-a.component';
 import { AddVehiclePlanComponent } from './add-vehicle-plan/add-vehicle-plan.component';
 import { AddTravelPlanComponent } from './add-travel-plan/add-travel-plan.component';
 
@@ -44,7 +43,6 @@ import { AddTravelPlanComponent } from './add-travel-plan/add-travel-plan.compon
     RenewInsuranceComponent,
     PaymentPageComponent,
     UpdateProfileComponent,
-    TravelAComponent,
     AddVehiclePlanComponent,
     AddTravelPlanComponent
   ],
