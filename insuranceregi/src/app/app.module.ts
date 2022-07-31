@@ -25,6 +25,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
 import { AddVehiclePlanComponent } from './add-vehicle-plan/add-vehicle-plan.component';
 import { AddTravelPlanComponent } from './add-travel-plan/add-travel-plan.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,8 @@ import { AddTravelPlanComponent } from './add-travel-plan/add-travel-plan.compon
     PaymentPageComponent,
     UpdateProfileComponent,
     AddVehiclePlanComponent,
-    AddTravelPlanComponent
+    AddTravelPlanComponent,
+    
   ],
   imports: [
     BrowserModule,

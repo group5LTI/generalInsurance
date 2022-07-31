@@ -55,6 +55,9 @@ public class TravelInsurancePlan {
 		this.travelLocation = travelLocation;
 	}
 
+
+
+
 	public int getTravleDuration() {
 		return travleDuration;
 	}

@@ -1,1 +1,83 @@
-<p>add-travel-plan works!</p>
+<app-admin-nav></app-admin-nav>
+<body>
+    <div class="container">
+        <div class="title">Travel Insurance Plan</div><br>
+        <div class="content">
+            <form #userForm="ngForm" (ngSubmit)="AddTravelPlan()" novalidate>
+                <!-- <div class="travel-details">
+                    <input type="radio" name="vehicleType" id="dot-1" value="twoWheeler" [(ngModel)]="addtravelPlan.vehicleType">
+                    <input type="radio" name="vehicleType" id="dot-2" value="fourWheeler" [(ngModel)]="addtravelPlan.vehicleType">
+                    <span class="details">Vehicle Type</span>
+                    <div class="category">
+                        <label for="dot-1">
+                            <span class="dot one"></span>
+                            <span class="Vehicle">Two-Wheeler</span>
+                        </label>
+                        <label for="dot-2">
+                            <span class="dot two"></span>
+                            <span class="gender">Four-Wheeler</span>
+                        </label>
+                    </div>
+                </div> -->
+                <div class="user-details">
+                    
+                    <div class="input-box">
+                        <span class="details" id="noOfPeople">No. of people</span>
+                        <input type="number" name="noOfPeople" 
+                            placeholder="Enter No. people" required [(ngModel)]="addtravelPlan.noOfPeople">
+                        <!-- <small class="text-danger">ChassisNo is
+                            Required</small> -->
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Travel Duration</span>
+                        <input type="number" name="travleDuration" 
+                            
+                            placeholder="Enter travel Duration" required [(ngModel)]="addtravelPlan.travleDuration">
+                        <!-- <small class="text-danger"
+                            >PlanDuration is
+                            Required</small> -->
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Planned Amount</span>
+                        <input type="number" name="plannedAmount" 
+                            
+                            placeholder="Enter planned Amount" required [(ngModel)]="addtravelPlan.plannedAmount">
+                        <!-- <small class="text-danger"
+                            >PlanDuration is
+                            Required</small> -->
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Travel Location</span>
+                        <input type="text" name="travelLocation" 
+                            
+                            placeholder="Enter travel Location" required [(ngModel)]="addtravelPlan.travelLocation">
+                        <!-- <small class="text-danger"
+                            >PlanDuration is
+                            Required</small> -->
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Plan Type</span>
+                        <select name="planType"
+                             id="dropdown" [(ngModel)]="addtravelPlan.planType"
+                            >
+                            <option value="default">Select Plan</option>
+                            <option value="Silver">Silver</option>
+                            <option value="Gold">Gold</option>
+                            <option value="Diamond">Diamond</option>
+                        </select>
+                        <!-- <small class="text-danger">Please Choose a
+                            Plan</small> -->
+                    </div>
+                    <div class="input-box">
+                        
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Submit" >
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+

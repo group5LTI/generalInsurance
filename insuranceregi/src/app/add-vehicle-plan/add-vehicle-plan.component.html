@@ -1,1 +1,76 @@
-<p>add-vehicle-plan works!</p>
+<!-- <app-dashboard-nav></app-dashboard-nav> -->
+<app-admin-nav></app-admin-nav>
+<body>
+    <div class="container">
+        <div class="title">Vehicle Insurance</div><br>
+        <div class="content">
+            <form #userForm="ngForm" (ngSubmit)="AddVehiclePlan()" novalidate>
+                <div class="travel-details">
+                    <input type="radio" name="vehicleType" id="dot-1" value="twoWheeler" [(ngModel)]="addVehicleplan.vehicleType">
+                    <input type="radio" name="vehicleType" id="dot-2" value="fourWheeler" [(ngModel)]="addVehicleplan.vehicleType">
+                    <span class="details">Vehicle Type</span>
+                    <div class="category">
+                        <label for="dot-1">
+                            <span class="dot one"></span>
+                            <span class="Vehicle">Two-Wheeler</span>
+                        </label>
+                        <label for="dot-2">
+                            <span class="dot two"></span>
+                            <span class="gender">Four-Wheeler</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="user-details">
+                    
+                    <div class="input-box">
+                        <span class="details" id="plannedAmountV">Planned Amount</span>
+                        <input type="number" name="plannedAmountV" 
+                            placeholder="Enter Planned Ampunt" required [(ngModel)]="addVehicleplan.plannedAmountV">
+                        <!-- <small class="text-danger">ChassisNo is
+                            Required</small> -->
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Plan Duration</span>
+                        <input type="number" name="noOfYears" 
+                            
+                            placeholder="Enter Plan Duration" required [(ngModel)]="addVehicleplan.noOfYears">
+                        <!-- <small class="text-danger"
+                            >PlanDuration is
+                            Required</small> -->
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Plan Type</span>
+                        <select name="planType"
+                             id="dropdown" [(ngModel)]="addVehicleplan.planType"
+                            >
+                            <option value="default">Select Plan</option>
+                            <option value="Silver">Silver</option>
+                            <option value="Gold">Gold</option>
+                            <option value="Diamond">Diamond</option>
+                        </select>
+                        <!-- <small class="text-danger">Please Choose a
+                            Plan</small> -->
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Insurance Type</span>
+                        <select name="insuranceType"
+                             id="dropdown" [(ngModel)]="addVehicleplan.insuranceType"
+                            >
+                            <option value="default">Select Plan</option>
+                            <option value="thirdParty">Third Party</option>
+                            <option value="comprehensive">Comprehensive</option>
+                            <!-- <option value="Diamond">Diamond</option> -->
+                        </select>
+                        <!-- <small class="text-danger">Please Choose a
+                            Plan</small> -->
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Submit" >
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+
