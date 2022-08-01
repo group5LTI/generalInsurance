@@ -1,5 +1,7 @@
 package com.lti.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -82,6 +84,12 @@ public class TravelServiceImpl implements TravelService {
 	public TravelInsurancePlan searchPlanByPeoplePlanLocationDuration(int noOfPeople, String location, int duration) {
 		// TODO Auto-generated method stub
 		return travelPlanDao.searchPlanByPeoplePlanLocationDuration(noOfPeople,location,duration);
+	}
+
+	@Override
+	public List<TravelInsurance> viewAllTravelInsurancesByUserName(String uname) {
+		// TODO Auto-generated method stub
+		return travelDao.viewAllTravelInsurancesByUserName(uname);
 	}
 
 }

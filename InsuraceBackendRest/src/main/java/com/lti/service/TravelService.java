@@ -1,5 +1,7 @@
 package com.lti.service;
 
+import java.util.List;
+
 import com.lti.dto.TravelSearchDto;
 import com.lti.entity.Insurance;
 import com.lti.entity.TravelInsurance;
@@ -20,4 +22,6 @@ public interface TravelService {
 	TravelInsurancePlan searchPlanByPeoplePlanLocationDuration(int noOfPeople,String location,int duration);
 	
 	Insurance addTravelInsurance(Insurance ti);
+
+	List<TravelInsurance> viewAllTravelInsurancesByUserName(String uname);
 }

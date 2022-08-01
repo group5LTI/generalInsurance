@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Addtravelplan } from './addtravelplan';
 import { BuyTinsuranceDto } from './buy-tinsurance-dto';
 import { ReturnInsuranceMessage } from './return-insurance-message';
+import { TravelInsurance } from './travel-insurance';
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +19,10 @@ export class TravelServiceService {
 
   addTravelInsurance(buyTDto:BuyTinsuranceDto):Observable<ReturnInsuranceMessage>{
     return this.httpClient.post<ReturnInsuranceMessage>("http://localhost:9090/travel/buytravelinsurance",buyTDto)
+  }
+
+ getTInsurances(userName:string):Observable<TravelInsurance[]>
+  {
+    return this.httpClient.get<TravelInsurance[]>("http://localhost:9090/travel/viewallTinsurance?userName="+userName);
   }
 }

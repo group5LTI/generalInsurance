@@ -11,7 +11,11 @@ public interface VehicleInsuranceDao {
 	VehicleInsurance searchVehicleInsuraceById(int vehicleInsuranceId);
 
 	List<VehicleInsurance> viewAllVehicleInsurance();
+
+	List<VehicleInsurance> viewAllVehicleInsurancesByUserId(int userId);
+
+	List<VehicleInsurance> viewAllVehicleInsurancesByUserName(String userName);
 	
-	List<VehicleInsurance> viewAllVehicleInsuranceByName(String userName);
+//	List<VehicleInsurance> viewAllVehicleInsuranceByName(String userName);
 }
 //

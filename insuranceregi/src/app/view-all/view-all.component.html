@@ -1,11 +1,16 @@
-<div>
+<app-dashboard-nav></app-dashboard-nav>
 <button type="button" class="slide-btn" (click)="getInsurances()">
     View Insurances
 </button>
-</div>
-<table border="1">
+<button type="button" class="slide-btn" (click)="getTInsurances()">
+    View Travel Insurances
+</button>
+<body>
+    
+    <div>
+<table border="1" id="1">
     <tr>
-        <th>Vehicle_Insurance_Id</th>
+        <th>Insurance Id</th>
         <th>Issue Date</th>
         <th>Years</th>
         <th>Amount Paid</th>
@@ -20,5 +25,25 @@
         <!-- <td>{{ins.vehicle}}</td>
         <td>{{ins.vehiclePlan}}</td> -->
     </tr>
-
 </table>
+</div>
+<div>
+    <table border="1" id="2">
+        <tr>
+            <th>Insurance Id</th>
+            <th>location</th>
+            <th>Travel start date</th>
+            <th>Travel End Date</th>
+            <th>Amount Paid</th>
+        </tr>
+        <tr *ngFor="let ins of tInsurances">
+            <td>{{ins.travelInsuranceId}}</td>
+            <td>{{ins.location}}</td>
+            <td>{{ins.travelStartDate}}</td>
+            <td>{{ins.travelEndDate}}</td>
+            <td>{{ins.amountPaid}}</td>
+        </tr>
+    
+    </table>
+    </div>
+</body>

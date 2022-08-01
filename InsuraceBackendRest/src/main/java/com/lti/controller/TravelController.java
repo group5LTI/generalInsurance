@@ -4,6 +4,7 @@ package com.lti.controller;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lti.dao.TravleInsuranceDaoImpl;
@@ -137,6 +139,10 @@ public class TravelController {
 			return msg;
 		}
 		
+	}
+	@GetMapping("/viewallTinsurance")
+	public List<TravelInsurance> viewAllTravelInsurancesByuserId(@RequestParam("userName") String uname) {
+		return travelService.viewAllTravelInsurancesByUserName(uname);
 	}
 //	@GetMapping(value="/searchbytype")
 //	public TravelInsurancePlan searchByDto(@RequestBody TravelSearchDto travelSearchDto) {

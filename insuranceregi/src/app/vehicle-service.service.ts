@@ -20,8 +20,8 @@ export class VehicleServiceService {
   {
     return this.httpClient.post("http://localhost:9090/vehicles/registervehicleplan",addVplan,{responseType:'text'})
   }
-  getInsurances():Observable<VehicleInsurance[]>
+  getInsurances(userName:string):Observable<VehicleInsurance[]>
   {
-    return this.httpClient.get<VehicleInsurance[]>("http://localhost:9090/vehicles/viewAll");
+    return this.httpClient.get<VehicleInsurance[]>("http://localhost:9090/vehicles/viewallinsurance?userName="+userName);
   }
 }

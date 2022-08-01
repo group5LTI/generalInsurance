@@ -250,22 +250,14 @@ public class VehicleController {
 		}
 	}
 
-//	@GetMapping("/vehicle")
-//    public List<VehicleInsurance> searchVehicleIdByUsername(@RequestParam("userName") String uName) {
-//        return vehicleService.;
-//	 }
-//	@PostMapping(value="/addvehicle")
-//	public Vehicle registervehicle(@RequestBody Vehicle vehicle) {
-//		Vehicle  message = vehicleService.ResgisterVehicle(vehicle);
-//		return message;
-//		
-//	}
 	
 	@GetMapping("/viewAll")
 	public List<VehicleInsurance> viewAllVehicleInsurances()
 	{
-		
 		return vehicleService.viewAllVehicleInsurances();
 	}
-	
+	@GetMapping("/viewallinsurance")
+	public List<VehicleInsurance> viewAllVehicleInsurancesByuserId(@RequestParam("userName") String uname) {
+		return vehicleService.viewAllVehicleInsurancesByUserName(uname);
+	}
 }

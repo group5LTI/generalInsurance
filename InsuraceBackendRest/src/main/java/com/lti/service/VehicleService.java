@@ -35,6 +35,10 @@ public interface VehicleService {
 	VehicleInsurancePlan searchPlanByDurationInsuranceType(String vehicleType,String insuranceType,int planDuration);
 
 	List<VehicleInsurance> viewAllVehicleInsurances();
+
+	List<VehicleInsurance> viewAllVehicleInsurancesByUserId(int userId);
+	
+	List<VehicleInsurance> viewAllVehicleInsurancesByUserName(String userName);
 	
 	
 	
