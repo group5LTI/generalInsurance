@@ -43,4 +43,10 @@ public class VehicleDaoImpl implements VehicleDao {
 		
 	}
 
+	@Override
+	public Vehicle searchVehicleByInsuranceId(int vehicleInsuranceId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

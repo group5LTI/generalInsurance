@@ -3,7 +3,6 @@ import { TravelInsurancePlan } from "./travel-insurance-plan";
 
 export class TravelInsurance {
     travelInsuranceId:number;
-
 	location:string;
 	travelStartDate:string;
 	travelEndDate:string;

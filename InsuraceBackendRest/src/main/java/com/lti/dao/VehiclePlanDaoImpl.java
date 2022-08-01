@@ -78,6 +78,7 @@ public class VehiclePlanDaoImpl implements VehiclePlanDao {
 //		}return vip;
 //	}
 
+//<<<<<<< HEAD
 //	@Override
 //	public VehicleInsurancePlan searchPlanByDurationInsuranceType(String vehicleType, String insuranceType,
 //			int planDuration) {
@@ -96,7 +97,9 @@ public class VehiclePlanDaoImpl implements VehiclePlanDao {
 //        }return vip;
 //	}
 
-	
+//	
+//=======
+//>>>>>>> cdae998a8de68d50a6b33b9ed34e137979e7b7e9
 	@Override
 	public VehicleInsurancePlan searchPlanByDurationInsuranceType(String vehicleType, String insuranceType,
 			int planDuration) {
@@ -115,9 +118,11 @@ public class VehiclePlanDaoImpl implements VehiclePlanDao {
         }return vip;
 	}
 
+
 	@Override
 	public VehicleInsurancePlan searchPlanByVehicleTypeYear(VehicleSearchDto dto1) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 }
+

@@ -13,7 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    /* background: linear-gradient(135deg, #71b7e6, #9b59b6); */
 }
 
 .container {
@@ -30,7 +30,12 @@ body {
     font-weight: 500;
     position: relative;
 }
-
+.container .content .travel-details .input-box input{
+    height: 45px;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid rgb(181, 178, 178);
+}
 .container .title::before {
     content: "";
     position: absolute;
@@ -52,12 +57,14 @@ body {
 form .user-details .input-box {
     margin-bottom: 15px;
     width: calc(100% / 2 - 20px);
+    
 }
 
 form .input-box span.details {
     display: block;
     font-weight: 500;
     margin-bottom: 5px;
+    
 }
 
 form .details {
@@ -74,6 +81,7 @@ form .details {
     padding-left: 15px;
     border: 1px solid #ccc;
     border-bottom-width: 2px;
+    
     transition: all 0.3s ease;
 }
 

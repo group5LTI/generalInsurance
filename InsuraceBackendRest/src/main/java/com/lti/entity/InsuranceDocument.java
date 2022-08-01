@@ -10,6 +10,10 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
 @Entity
 @Table(name = "tbl_insurancedocument")
 public class InsuranceDocument {
@@ -26,7 +30,7 @@ public class InsuranceDocument {
 	Customer customer;
 	
 	@OneToOne
-	@JoinColumn(name = "insurance_id")
+	@JoinColumn(name = "insuranceId")
 	Insurance insurance;
 
 	public int getInsuranceDocumentId() {
@@ -44,7 +48,7 @@ public class InsuranceDocument {
 	public void setInsuranceDocumentPath(String insuranceDocumentPath) {
 		this.insuranceDocumentPath = insuranceDocumentPath;
 	}
-
+	@JsonIgnore
 	public Customer getCustomer() {
 		return customer;
 	}
@@ -52,7 +56,7 @@ public class InsuranceDocument {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-
+	@JsonIgnore
 	public Insurance getInsurance() {
 		return insurance;
 	}

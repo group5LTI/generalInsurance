@@ -11,4 +11,6 @@ public interface TravelInsuranceDao {
 	TravelInsurance searchTravelInsuranceById(int travelInsuranceId);
 	
 	List<TravelInsurance> viewAllTravelInsurances();
+
+	List<TravelInsurance> viewAllTravelInsurancesByUserName(String uname);
 }

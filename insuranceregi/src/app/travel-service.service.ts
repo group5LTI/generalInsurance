@@ -7,6 +7,7 @@ import { CalTravelInput } from './cal-travel-input';
 import { CalTravel } from './calTravel';
 import { CalTravelDto } from './calTravelDto';
 import { ReturnInsuranceMessage } from './return-insurance-message';
+import { TravelInsurance } from './travel-insurance';
 
 import { HttpHeaders } from "@angular/common/http";
 
@@ -31,10 +32,29 @@ export class TravelServiceService {
   }
 
 
-  getCalTravel(calTravela:CalTravelInput) {
-    let data = this.httpClient.get("http://localhost:9090/travel/calculatetravel");
-    console.log(data)
-    return data;
-    }
+  // getCalTravel(calTravela:CalTravelInput) {
+  //   let data = this.httpClient.get("http://localhost:9090/travel/calculatetravel");
+  //   console.log(data)
+  //   return data;
+  //   }
 
+ getTInsurances(userName:string):Observable<TravelInsurance[]>
+  {
+    return this.httpClient.get<TravelInsurance[]>("http://localhost:9090/travel/viewallTinsurance?userName="+userName);
+  }
+
+
+  getCalTravel(calTravela:any) {
+    let url="http://localhost:9090/travel/calculatetravel";
+    let body =  {vehicleType:"twoWheeler", noOfYears:2, insuranceType:"thirdParty"}
+    let headers=new Headers();
+    headers.append("Content-Type", "application/json");
+
+    console.log("To send ", calTravela)
+    let data = JSON.parse(JSON.stringify(calTravela))
+    return this.httpClient.get<CalTravelDto>(url, );
+    // return this.httpClient.get(url, data);
+    // return this.httpClient.get<CalTravelDto>(url)
+    }
 }
+// /add/{id}

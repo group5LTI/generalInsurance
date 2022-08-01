@@ -4,6 +4,7 @@ import { RenewRegisterVInsuranceDto } from '../renew-register-vinsurance-dto';
 import { User } from '../user';
 import { VehicleInsurance } from '../vehicle-insurance';
 import { Router } from '@angular/router';
+import { RegisterService } from '../register.service';
 
 @Component({
   selector: 'app-renew-insurance',
@@ -13,7 +14,7 @@ import { Router } from '@angular/router';
 export class RenewInsuranceComponent implements OnInit {
 
   msg:string;
-  constructor(private renewInsuranceService:InsuranceService) { }
+  constructor(private renewInsuranceService:InsuranceService,private registerService:RegisterService) { }
   buyInsurance:VehicleInsurance=new VehicleInsurance();
   user:User=new User();
   renewDto:RenewRegisterVInsuranceDto=new RenewRegisterVInsuranceDto();

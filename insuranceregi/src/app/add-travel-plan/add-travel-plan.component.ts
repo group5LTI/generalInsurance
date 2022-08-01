@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Addtravelplan } from '../addtravelplan';
 import { TravelServiceService } from '../travel-service.service';
 
@@ -10,7 +11,7 @@ import { TravelServiceService } from '../travel-service.service';
 export class AddTravelPlanComponent implements OnInit {
   addtravelPlan:Addtravelplan=new Addtravelplan();
   message:string;
-  constructor(private planService:TravelServiceService) { }
+  constructor(private planService:TravelServiceService,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -23,7 +24,7 @@ export class AddTravelPlanComponent implements OnInit {
       msg=>{
         this.message=msg;
         alert(this.message);
-        
+        this.router.navigate(['adminLink']);
       }
     );
   }

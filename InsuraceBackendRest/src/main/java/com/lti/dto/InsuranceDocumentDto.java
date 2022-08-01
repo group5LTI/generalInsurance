@@ -2,23 +2,34 @@ package com.lti.dto;
 
 import org.springframework.web.multipart.MultipartFile;
 
+
 public class InsuranceDocumentDto {
 
 	private int insuranceId;
-	private MultipartFile document;
+	private int userId;
+	private MultipartFile insuranceDocument;
+	
 	public int getInsuranceId() {
 		return insuranceId;
 	}
 	public void setInsuranceId(int insuranceId) {
 		this.insuranceId = insuranceId;
 	}
-	public MultipartFile getDocument() {
-		return document;
+	
+	
+	public int getUserId() {
+		return userId;
 	}
-	public void setDocument(MultipartFile document) {
-		this.document = document;
-
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
+	public MultipartFile getInsuranceDocument() {
+		return insuranceDocument;
+	}
+	public void setInsuranceDocument(MultipartFile insuranceDocument) {
+		this.insuranceDocument = insuranceDocument;
+	}
+	
 	
 	
 }

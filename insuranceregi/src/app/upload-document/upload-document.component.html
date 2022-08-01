@@ -1,0 +1,26 @@
+<!-- 
+<app-dashboard-nav></app-dashboard-nav>
+<body>
+    
+    <div class="container">
+        <div class="title">Vehicle Renew Insurance</div><br>
+        <div class="content">
+            <form  #renewvehicleinsuranceForm="ngForm" (ngSubmit)="uploadDocumentInsurance()" novalidate>
+                <div class="travel-details">
+                    <div class="input-box">
+                        <span class="details">Enter Insurance ID</span>
+                        <input type="number" name="vehicleId" min="1000" [(ngModel)]="insuranceDoc.insuranceDocumentId" placeholder="Enter Plan Duration" required/>
+                    </div>
+                </div>
+                <form enctype="multipart/form-data" (ngSubmit)="uploadDoc()">
+                    Select profile Pic <input type="file" name="pp" (change)="onFileChange($event)"> <br>
+                    <button type="submit">upload</button>
+                </form>
+                <div class="button">
+                    <input type="submit" value="Submit">
+                  </div>
+            </form>
+        </div>
+    </div>
+</body>
+ -->

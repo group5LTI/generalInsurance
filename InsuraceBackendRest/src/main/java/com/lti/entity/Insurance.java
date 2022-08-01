@@ -12,8 +12,13 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
 @Entity
 @Table(name = "tbl_insurance")
+@JsonInclude(Include.NON_NULL)
 public class Insurance {
 
 	@Id
@@ -28,6 +33,7 @@ public class Insurance {
 	@OneToOne
 	@JoinColumn(name = "vehcileInsuranceId")
 	VehicleInsurance vehicleInsurance;
+	
 	
 	@OneToMany(mappedBy = "insurance")
 	List<Claim> claims;
@@ -59,6 +65,7 @@ public class Insurance {
 		this.vehicleInsurance = vehicleInsurance;
 	}
 
+	@JsonIgnore
 	public List<Claim> getClaims() {
 		return claims;
 	}

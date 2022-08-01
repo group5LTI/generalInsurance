@@ -144,6 +144,8 @@ public class VehicleServiceImpl implements VehicleService {
 		return vehicleDao.searchVehicleById(vehicleId);
 	}
 
+
+	@Override
 	public VehicleInsurancePlan searchPlanByDurationInsuranceType(String vehicleType, String insuranceType,
 			int planDuration) {
 		VehicleInsurancePlan vehiclePlan;
@@ -154,6 +156,28 @@ public class VehicleServiceImpl implements VehicleService {
 		}
 		return vehiclePlan;
 
+
 	}
+
+	
+	@Override
+	public List<VehicleInsurance> viewAllVehicleInsurances() {
+	
+		return vehicleInsuranceDao.viewAllVehicleInsurance();
+	}
+
+	@Override
+	public List<VehicleInsurance> viewAllVehicleInsurancesByUserId(int userId) {
+		// TODO Auto-generated method stub
+		return vehicleInsuranceDao.viewAllVehicleInsurancesByUserId(userId);
+	}
+
+	@Override
+	public List<VehicleInsurance> viewAllVehicleInsurancesByUserName(String userName) {
+		// TODO Auto-generated method stub
+		return vehicleInsuranceDao.viewAllVehicleInsurancesByUserName(userName);
+	}
+
+	
 
 }

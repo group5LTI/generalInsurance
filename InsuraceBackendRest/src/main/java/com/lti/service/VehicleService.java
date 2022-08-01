@@ -16,6 +16,7 @@ public interface VehicleService {
 	
 	VehicleInsurance searchVehicleInsuranceById(int vehicleInsuranceId);
 	
+	
 //	boolean renewVehicleInsurance(RenewVInsuranceDto vehicleInsurance);
 	
 	String RegisterVehiclePlan(VehicleInsurancePlan vehicleInsurancePlan);
@@ -30,11 +31,23 @@ public interface VehicleService {
 
 	Insurance addVehicleInsurance(Insurance vi);
 	
-//	VehicleInsurance updateBuyInsurance(VehicleInsurance vehicleInsurance);
-
-//	String RegisterVehiclePlan(VehicleInsurancePlan vehicleInsurancePlan);
+//<<<<<<< HEAD
+////	VehicleInsurance updateBuyInsurance(VehicleInsurance vehicleInsurance);
+//
+////	String RegisterVehiclePlan(VehicleInsurancePlan vehicleInsurancePlan);
+//
+//	VehicleInsurancePlan searchPlanByDurationInsuranceType(String vehicleType,String insuranceType,int planDuration);
+//=======
 
 	VehicleInsurancePlan searchPlanByDurationInsuranceType(String vehicleType,String insuranceType,int planDuration);
+
+	List<VehicleInsurance> viewAllVehicleInsurances();
+
+	List<VehicleInsurance> viewAllVehicleInsurancesByUserId(int userId);
+	
+	List<VehicleInsurance> viewAllVehicleInsurancesByUserName(String userName);
+	
+//>>>>>>> cdae998a8de68d50a6b33b9ed34e137979e7b7e9
 	
 	
 }

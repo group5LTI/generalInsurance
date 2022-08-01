@@ -71,7 +71,7 @@ public class VehicleInsurancePlan {
 		this.insuranceType = insuranceType;
 	}
 	
-	
+	@JsonIgnore
 	public List<VehicleInsurance> getVehicleInsurances() {
 		return vehicleInsurances;
 	}

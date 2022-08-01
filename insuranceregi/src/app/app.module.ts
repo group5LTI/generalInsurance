@@ -28,10 +28,12 @@ import { TravelCalculatorComponent } from './travel-calculator/travel-calculator
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { ClaimInsuranceComponent } from './claim-insurance/claim-insurance.component';
 import { VehicleCalculatorComponent } from './vehicle-calculator/vehicle-calculator.component';
-import { TravelInsurance } from './travel-insurance';
+// import { TravelInsurance } from './travel-insurance';
 import { TravelPremiumComponent } from './travel-premium/travel-premium.component';
 import { CalPageComponent } from './cal-page/cal-page.component';
 import { AdminVerifyClaimComponent } from './admin-verify-claim/admin-verify-claim.component';
+import { UploadDocumentComponent } from './upload-document/upload-document.component';
+import { ViewAllComponent } from './view-all/view-all.component';
 
 
 @NgModule({
@@ -60,9 +62,9 @@ import { AdminVerifyClaimComponent } from './admin-verify-claim/admin-verify-cla
     ClaimInsuranceComponent,
     VehicleCalculatorComponent,
     CalPageComponent,
-    AdminVerifyClaimComponent
-
-
+    AdminVerifyClaimComponent,
+    UploadDocumentComponent,
+    ViewAllComponent,
     
   ],
   imports: [

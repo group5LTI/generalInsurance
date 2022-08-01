@@ -12,6 +12,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "tbl_travelinsurance")
 public class TravelInsurance {
@@ -78,15 +80,17 @@ public class TravelInsurance {
 		this.amountPaid = amountPaid;
 	}
 
-	
+	@JsonIgnore
 	public TravelInsurancePlan getTravelInsurancePlan() {
 		return travelInsurancePlan;
 	}
 
 	public void setTravelInsurancePlan(TravelInsurancePlan travelInsurancePlan) {
 		this.travelInsurancePlan = travelInsurancePlan;
+	}public TravelInsurance() {
+		// TODO Auto-generated constructor stub
 	}
-
+	@JsonIgnore
 	public Customer getCustomer() {
 		return customer;
 	}
@@ -94,7 +98,7 @@ public class TravelInsurance {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-
+	@JsonIgnore
 	public Insurance getInsurance() {
 		return insurance;
 	}

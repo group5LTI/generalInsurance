@@ -1,6 +1,6 @@
 export class RenewRegisterVInsuranceDto {
 
-    vehicleId:number;
+    vehicleInsuranceId:number;
     userId:number;
     planDuration:number;
     planType:string;

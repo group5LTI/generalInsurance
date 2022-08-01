@@ -94,6 +94,7 @@ public class Customer {
 	public void setVehicles(List<Vehicle> vehicles) {
 		this.vehicles = vehicles;
 	}
+	
 	@JsonIgnore
 	public List<TravelInsurance> getTravelInsurances() {
 		return travelInsurances;
@@ -102,6 +103,7 @@ public class Customer {
 	public void setTravelInsurances(List<TravelInsurance> travelInsurances) {
 		this.travelInsurances = travelInsurances;
 	}
+	
 	@JsonIgnore
 	public List<InsuranceDocument> getInsuranceDocuments() {
 		return insuranceDocuments;
