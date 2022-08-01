@@ -16,6 +16,7 @@ public interface VehicleService {
 	
 	VehicleInsurance searchVehicleInsuranceById(int vehicleInsuranceId);
 	
+	
 //	boolean renewVehicleInsurance(RenewVInsuranceDto vehicleInsurance);
 	
 	String RegisterVehiclePlan(VehicleInsurancePlan vehicleInsurancePlan);
@@ -30,7 +31,7 @@ public interface VehicleService {
 
 	Insurance addVehicleInsurance(Insurance vi);
 	
-	
+	VehicleInsurancePlan searchPlanByDurationInsuranceType(String vehicleType,String insuranceType,int planDuration);
 	
 	
 }

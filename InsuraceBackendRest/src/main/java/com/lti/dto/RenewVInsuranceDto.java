@@ -2,16 +2,18 @@ package com.lti.dto;
 
 public class RenewVInsuranceDto {
 
-	int vehicleId;
+	int vehicleInsuranceId;
 	int userId;
 	int planDuration;
 	String planType;
 	
-	public int getVehicleId() {
-		return vehicleId;
+	
+	
+	public int getVehicleInsuranceId() {
+		return vehicleInsuranceId;
 	}
-	public void setVehicleId(int vehicleId) {
-		this.vehicleId = vehicleId;
+	public void setVehicleInsuranceId(int vehicleInsuranceId) {
+		this.vehicleInsuranceId = vehicleInsuranceId;
 	}
 	public int getUserId() {
 		return userId;

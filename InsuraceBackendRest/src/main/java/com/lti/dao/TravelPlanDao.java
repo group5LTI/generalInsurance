@@ -15,4 +15,6 @@ public interface TravelPlanDao {
 	TravelInsurancePlan searchPlanByPeoplePlanLocationDurationType(String planType,int noOfPeople,String location,int duration);
 	
 	List<TravelInsurancePlan> viewAllTravelPlans();
+
+	TravelInsurancePlan searchPlanByPeoplePlanLocationDuration(int noOfPeople, String location, int duration);
 }

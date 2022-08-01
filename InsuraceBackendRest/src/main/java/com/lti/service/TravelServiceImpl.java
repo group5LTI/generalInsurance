@@ -78,4 +78,10 @@ public class TravelServiceImpl implements TravelService {
 		}
 	}
 
+	@Override
+	public TravelInsurancePlan searchPlanByPeoplePlanLocationDuration(int noOfPeople, String location, int duration) {
+		// TODO Auto-generated method stub
+		return travelPlanDao.searchPlanByPeoplePlanLocationDuration(noOfPeople,location,duration);
+	}
+
 }

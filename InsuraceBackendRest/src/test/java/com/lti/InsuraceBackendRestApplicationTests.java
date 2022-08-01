@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.lti.dao.CustomerDao;
+import com.lti.dao.InsuranceDocumentDao;
+import com.lti.entity.InsuranceDocument;
 
 @SpringBootTest
 class InsuraceBackendRestApplicationTests {
@@ -15,5 +17,5 @@ class InsuraceBackendRestApplicationTests {
 //		boolean b=dao.login("Ash", "1234");
 //		assertTrue(b);
 	}
-
+	
 }

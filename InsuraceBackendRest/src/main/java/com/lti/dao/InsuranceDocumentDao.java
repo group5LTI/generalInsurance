@@ -10,7 +10,7 @@ public interface InsuranceDocumentDao {
 	
 	InsuranceDocument searchInsuranceDocumentByInsuranceDocumentId(int insuranceDocumentId);
 	
-//	InsuranceDocument searchInsuranceDocumentByInsuranceId(int insuranceId);
+	InsuranceDocument searchInsuranceDocumentByInsuranceId(int insuranceId);
 	
 	List<InsuranceDocument> viewAllInsurancesDocuments();
 }

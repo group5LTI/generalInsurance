@@ -7,12 +7,12 @@
             <form  #renewvehicleinsuranceForm="ngForm" (ngSubmit)="renewInsurance()" novalidate>
                 <div class="travel-details">
                     <div class="input-box">
-                        <span class="details">Enter Vehicle ID</span>
-                        <input type="number" name="vehicleId" min="1000" [(ngModel)]="renewDto.vehicleId" placeholder="Enter Plan Duration" required>
+                        <span class="details">Enter Vehicle Insurance ID</span>
+                        <input type="number" name="vehicleId" min="1000" [(ngModel)]="renewDto.vehicleInsuranceId" placeholder="Enter Plan Duration" required/>
                     </div>
                     <div class="input-box">
                         <span class="details">Plan Duration</span>
-                        <input type="number" name="planDuration" min="1"  [(ngModel)]="renewDto.planDuration" placeholder="Enter Plan Duration" required>
+                        <input type="number" name="planDuration" min="1"  [(ngModel)]="renewDto.planDuration" placeholder="Enter Plan Duration" required/>
                     </div>
                     <div class="input-box">
                         <span class="details">Plan Type</span>

@@ -17,5 +17,7 @@ public interface TravelService {
 
 	TravelInsurancePlan searchPlanByPeoplePlanLocationDurationType(String planType,int noOfPeople,String location,int duration);
 
+	TravelInsurancePlan searchPlanByPeoplePlanLocationDuration(int noOfPeople,String location,int duration);
+	
 	Insurance addTravelInsurance(Insurance ti);
 }

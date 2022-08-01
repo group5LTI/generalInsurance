@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AddVehiclePlan } from '../add-vehicle-plan';
 import { VehicleServiceService } from '../vehicle-service.service';
 
@@ -10,7 +11,7 @@ import { VehicleServiceService } from '../vehicle-service.service';
 export class AddVehiclePlanComponent implements OnInit {
 addVehicleplan:AddVehiclePlan=new AddVehiclePlan();
 message:string;
-  constructor(private vehicleService:VehicleServiceService) { }
+  constructor(private vehicleService:VehicleServiceService,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -22,7 +23,7 @@ message:string;
       msg=>{
         this.message=msg;
         alert(this.message);
-        
+        this.router.navigate(['adminLink']);
       }
     );
     

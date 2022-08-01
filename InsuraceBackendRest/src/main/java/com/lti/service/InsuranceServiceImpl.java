@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 
 import com.lti.dao.InsuranceDocumentDao;
 import com.lti.entity.InsuranceDocument;
+import com.lti.exception.CheckIdException;
+import com.lti.exception.InsuranceNotFound;
 
 @Service
 public class InsuranceServiceImpl implements InsuranceService {
@@ -25,4 +27,26 @@ public class InsuranceServiceImpl implements InsuranceService {
 		}
 	}
 
+	@Override
+	public InsuranceDocument searchInsuranceDocumentByInsuranceId(int insuranceId) {
+		// TODO Auto-generated method stub
+		return insuranceDocumentDao.searchInsuranceDocumentByInsuranceId(insuranceId);
+	}
+
+	@Override
+	public InsuranceDocument updateInsuranceDocument(InsuranceDocument id) {
+		try {
+			if(id.getInsurance().getInsuranceId()==0) {
+				throw new CheckIdException("Check id you mentioned");}
+			else if(insuranceDocumentDao.searchInsuranceDocumentByInsuranceId(id.getInsurance().getInsuranceId())==null)
+				{throw new InsuranceNotFound("No insurance Found For this account");}
+			InsuranceDocument id1 = insuranceDocumentDao.addOrUpdateInsuranceDocument(id);
+			System.out.println("Indurance document updated");
+			return id1;
+		} catch (Exception e) {
+			return null;
+		}
+	}
+
+	
 }
