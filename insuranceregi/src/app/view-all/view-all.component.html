@@ -1,0 +1,24 @@
+<div>
+<button type="button" class="slide-btn" (click)="getInsurances()">
+    View Insurances
+</button>
+</div>
+<table border="1">
+    <tr>
+        <th>Vehicle_Insurance_Id</th>
+        <th>Issue Date</th>
+        <th>Years</th>
+        <th>Amount Paid</th>
+        <!-- <th>Vehicle</th>
+        <th>Vehicle Plan</th> -->
+    </tr>
+    <tr *ngFor="let ins of insurances">
+        <td>{{ins.vehicleInsuranceId}}</td>
+        <td>{{ins.issueDate}}</td>
+        <td>{{ins.years}}</td>
+        <td>{{ins.amountPaidV}}</td>
+        <!-- <td>{{ins.vehicle}}</td>
+        <td>{{ins.vehiclePlan}}</td> -->
+    </tr>
+
+</table>

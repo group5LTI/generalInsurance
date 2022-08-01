@@ -30,6 +30,7 @@ public interface VehicleService {
 
 	Insurance addVehicleInsurance(Insurance vi);
 	
+	List<VehicleInsurance> viewAllVehicleInsurances();
 	
 	
 	

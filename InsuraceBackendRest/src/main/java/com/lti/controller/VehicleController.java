@@ -3,6 +3,8 @@ package com.lti.controller;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.io.File;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,7 @@ import com.lti.dto.BuyVInsuranceDto;
 import com.lti.dto.InsuranceDocumentDto;
 import com.lti.dto.RenewVInsuranceDto;
 import com.lti.dto.RenewedVInsurance;
+import com.lti.dto.viewAllDto;
 import com.lti.entity.Customer;
 import com.lti.entity.Insurance;
 import com.lti.entity.InsuranceDocument;
@@ -173,11 +176,19 @@ public class VehicleController {
 //	@GetMapping("/vehicle")
 //    public List<VehicleInsurance> searchVehicleIdByUsername(@RequestParam("userName") String uName) {
 //        return vehicleService.;
-	// }
+//	 }
 //	@PostMapping(value="/addvehicle")
 //	public Vehicle registervehicle(@RequestBody Vehicle vehicle) {
 //		Vehicle  message = vehicleService.ResgisterVehicle(vehicle);
 //		return message;
 //		
 //	}
+	
+	@GetMapping("/viewAll")
+	public List<VehicleInsurance> viewAllVehicleInsurances()
+	{
+		
+		return vehicleService.viewAllVehicleInsurances();
+	}
+	
 }

@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { BuyVInsuranceDto } from './buy-vinsurance-dto';
 import { Observable } from 'rxjs';
 import { AddVehiclePlan } from './add-vehicle-plan';
+import { VehicleInsurance } from './vehicle-insurance';
+import { ViewAlldto } from './view-alldto';
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +19,9 @@ export class VehicleServiceService {
   AddVehiclePlan(addVplan:AddVehiclePlan):Observable<string>
   {
     return this.httpClient.post("http://localhost:9090/vehicles/registervehicleplan",addVplan,{responseType:'text'})
+  }
+  getInsurances():Observable<VehicleInsurance[]>
+  {
+    return this.httpClient.get<VehicleInsurance[]>("http://localhost:9090/vehicles/viewAll");
   }
 }

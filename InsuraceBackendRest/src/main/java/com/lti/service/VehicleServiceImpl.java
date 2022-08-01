@@ -145,6 +145,13 @@ public class VehicleServiceImpl implements VehicleService {
 	}
 
 	
+	@Override
+	public List<VehicleInsurance> viewAllVehicleInsurances() {
+	
+		return vehicleInsuranceDao.viewAllVehicleInsurance();
+	}
+
+	
 
 	
 
