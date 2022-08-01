@@ -45,7 +45,7 @@ public class TravelController {
 		TravelSearchDto trdto = new TravelSearchDto();
 		ReturnMessageWhileBuying returnMessage = new ReturnMessageWhileBuying();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		System.out.println(travelInsurance.getTravelEndDate());
+
 		LocalDate end = LocalDate.parse(travelInsurance.getTravelEndDate(),formatter);
 		LocalDate start = LocalDate.parse(travelInsurance.getTravelStartDate(),formatter);
 		Period months = Period.between(start, end);

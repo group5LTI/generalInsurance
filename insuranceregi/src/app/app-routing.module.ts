@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutUsComponent } from './about-us/about-us.component';
 import { AddTravelPlanComponent } from './add-travel-plan/add-travel-plan.component';
 import { AddVehiclePlanComponent } from './add-vehicle-plan/add-vehicle-plan.component';
 import { AdminVerifyClaimComponent } from './admin-verify-claim/admin-verify-claim.component';
@@ -79,6 +80,9 @@ const routes: Routes = [
 },
 {
   path:'updateProfileLink',component:UpdateProfileComponent
+},
+{
+  path:'AboutLink',component:AboutUsComponent
 },
 {
   path:'forgotLink',component:ForgotpasswordComponent

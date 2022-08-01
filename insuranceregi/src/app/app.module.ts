@@ -33,6 +33,7 @@ import { TravelPremiumComponent } from './travel-premium/travel-premium.componen
 import { CalPageComponent } from './cal-page/cal-page.component';
 import { AdminVerifyClaimComponent } from './admin-verify-claim/admin-verify-claim.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +63,7 @@ import { AdminVerifyClaimComponent } from './admin-verify-claim/admin-verify-cla
     AdminVerifyClaimComponent
 
 
+    
   ],
   imports: [
     BrowserModule,
