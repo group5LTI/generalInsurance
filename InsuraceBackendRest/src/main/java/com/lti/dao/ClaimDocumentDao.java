@@ -2,7 +2,7 @@ package com.lti.dao;
 
 import java.util.List;
 
-import com.lti.entity.Claim;
+import com.lti.entity.ClaimInurance;
 import com.lti.entity.ClaimDocument;
 
 public interface ClaimDocumentDao {

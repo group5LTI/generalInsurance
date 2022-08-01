@@ -2,13 +2,13 @@ package com.lti.dao;
 
 import java.util.List;
 
-import com.lti.entity.Claim;
+import com.lti.entity.ClaimInurance;
 
 public interface ClaimDao {
 
-	Claim AddOrUpdateClaim(Claim claim);
+	ClaimInurance AddOrUpdateClaim(ClaimInurance claim);
 
-	Claim searchClaimById(int claimId);
+	ClaimInurance searchClaimById(int claimId);
 
-	List<Claim> viewAllClaims();
+	List<ClaimInurance> viewAllClaims();
 }

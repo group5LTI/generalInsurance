@@ -5,6 +5,7 @@ import { AddTravelPlanComponent } from './add-travel-plan/add-travel-plan.compon
 import { AddVehiclePlanComponent } from './add-vehicle-plan/add-vehicle-plan.component';
 import { AdminComponent } from './admin/admin.component';
 import { BuyComponent } from './buy-insurance/buy-insurance.component';
+import { ClaimInsuranceComponent } from './claim-insurance/claim-insurance.component';
 import { ContactComponent } from './contact/contact.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
@@ -72,6 +73,9 @@ const routes: Routes = [
 },
 {
   path:'addTravelPlan',component:AddTravelPlanComponent
+},
+{
+  path:'claimLink',component:ClaimInsuranceComponent
 }
 
 

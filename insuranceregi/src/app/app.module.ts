@@ -26,6 +26,7 @@ import { AddVehiclePlanComponent } from './add-vehicle-plan/add-vehicle-plan.com
 import { AddTravelPlanComponent } from './add-travel-plan/add-travel-plan.component';
 import { UploadDocumentComponent } from './upload-document/upload-document.component';
 import { ViewAllComponent } from './view-all/view-all.component';
+import { ClaimInsuranceComponent } from './claim-insurance/claim-insurance.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { ViewAllComponent } from './view-all/view-all.component';
     AddTravelPlanComponent,
     UploadDocumentComponent,
     ViewAllComponent,
+    ClaimInsuranceComponent,
     
   ],
   imports: [

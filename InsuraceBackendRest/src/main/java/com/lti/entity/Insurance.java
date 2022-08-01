@@ -36,7 +36,7 @@ public class Insurance {
 	
 	
 	@OneToMany(mappedBy = "insurance")
-	List<Claim> claims;
+	List<ClaimInurance> claims;
 	
 	@OneToOne(mappedBy = "insurance")
 	InsuranceDocument insuranceDocument;
@@ -66,11 +66,11 @@ public class Insurance {
 	}
 
 	@JsonIgnore
-	public List<Claim> getClaims() {
+	public List<ClaimInurance> getClaims() {
 		return claims;
 	}
 
-	public void setClaims(List<Claim> claims) {
+	public void setClaims(List<ClaimInurance> claims) {
 		this.claims = claims;
 	}
 
