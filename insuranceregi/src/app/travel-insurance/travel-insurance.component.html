@@ -1,18 +1,10 @@
+<app-dashboard-nav></app-dashboard-nav>
 <body>
     <div class="container">
         <div class="title">Travel Insurance</div><br>
         <div class="content">
             <form #regForm="ngForm" (ngSubmit)="addTravelInsurance()" novalidate>
                 <div class="user-details">
-                    <!-- <div class="input-box">
-                        <span class="details">Insurance ID</span>
-                        <input type="number" placeholder="Enter Insurance ID" required>
-                    </div> -->
-
-                    <!-- <div class="input-box">
-                        <span class="details">Plan ID</span>
-                        <input type="number" placeholder="Enter Plan ID" required>
-                    </div> -->
                     <div class="input-box">
                         <span class="details">Location</span>
                         <input type="text" name="location" #location="ngModel"
@@ -23,17 +15,17 @@
                     </div>
                     <div class="input-box">
                         <span class="details">Travel Start Date</span>
-                        <input type="date" name="travelstartDate" #travelstartDate="ngModel" id="travelstartDate"
-                            placeholder="Enter Start Date" [(ngModel)]="buyTDto.travelstartDate" required
-                            [class.is-invali]="travelstartDate.invalid && travelstartDate.touched">
-                            <small class="text-danger" [class.d-none]="travelstartDate.valid || travelstartDate.untouched">Start Date is
+                        <input type="date" name="travelStartDate" #travelStartDate="ngModel" id="travelStartDate"
+                            placeholder="Enter Start Date" [(ngModel)]="buyTDto.travelStartDate" required
+                            [class.is-invali]="travelStartDate.invalid && travelStartDate.touched">
+                            <small class="text-danger" [class.d-none]="travelStartDate.valid || travelStartDate.untouched">Start Date is
                             Required</small>
                     </div>
                     <div class="input-box">
                         <span class="details">Travel End Date</span>
-                        <input type="date" name="travelendDate" #travelendDate="ngModel" id="travelendDate"
-                            placeholder="Enter End Date" [(ngModel)]="buyTDto.travelendDate" required [class.is-invalid] ="travelendDate.invalid && travelendDate.touched">
-                        <small class="text-danger" [class.d-none]="travelendDate.valid || travelendDate.untouched">End Date is Required</small>
+                        <input type="date" name="travelEndDate" #travelEndDate="ngModel" id="travelEndDate"
+                            placeholder="Enter End Date" [(ngModel)]="buyTDto.travelEndDate" required [class.is-invalid] ="travelEndDate.invalid && travelEndDate.touched">
+                        <small class="text-danger" [class.d-none]="travelEndDate.valid || travelEndDate.untouched">End Date is Required</small>
                     </div>
                     <!-- <div class="input-box">
                         <span class="details">Amount Paid</span>
@@ -43,12 +35,21 @@
                         <span class="details">Plan Type</span>
                         <select (blur)="validatePlan(planType.value)" (change)="validatePlan(planType.value)" name="planType" #planType="ngModel" [(ngModel)]="buyTDto.planType" id="dropdown">
                             <option value="00">Select Plan</option> 
-                            <option value="01">Silver</option>
-                            <option value="02">Gold</option>
-                            <option value="03">Diamond</option>
+                            <option value="Silver">Silver</option>
+                            <option value="Gold">Gold</option>
+                            <option value="Diamond">Diamond</option>
                         </select>
                         <small class="text-danger" [class.d-none]="!planHasError || planType.untouched">Please Choose a
                             Plan</small>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">NoOfPeople</span>
+                        <input type="number" name="noOfPeople" #people="ngModel"
+                            placeholder="Enter no Of people traveling" [(ngModel)]="buyTDto.noOfPeople" required
+                            [class.is-invali]="people.invalid && people.touched">
+                        <small class="text-danger" [class.d-none]="people.valid || people.untouched">No of people is
+                            Required</small>
                     </div>
 
                 </div>

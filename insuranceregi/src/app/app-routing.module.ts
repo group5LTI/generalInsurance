@@ -56,6 +56,7 @@ const routes: Routes = [
   path:'travelLink',component:TravelComponent
 },
 {
+
   path:'claimLink',component:ClaimInsuranceComponent
 },
 {
@@ -68,10 +69,12 @@ const routes: Routes = [
   path:'travelCal',component:TravelCalculatorComponent
 },
 {
-  path:'vehicleCal',component:VehicleCalculatorComponent},{
+  path:'vehicleCal',component:VehicleCalculatorComponent},
+{
   path:'travelLinkA',component:TravelComponent
 },
 {
+
   path:'paymentLink',component:PaymentPageComponent
 },
 {
@@ -89,9 +92,6 @@ const routes: Routes = [
 {
   path:'adminclaimLink',component:AdminVerifyClaimComponent
 }
-
-
-
 ];
 
 @NgModule({

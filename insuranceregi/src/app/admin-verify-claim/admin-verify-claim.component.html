@@ -1,37 +1,68 @@
 <app-admin-nav></app-admin-nav>
-	
-<h1>Approve Claim Data</h1>
+<div class="container">	
+
 <!-- <div class="d-flex justify-content-center">
 <div class="spinner-border" role="status" >
 	<span class="sr-only" id="loading">Loading...</span>
 </div>
 </div> -->
-<table class="table" id='tab'>
-	<thead>
-	<tr>
-		<th scope="col">Name</th>
-		<th scope="col">claim Amount</th>
-		<th scope="col">vehicle Type</th>
-		<th scope="col">reason</th>
-        <th scope="col">Approve</th>
-	</tr>
-	</thead>
-	<!-- <tbody>
-	<tr >
-        <td>{{data.vehiclePlanId}}</td>
-		<td>{{ data.plannedAmountV }}</td>
-		<td>{{ data.noOfYears }}</td>
-		<td>{{ data.insuranceType }}</td>
-		<td>{{ data.planType }}</td>
-	</tr>
-	</tbody> -->
-    <tbody>
-	<tr >
-        <td>Raj</td>
-		<td>9000</td>
-		<td>twoWheeler</td>
-		<td>Accident</td>
-		<td><button>Approve</button></td>
-	</tr>
-	</tbody>
-</table>	
+
+  <!--/.col-->
+  <div class="col-sm-12 col-xs-16">
+	<div class="single-we-do-box text-center">
+		<div class="we-do-description">
+			<div class="we-do-info">
+				
+				<!--/.we-do-img-->
+				<div class="we-do-topics">
+					<h2>
+						<a >
+							Verify claim
+						</a>
+					</h2>
+				</div>
+				<!--/.we-do-topics-->
+			</div>
+			<!--/.we-do-info-->
+			<div class="we-do-comment">
+				<table class="table" id='tab'>
+					<thead>
+					<tr>
+						<th scope="col">Name</th>
+						<th scope="col">claim Amount</th>
+						<th scope="col">vehicle Type</th>
+						<th scope="col">reason</th>
+						<th scope="col">viewDocument</th>
+						<th scope="col">Approve</th>
+					</tr>
+					</thead>
+					<!-- <tbody>
+					<tr >
+						<td>{{data.vehiclePlanId}}</td>
+						<td>{{ data.plannedAmountV }}</td>
+						<td>{{ data.noOfYears }}</td>
+						<td>{{ data.insuranceType }}</td>
+						<td>{{ data.planType }}</td>
+					</tr>
+					</tbody> -->
+					<tbody>
+					<tr >
+						<td>Raj</td>
+						<td>9000</td>
+						<td>twoWheeler</td>
+						<td>Accident</td>
+						<td>DocumentPath</td>
+						<td><input type="button" class="btn1" value="Approve"></td>
+					</tr>
+					</tbody>
+				</table>	
+				<!-- button close -->
+				
+			</div>
+			<!--/.we-do-comment-->
+		</div>
+		<!--/.we-do-description-->
+	</div>
+	<!--/.single-we-do-box-->
+</div>
+<!--/.col--></div>

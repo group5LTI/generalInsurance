@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BuyVInsuranceDto } from './buy-vinsurance-dto';
-import { Observable } from 'rxjs';
+import { Observable, ObservableInput } from 'rxjs';
 import { VehicleInsurancePlan } from './vehicle-insurance-plan';
+import { AdminVerifyClaimComponent } from './admin-verify-claim/admin-verify-claim.component';
 
 @Injectable({
   providedIn: 'root'

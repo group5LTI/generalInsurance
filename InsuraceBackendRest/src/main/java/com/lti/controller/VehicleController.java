@@ -77,9 +77,13 @@ public class VehicleController {
 					vi.setVehicle(vehicle);
 					vi.setAmountPaidV(vp.getPlannedAmountV());
 					vi.setYears(vehicleInsurance.getPlanDuration());
-
 					VehicleInsurance b = vehicleService.buyInsurance(vi);
 					if (b != null) {
+					Insurance i = new Insurance();
+					i.setVehicleInsurance(b);
+					Insurance insurance = vehicleService.addVehicleInsurance(i);
+					VehicleInsurance vf = vehicleService.searchVehicleInsuranceById(b.getVehicleInsuranceId());
+					vf.setInsurance(insurance);
 						return true;
 					} else {
 

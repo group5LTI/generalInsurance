@@ -28,7 +28,7 @@ user:User = new User();
       this.router.navigate(['/addTravelPlan'])
     }
     else{
-      this.router.navigate(['/travelpageLink']);
+      this.router.navigate(['/travelLink']);
     }
   }
 
