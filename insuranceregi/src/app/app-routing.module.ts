@@ -16,6 +16,7 @@ import { RenewInsuranceComponent } from './renew-insurance/renew-insurance.compo
 import { TravelComponent } from './travel-insurance/travel-insurance.component';
 import { TravelPageComponent } from './travel-page/travel-page.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { ViewAllComponent } from './view-all/view-all.component';
 
 const routes: Routes = [
   {
@@ -65,6 +66,9 @@ const routes: Routes = [
 },
 {
   path:'addVehiclePlan',component:AddVehiclePlanComponent
+},
+{
+  path:'viewLink',component:ViewAllComponent
 },
 {
   path:'addTravelPlan',component:AddTravelPlanComponent

@@ -12,6 +12,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "tbl_vehicleinsurance")
 public class VehicleInsurance {
@@ -69,6 +71,7 @@ public void setAmountPaidV(double amountPaidV) {
 	this.amountPaidV = amountPaidV;
 }
 
+@JsonIgnore
 public VehicleInsurancePlan getVehicleInsurancePlan() {
 	return vehicleInsurancePlan;
 }
@@ -77,6 +80,7 @@ public void setVehicleInsurancePlan(VehicleInsurancePlan vehicleInsurancePlan) {
 	this.vehicleInsurancePlan = vehicleInsurancePlan;
 }
 
+@JsonIgnore
 public Vehicle getVehicle() {
 	return vehicle;
 }
@@ -85,6 +89,7 @@ public void setVehicle(Vehicle vehicle) {
 	this.vehicle = vehicle;
 }
 
+@JsonIgnore
 public Insurance getInsurance() {
 	return insurance;
 }

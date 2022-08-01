@@ -31,7 +31,11 @@ public interface VehicleService {
 
 	Insurance addVehicleInsurance(Insurance vi);
 	
+
 	VehicleInsurancePlan searchPlanByDurationInsuranceType(String vehicleType,String insuranceType,int planDuration);
+
+	List<VehicleInsurance> viewAllVehicleInsurances();
+	
 	
 	
 }

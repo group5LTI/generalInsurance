@@ -25,6 +25,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
 import { AddVehiclePlanComponent } from './add-vehicle-plan/add-vehicle-plan.component';
 import { AddTravelPlanComponent } from './add-travel-plan/add-travel-plan.component';
 import { UploadDocumentComponent } from './upload-document/upload-document.component';
+import { ViewAllComponent } from './view-all/view-all.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { UploadDocumentComponent } from './upload-document/upload-document.compo
     AddVehiclePlanComponent,
     AddTravelPlanComponent,
     UploadDocumentComponent,
+    ViewAllComponent,
     
   ],
   imports: [
