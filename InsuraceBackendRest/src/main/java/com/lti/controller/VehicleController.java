@@ -23,8 +23,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.lti.dto.BuyRegisterVInsuranceDto;
 import com.lti.dto.BuyVInsuranceDto;
 import com.lti.dto.InsuranceDocumentDto;
+import com.lti.dto.PremiumVehicleCalculate;
 import com.lti.dto.RenewVInsuranceDto;
 import com.lti.dto.RenewedVInsurance;
+import com.lti.dto.ReturnMessageVehiclePremium;
 import com.lti.entity.Customer;
 import com.lti.entity.Insurance;
 
@@ -191,6 +193,24 @@ public class VehicleController {
 	public VehicleInsurancePlan searchVehiclePlan(@RequestParam("planId") int VplanId ) {
 		return vehicleService.searchPlanById(VplanId);
 	}
-
+	
+	@GetMapping(value="/calculatevehicle")
+	public ReturnMessageVehiclePremium calculateTravelPremium(@RequestBody PremiumVehicleCalculate pvc) {
+		
+		VehicleInsurancePlan vp = vehicleService.searchPlanByDurationInsuranceType(pvc.getVehicleType(),
+				pvc.getInsuranceType(), pvc.getNoOfYears());
+		ReturnMessageVehiclePremium msg = new ReturnMessageVehiclePremium();
+		if(vp!=null) {
+			msg.setMessage("For your preferences we have found this plan");
+			msg.setVip(vp);
+			return msg;
+		}
+		else {
+			msg.setMessage("No plan Available!");
+			msg.setVip(null);
+			return msg;
+	
+		}
+	}
 
 }

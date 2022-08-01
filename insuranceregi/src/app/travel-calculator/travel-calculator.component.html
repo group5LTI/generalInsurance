@@ -15,23 +15,23 @@
                                     <div class="container">
                                         <div class="title">Travel Insurance</div><br>
                                         <div class="content">
-                                            <!-- <form #calTravel="ngForm" > --><form>
+                                            <form #calTravel="ngForm" (ngSubmit)="calcTravel()">
                                                 <div class="user-details ">
                                                     <div class="input-box">
                                                         <span class="details">Location</span>
-                                                        <input type="text"  name="location" placeholder="Enter Location" required>
+                                                        <input type="text"  name="location" placeholder="Enter Location" [(ngModel)]="TravelInput.location" required>
                                                     </div>
                                                     <div class="input-box">
                                                         <span class="details">No of People</span>
-                                                        <input type="number" name="noofpeople" placeholder="No of People" required>
+                                                        <input type="number" name="noOfPeople" placeholder="No of People" [(ngModel)]="TravelInput.noOfPeople" required>
                                                     </div>
                                                     <div class="input-box">
                                                         <span class="details">Travel Start Date</span>
-                                                        <input type="date" name="start" placeholder="Enter Start Date" required>
+                                                        <input type="date" name="travelStartDate" placeholder="Enter Start Date" [(ngModel)]="TravelInput.travelStartDate" required>
                                                     </div>
                                                     <div class="input-box">
                                                         <span class="details">Travel End Date</span>
-                                                        <input type="date" name="end" placeholder="Enter End Date" required>
+                                                        <input type="date" name="travelEndDate" placeholder="Enter End Date" [(ngModel)]="TravelInput.travelEndDate" required>
                                                     </div>
 
 
@@ -77,10 +77,9 @@
                                 <!--/.we-do-info-->
                                 <div class="we-do-comment">
 
-                                    <h1>Silver</h1>
+                                    <!-- <h1>{{data.planType}}</h1> -->
                                     <ul class="plan-lists">
-                                        <li>Medical Expenses
-                                            rs 100,000 </li>
+                                        <!-- <li>Medical Expenses rs {{data.plannedAmount}} </li> -->
                                         <li>Trip Cancellation 40,000</li>
                                         <li>Baggage Loss
                                             rs5,000</li>

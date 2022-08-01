@@ -21,5 +21,9 @@ public interface TravelService {
 	Insurance addTravelInsurance(Insurance ti);
 	
 //	TravelInsurancePlan searchPlanByPeoplePlanLocationDurationType1(CalTravelDto calTravelDto);
+	
+	TravelInsurancePlan searchPlanByPeoplePlanLocationDuration(int noOfPeople,String location,int duration);
+	
+	
 
 }

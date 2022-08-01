@@ -12,6 +12,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "tbl_travel_plan")
 public class TravelInsurancePlan {
@@ -73,7 +75,7 @@ public class TravelInsurancePlan {
 	public void setPlannedAmount(double plannedAmount) {
 		this.plannedAmount = plannedAmount;
 	}
-
+ @JsonIgnore
 	public List<TravelInsurance> getTravelInsurances() {
 		return travelInsurances;
 	}

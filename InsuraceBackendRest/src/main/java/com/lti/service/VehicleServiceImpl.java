@@ -144,8 +144,16 @@ public class VehicleServiceImpl implements VehicleService {
 		return vehicleDao.searchVehicleById(vehicleId);
 	}
 
-	
+	public VehicleInsurancePlan searchPlanByDurationInsuranceType(String vehicleType, String insuranceType,
+			int planDuration) {
+		VehicleInsurancePlan vehiclePlan;
+		try {
+			vehiclePlan = vehiclePlanDao.searchPlanByDurationInsuranceType(vehicleType, insuranceType, planDuration);
+		} catch (Exception e) {
+			return null;
+		}
+		return vehiclePlan;
 
-	
+	}
 
 }

@@ -63,21 +63,61 @@ public class VehiclePlanDaoImpl implements VehiclePlanDao {
 
 	}
 	
-	@Override
-	public VehicleInsurancePlan searchPlanByVehicleTypeYear(VehicleSearchDto dto1) {
-		String jpql = "select vp from VehicleInsurancePlan vp where vp.planType=:vType and vp.noOfYears >=:p  and LOWER(tp.travelLocation)= LOWER(:loc) and tp.travleDuration>=:d";
-        TypedQuery<VehicleInsurancePlan> qry = em.createQuery(jpql,VehicleInsurancePlan.class);
-        qry.setParameter("vType", dto1.getVehicleType());
-        qry.setParameter("NoYear", dto1.getNoOfYears());
-        qry.setParameter("iType", dto1.getInsuranceType());
-		VehicleInsurancePlan vip;
-		try {
-			vip=qry.getSingleResult();
-		} catch (Exception e) {
-			return null;
-		}return vip;
-	}
+//	@Override
+//	public VehicleInsurancePlan searchPlanByVehicleTypeYear(VehicleSearchDto dto1) {
+//		String jpql = "select vp from VehicleInsurancePlan vp where vp.planType=:vType and vp.noOfYears >=:p  and LOWER(tp.travelLocation)= LOWER(:loc) and tp.travleDuration>=:d";
+//        TypedQuery<VehicleInsurancePlan> qry = em.createQuery(jpql,VehicleInsurancePlan.class);
+//        qry.setParameter("vType", dto1.getVehicleType());
+//        qry.setParameter("NoYear", dto1.getNoOfYears());
+//        qry.setParameter("iType", dto1.getInsuranceType());
+//		VehicleInsurancePlan vip;
+//		try {
+//			vip=qry.getSingleResult();
+//		} catch (Exception e) {
+//			return null;
+//		}return vip;
+//	}
+
+//	@Override
+//	public VehicleInsurancePlan searchPlanByDurationInsuranceType(String vehicleType, String insuranceType,
+//			int planDuration) {
+//		String jpql = "select vp from VehicleInsurancePlan vp where LOWER(vp.vehicleType)=LOWER(:vType) and LOWER(vp.insuranceType)=LOWER(:pType) and vp.noOfYears=:years";
+//        TypedQuery<VehicleInsurancePlan> qry = em.createQuery(jpql, VehicleInsurancePlan.class);
+//        qry.setParameter("vType", vehicleType);
+//        qry.setParameter("pType", insuranceType);
+//        qry.setParameter("years", planDuration);
+////		return qry.C;
+//        VehicleInsurancePlan vip;
+//        try {
+//            vip=qry.setMaxResults(1).getSingleResult();
+//        } catch (Exception e) {
+//        	System.out.println(e.getMessage());
+//            return null;
+//        }return vip;
+//	}
 
 	
+	@Override
+	public VehicleInsurancePlan searchPlanByDurationInsuranceType(String vehicleType, String insuranceType,
+			int planDuration) {
+		String jpql = "select vp from VehicleInsurancePlan vp where LOWER(vp.vehicleType)=LOWER(:vType) and LOWER(vp.insuranceType)=LOWER(:pType) and vp.noOfYears=:years";
+        TypedQuery<VehicleInsurancePlan> qry = em.createQuery(jpql, VehicleInsurancePlan.class);
+        qry.setParameter("vType", vehicleType);
+        qry.setParameter("pType", insuranceType);
+        qry.setParameter("years", planDuration);
+//		return qry.C;
+        VehicleInsurancePlan vip;
+        try {
+            vip=qry.setMaxResults(1).getSingleResult();
+        } catch (Exception e) {
+        	System.out.println(e.getMessage());
+            return null;
+        }return vip;
+	}
 
+	@Override
+	public VehicleInsurancePlan searchPlanByVehicleTypeYear(VehicleSearchDto dto1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

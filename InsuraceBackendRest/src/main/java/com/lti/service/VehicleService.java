@@ -34,6 +34,7 @@ public interface VehicleService {
 
 //	String RegisterVehiclePlan(VehicleInsurancePlan vehicleInsurancePlan);
 
+	VehicleInsurancePlan searchPlanByDurationInsuranceType(String vehicleType,String insuranceType,int planDuration);
 	
 	
 }

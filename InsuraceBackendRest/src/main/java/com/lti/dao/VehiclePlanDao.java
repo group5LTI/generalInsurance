@@ -16,5 +16,7 @@ public interface VehiclePlanDao {
 	VehicleInsurancePlan searchVehiclePlan(String vehicleType,String planType ,int years);
 	
 	VehicleInsurancePlan searchPlanByVehicleTypeYear(VehicleSearchDto dto1);
+	
+	VehicleInsurancePlan searchPlanByDurationInsuranceType(String vehicleType, String insuranceType,int planDuration);
 
 }
