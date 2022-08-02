@@ -4,11 +4,13 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Component;
 
-import com.lti.entity.ClaimInurance;
+import com.lti.entity.ClaimInsurance;
+import com.lti.entity.InsuranceDocument;
 import com.lti.entity.ClaimDocument;
 
 @Component
@@ -38,6 +40,20 @@ public class ClaimDocumentDaoImpl implements ClaimDocumentDao {
 		// TODO Auto-generated method stub
 		String jpql = "select cla from ClaimDocument cla";
 		return em.createQuery(jpql).getResultList();
+	}
+
+	@Override
+	public ClaimDocument searchClaimDoucmentByClaimId(int insIdUpload) {
+		String jpql = "select i from ClaimDocument i where i.claiminsurance.claimId=:idd";
+        TypedQuery<ClaimDocument> qry = em.createQuery(jpql, ClaimDocument.class);
+        qry.setParameter("idd", insIdUpload);
+        ClaimDocument idoc;
+        try {
+            idoc=qry.getSingleResult();
+            return idoc;
+        } catch (Exception e) {
+            return null;
+        }
 	}
 
 }

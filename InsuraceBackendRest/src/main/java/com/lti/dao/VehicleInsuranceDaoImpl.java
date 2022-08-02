@@ -72,6 +72,23 @@ public class VehicleInsuranceDaoImpl implements VehicleInsuranceDao {
 		return null;
 	}
 
+	@Override
+	public List<Integer> viewAllVehicleInsurancesIdByUserName(String uname) {
+		Customer c = daoc.searchCustomerByUsername(uname);
+		int userId = c.getUserId();
+		String jpql = "select vp.vehicleInsuranceId from VehicleInsurance vp where vp.vehicle.customer.userId=:uid";
+        TypedQuery<Integer> qry = em.createQuery(jpql, Integer.class);
+        qry.setParameter("uid", userId);
+//		return qry.C;
+        try {
+        	List<Integer> vp = qry.getResultList();
+        	return vp;
+        } catch (Exception e) {
+        	System.out.println(e.getMessage());
+            return null;
+        }
+	}
+
 
 	
 

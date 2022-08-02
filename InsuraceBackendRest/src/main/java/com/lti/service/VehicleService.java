@@ -46,6 +46,8 @@ public interface VehicleService {
 	List<VehicleInsurance> viewAllVehicleInsurancesByUserId(int userId);
 	
 	List<VehicleInsurance> viewAllVehicleInsurancesByUserName(String userName);
+
+	List<Integer> viewAllVehicleInsurancesIdByUserName(String uname);
 	
 //>>>>>>> cdae998a8de68d50a6b33b9ed34e137979e7b7e9
 	

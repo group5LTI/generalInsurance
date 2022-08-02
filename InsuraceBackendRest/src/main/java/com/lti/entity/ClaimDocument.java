@@ -21,7 +21,7 @@ public class ClaimDocument {
 	
 	@OneToOne
 	@JoinColumn(name = "claim_id")
-	ClaimInurance claim;
+	ClaimInsurance claiminsurance;
 
 	public int getClaimDocumentId() {
 		return claimDocumentId;
@@ -39,13 +39,15 @@ public class ClaimDocument {
 		this.claimDocumentPath = claimDocumentPath;
 	}
 
-	public ClaimInurance getClaim() {
-		return claim;
+	public ClaimInsurance getClaiminsurance() {
+		return claiminsurance;
 	}
 
-	public void setClaim(ClaimInurance claim) {
-		this.claim = claim;
+	public void setClaiminsurance(ClaimInsurance claiminsurance) {
+		this.claiminsurance = claiminsurance;
 	}
+
+	
 	
 	
 	

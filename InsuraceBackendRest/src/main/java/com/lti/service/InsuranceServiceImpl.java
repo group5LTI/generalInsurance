@@ -3,7 +3,9 @@ package com.lti.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.lti.dao.InsuranceDao;
 import com.lti.dao.InsuranceDocumentDao;
+import com.lti.entity.Insurance;
 import com.lti.entity.InsuranceDocument;
 import com.lti.exception.CheckIdException;
 import com.lti.exception.InsuranceNotFound;
@@ -13,6 +15,9 @@ public class InsuranceServiceImpl implements InsuranceService {
 
 	@Autowired
 	InsuranceDocumentDao insuranceDocumentDao;
+	
+	@Autowired
+	InsuranceDao insuranceDao;
 	
 	@Override
 	public InsuranceDocument addOrUpdateInsuranceDocument(InsuranceDocument id) {
@@ -46,6 +51,12 @@ public class InsuranceServiceImpl implements InsuranceService {
 		} catch (Exception e) {
 			return null;
 		}
+	}
+
+	@Override
+	public Insurance searchInsuranceByinsuranceId(int insuranceId) {
+		// TODO Auto-generated method stub
+		return insuranceDao.searchInsurance(insuranceId);
 	}
 
 	

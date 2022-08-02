@@ -28,12 +28,13 @@
 				<table class="table" id='tab'>
 					<thead>
 					<tr>
-						<th scope="col">Name</th>
-						<th scope="col">claim Amount</th>
-						<th scope="col">vehicle Type</th>
-						<th scope="col">reason</th>
-						<th scope="col">viewDocument</th>
-						<th scope="col">Approve</th>
+						<th scope="col">Claim Id</th>
+						<th scope="col">Reason</th>
+						<th scope="col">ClaimAmount</th>
+						<th scope="col">ClaimDate</th>
+						<th scope="col">Status</th>
+						<th scope="col">Document</th>
+						
 					</tr>
 					</thead>
 					<!-- <tbody>
@@ -43,16 +44,27 @@
 						<td>{{ data.noOfYears }}</td>
 						<td>{{ data.insuranceType }}</td>
 						<td>{{ data.planType }}</td>
+						<td><input type="button" class="btn1" value="Approve"></td>
 					</tr>
+
+					 "claimId": 10025,
+        "reason": "Accident",
+        "claimAmount": 10000,
+        "claimDate": "2022-08-02",
+        "approval": "Pending",
+        "claimDocumentPath": null
 					</tbody> -->
 					<tbody>
-					<tr >
-						<td>Raj</td>
-						<td>9000</td>
-						<td>twoWheeler</td>
-						<td>Accident</td>
-						<td>DocumentPath</td>
-						<td><input type="button" class="btn1" value="Approve"></td>
+					<tr *ngFor="let c of viewClaims" >
+						<td>{{c.claimId}}</td>
+						<td>{{c.reason}}</td>
+						<td>{{c.claimAmount}}</td>
+						<td>{{c.claimDate}}</td>
+						<td>{{c.approval}}</td>
+						<td><a href="http://localhost:9090/downloads/{{c.claimDocumentPath}}" target="_blank">view Document</a></td>
+						<td><input type="button" class="btn1" (click)="Approve(c.claimId)" value="Approve"></td>
+						<td><input type="button" class="btn2"  (click)="Reject(c.claimId)"value="Reject"></td>
+			
 					</tr>
 					</tbody>
 				</table>	

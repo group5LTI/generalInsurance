@@ -11,6 +11,8 @@ import { VehicleServiceService } from '../vehicle-service.service';
 export class AddVehiclePlanComponent implements OnInit {
 addVehicleplan:AddVehiclePlan=new AddVehiclePlan();
 message:string;
+plan = ['Silver','Gold','Diamond']
+  planHasError = true;
   constructor(private vehicleService:VehicleServiceService,private router:Router) { }
 
   ngOnInit(): void {

@@ -23,6 +23,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
 import { VehicleCalculatorComponent } from './vehicle-calculator/vehicle-calculator.component';
 // import { ViewAllComponent } from './view-all/view-all.component';
 import { ViewAllComponent } from './view-all/view-all.component';
+import { ViewCustomerClaimsComponent } from './view-customer-claims/view-customer-claims.component';
 
 const routes: Routes = [
   {
@@ -101,6 +102,12 @@ const routes: Routes = [
 {
   path:'adminclaimLink',component:AdminVerifyClaimComponent},{
   path:'claimLink',component:ClaimInsuranceComponent
+},
+{
+  path:'verifyClaim',component:AdminVerifyClaimComponent
+},
+{
+  path:'viewCustomerClaim',component:ViewCustomerClaimsComponent
 }
 ];
 

@@ -2,7 +2,7 @@ package com.lti.dao;
 
 import java.util.List;
 
-import com.lti.entity.ClaimInurance;
+import com.lti.entity.ClaimInsurance;
 import com.lti.entity.ClaimDocument;
 
 public interface ClaimDocumentDao {
@@ -11,4 +11,8 @@ public interface ClaimDocumentDao {
 	ClaimDocument searchClaimDoucmentById(int claimDocumentId);
 
 	List<ClaimDocument> viewAllClaimDocuments();
+
+	ClaimDocument searchClaimDoucmentByClaimId(int insIdUpload);
+
+	
 }

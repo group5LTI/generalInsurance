@@ -2,6 +2,8 @@ package com.lti.dto;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 public class InsuranceDocumentDto {
 
@@ -23,6 +25,7 @@ public class InsuranceDocumentDto {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
+
 	public MultipartFile getInsuranceDocument() {
 		return insuranceDocument;
 	}

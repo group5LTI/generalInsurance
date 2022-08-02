@@ -79,7 +79,6 @@ public VehicleInsurancePlan getVehicleInsurancePlan() {
 public void setVehicleInsurancePlan(VehicleInsurancePlan vehicleInsurancePlan) {
 	this.vehicleInsurancePlan = vehicleInsurancePlan;
 }
-
 @JsonIgnore
 public Vehicle getVehicle() {
 	return vehicle;

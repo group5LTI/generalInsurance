@@ -51,7 +51,7 @@ public class TravelController {
 	InsuranceService insuranceService;
 	
 	@PostMapping(value = "/buytravelinsurance")
-	public ReturnMessageWhileBuying buyTravelInsurance(@RequestBody BuyTInsuranceDto travelInsurance) {
+	public TravelInsurance buyTravelInsurance(@RequestBody BuyTInsuranceDto travelInsurance) {
 		TravelInsurance travelIn = new TravelInsurance();
 		TravelSearchDto trdto = new TravelSearchDto();
 		ReturnMessageWhileBuying returnMessage = new ReturnMessageWhileBuying();
@@ -83,6 +83,7 @@ public class TravelController {
 				if(ti!=null) {
 					Insurance insurance = new Insurance();
 					insurance.setTravelInsurance(ti);
+					insurance.setCustomer(ti.getCustomer());
 					Insurance i = travelService.addTravelInsurance(insurance);
 					TravelInsurance travel = travelService.searchTravelInsuranceById(ti.getTravelInsuranceId());
 					InsuranceDocument idoc = new InsuranceDocument();
@@ -90,9 +91,8 @@ public class TravelController {
 					idoc.setInsurance(i);
 					InsuranceDocument idocument = insuranceService.addOrUpdateInsuranceDocument(idoc);
 					travel.setInsurance(i);
-					returnMessage.setValid(true);
-					returnMessage.setMessage("Congratulations You have bought "+ti.getTravelInsurancePlan().getPlanType()+"and no of people travelling "+ti.getNoOfPeople());
-					return returnMessage;
+					
+					return ti;
 				}
 				else {
 					throw new RegistrationError("Travel Registration Error");
@@ -104,8 +104,8 @@ public class TravelController {
 			}
 		} catch (Exception e) {
 			returnMessage.setMessage(e.getMessage());
-			returnMessage.setValid(false);
-			return returnMessage;
+			System.out.println(e.getMessage());
+			return null;
 		}
 		
 	}

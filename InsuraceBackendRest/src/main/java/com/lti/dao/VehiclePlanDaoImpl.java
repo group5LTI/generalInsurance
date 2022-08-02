@@ -103,7 +103,7 @@ public class VehiclePlanDaoImpl implements VehiclePlanDao {
 	@Override
 	public VehicleInsurancePlan searchPlanByDurationInsuranceType(String vehicleType, String insuranceType,
 			int planDuration) {
-		String jpql = "select vp from VehicleInsurancePlan vp where LOWER(vp.vehicleType)=LOWER(:vType) and LOWER(vp.insuranceType)=LOWER(:pType) and vp.noOfYears=:years";
+		String jpql = "select vp from VehicleInsurancePlan vp where LOWER(vp.vehicleType)=LOWER(:vType) and LOWER(vp.insuranceType)=LOWER(:pType) and vp.noOfYears>=:years order by noOfYears";
         TypedQuery<VehicleInsurancePlan> qry = em.createQuery(jpql, VehicleInsurancePlan.class);
         qry.setParameter("vType", vehicleType);
         qry.setParameter("pType", insuranceType);

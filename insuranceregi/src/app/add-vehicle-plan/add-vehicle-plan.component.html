@@ -24,23 +24,24 @@
                     
                     <div class="input-box">
                         <span class="details" id="plannedAmountV">Planned Amount</span>
-                        <input type="number" name="plannedAmountV" 
+                        <input type="number" name="plannedAmountV" #plannedAmount="ngModel" min="1000"
                             placeholder="Enter Planned Ampunt" required [(ngModel)]="addVehicleplan.plannedAmountV">
-                        <!-- <small class="text-danger">ChassisNo is
-                            Required</small> -->
+                            <small class="text-danger"
+                            [class.d-none]="plannedAmount.valid || plannedAmount.untouched">Plan amount is Required
+                            </small>
                     </div>
                     <div class="input-box">
                         <span class="details">Plan Duration</span>
                         <input type="number" name="noOfYears" 
-                            
+                        #planduration="ngModel" [class.is-invalid]="planduration.invalid && planduration.touched" min="1" max="3"
                             placeholder="Enter Plan Duration" required [(ngModel)]="addVehicleplan.noOfYears">
-                        <!-- <small class="text-danger"
-                            >PlanDuration is
-                            Required</small> -->
+                            <small class="text-danger"
+                            [class.d-none]="planduration.valid || planduration.untouched">PlanDuration between 1-3 yrs
+                            Required</small>
                     </div>
                     <div class="input-box">
                         <span class="details">Plan Type</span>
-                        <select name="planType"
+                        <select name="planType"  #plan="ngModel"
                              id="dropdown" [(ngModel)]="addVehicleplan.planType"
                             >
                             <option value="default">Select Plan</option>
@@ -48,8 +49,8 @@
                             <option value="Gold">Gold</option>
                             <option value="Diamond">Diamond</option>
                         </select>
-                        <!-- <small class="text-danger">Please Choose a
-                            Plan</small> -->
+                        <small class="text-danger" [class.d-none]="!planHasError || plan.untouched">Please Choose a
+                            Plan</small>
                     </div>
                     <div class="input-box">
                         <span class="details">Insurance Type</span>
@@ -66,7 +67,7 @@
                     </div>
                 </div>
                 <div class="button">
-                    <input type="submit" value="Submit" >
+                    <input type="submit" value="Submit" [disabled]="userForm.form.invalid || planHasError">
                 </div>
 
             </form>

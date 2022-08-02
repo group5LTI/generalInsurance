@@ -47,6 +47,11 @@
                         id="add-travel-form">
                 </div>
             </form>
+            <div>
+                <form enctype="multipart/form-data" (submit)="UploadClaim()"> <input type="file" name="pp" (change)="onFileChange($event)"> <br>
+                <button type="submit" >upload</button>
+                </form>
+            </div>
         </div>
     </div>
 </body>

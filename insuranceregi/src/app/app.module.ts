@@ -32,10 +32,15 @@ import { VehicleCalculatorComponent } from './vehicle-calculator/vehicle-calcula
 import { TravelPremiumComponent } from './travel-premium/travel-premium.component';
 import { CalPageComponent } from './cal-page/cal-page.component';
 import { AdminVerifyClaimComponent } from './admin-verify-claim/admin-verify-claim.component';
-import { UploadDocumentComponent } from './upload-document/upload-document.component';
+// import { UploadDocumentComponent } from './upload-document/upload-document.component';
 import { ViewAllComponent } from './view-all/view-all.component';
+import { ViewCustomerClaimsComponent } from './view-customer-claims/view-customer-claims.component';
 // import { ViewClaimHistoryComponent } from './view-claim-history/view-claim-history/view-claim-history.component';
 // import { ClaimInsuranceComponent } from './claim-insurance/claim-insurance.component';
+// import { ViewAllComponent } from './view-all/view-all.component';
+// import { ClaimInsuranceComponent } from './claim-insurance/claim-insurance.component';
+// import { AdminVerifyClaimComponent } from './admin-verify-claim/admin-verify-claim.component';
+// import { ViewCustomerClaimsComponent } from './view-customer-claims/view-customer-claims.component';
 
 
 @NgModule({
@@ -65,11 +70,15 @@ import { ViewAllComponent } from './view-all/view-all.component';
     VehicleCalculatorComponent,
     CalPageComponent,
     AdminVerifyClaimComponent,
-    UploadDocumentComponent,
+    // UploadDocumentComponent,
     ViewAllComponent,
     ClaimInsuranceComponent,
     // ViewClaimHistoryComponent,
 
+    ViewAllComponent,
+    ClaimInsuranceComponent,
+    AdminVerifyClaimComponent,
+    ViewCustomerClaimsComponent
     
   ],
   imports: [

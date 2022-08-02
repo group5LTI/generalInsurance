@@ -11,6 +11,8 @@ import { TravelServiceService } from '../travel-service.service';
 export class AddTravelPlanComponent implements OnInit {
   addtravelPlan:Addtravelplan=new Addtravelplan();
   message:string;
+  plan = ['Silver','Gold','Diamond']
+  planHasError = true;
   constructor(private planService:TravelServiceService,private router:Router) { }
 
   ngOnInit(): void {
@@ -27,5 +29,12 @@ export class AddTravelPlanComponent implements OnInit {
         this.router.navigate(['adminLink']);
       }
     );
+  }
+  validatePlan(value:string) {
+    if(value == 'default') {
+      this.planHasError = true;
+    }else {
+      this.planHasError = false;
+    }
   }
 }

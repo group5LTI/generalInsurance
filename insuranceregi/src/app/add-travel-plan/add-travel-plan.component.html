@@ -4,60 +4,47 @@
         <div class="title">Travel Insurance Plan</div><br>
         <div class="content">
             <form #userForm="ngForm" (ngSubmit)="AddTravelPlan()" novalidate>
-                <!-- <div class="travel-details">
-                    <input type="radio" name="vehicleType" id="dot-1" value="twoWheeler" [(ngModel)]="addtravelPlan.vehicleType">
-                    <input type="radio" name="vehicleType" id="dot-2" value="fourWheeler" [(ngModel)]="addtravelPlan.vehicleType">
-                    <span class="details">Vehicle Type</span>
-                    <div class="category">
-                        <label for="dot-1">
-                            <span class="dot one"></span>
-                            <span class="Vehicle">Two-Wheeler</span>
-                        </label>
-                        <label for="dot-2">
-                            <span class="dot two"></span>
-                            <span class="gender">Four-Wheeler</span>
-                        </label>
-                    </div>
-                </div> -->
+                
                 <div class="user-details">
                     
                     <div class="input-box">
                         <span class="details" id="noOfPeople">No. of people</span>
-                        <input type="number" name="noOfPeople" 
-                            placeholder="Enter No. people" required [(ngModel)]="addtravelPlan.noOfPeople">
-                        <!-- <small class="text-danger">ChassisNo is
-                            Required</small> -->
+                        <input type="number" name="noOfPeople" #people="ngModel" [class.is-invalid]="people.invalid && people.touched"
+                            placeholder="Enter No. people" min="1" required [(ngModel)]="addtravelPlan.noOfPeople">
+                            <small class="text-danger"
+                            [class.d-none]="people.valid || people.untouched">No of people
+                            Required</small>
                     </div>
                     <div class="input-box">
-                        <span class="details">Travel Duration</span>
+                        <span class="details">Travel Duration In months</span>
                         <input type="number" name="travleDuration" 
-                            
-                            placeholder="Enter travel Duration" required [(ngModel)]="addtravelPlan.travleDuration">
-                        <!-- <small class="text-danger"
-                            >PlanDuration is
-                            Required</small> -->
+                        #planduration="ngModel"
+                        [class.is-invalid]="planduration.invalid && planduration.touched"
+
+                            placeholder="Enter travel Duration" min="1" required [(ngModel)]="addtravelPlan.travleDuration">
+                            <small class="text-danger"
+                            [class.d-none]="planduration.valid || planduration.untouched">Minimum 1 month travel duration
+                            Required</small>
                     </div>
                     <div class="input-box">
                         <span class="details">Planned Amount</span>
                         <input type="number" name="plannedAmount" 
                             
-                            placeholder="Enter planned Amount" required [(ngModel)]="addtravelPlan.plannedAmount">
-                        <!-- <small class="text-danger"
-                            >PlanDuration is
-                            Required</small> -->
+                            placeholder="Enter planned Amount" min="10000" required #amount="ngModel" [class.is-invalid]="amount.invalid && amount.touched" [(ngModel)]="addtravelPlan.plannedAmount">
+                            <small class="text-danger"
+                            [class.d-none]="amount.valid || amount.untouched">minimum amount should be 10000</small>
                     </div>
                     <div class="input-box">
                         <span class="details">Travel Location</span>
-                        <input type="text" name="travelLocation" 
-                            
+                        <input type="text" name="travelLocation" #travellocation="ngModel"
+                        [class.is-invalid]="travellocation.invalid && travellocation.touched"
                             placeholder="Enter travel Location" required [(ngModel)]="addtravelPlan.travelLocation">
-                        <!-- <small class="text-danger"
-                            >PlanDuration is
-                            Required</small> -->
+                            <small class="text-danger"
+                            [class.d-none]="travellocation.valid || travellocation.untouched">Travel Location is needed</small>
                     </div>
                     <div class="input-box">
                         <span class="details">Plan Type</span>
-                        <select name="planType"
+                        <select (blur)="validatePlan(plan.value)" (change)="validatePlan(plan.value)" #plan="ngModel" name="planType" [class.is-invalid]="planHasError && plan.touched"
                              id="dropdown" [(ngModel)]="addtravelPlan.planType"
                             >
                             <option value="default">Select Plan</option>
@@ -65,15 +52,15 @@
                             <option value="Gold">Gold</option>
                             <option value="Diamond">Diamond</option>
                         </select>
-                        <!-- <small class="text-danger">Please Choose a
-                            Plan</small> -->
+                        <small class="text-danger" [class.d-none]="!planHasError || plan.untouched">Please Choose a
+                            Plan</small>
                     </div>
                     <div class="input-box">
                         
                     </div>
                 </div>
                 <div class="button">
-                    <input type="submit" value="Submit" >
+                    <input type="submit" value="Submit" [disabled]="userForm.form.invalid || planHasError" >
                 </div>
 
             </form>

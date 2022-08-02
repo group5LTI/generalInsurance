@@ -6,6 +6,8 @@ import { Login } from '../login';
 import { User } from '../user';
 import { TravelInsurance } from '../travel-insurance';
 import { RegisterService } from '../register.service';
+import { InsuranceDocumentDto } from '../insurance-document-dto';
+import { UploadDocumentServiceService } from '../upload-document-service.service';
 
 @Component({
   selector: 'travel-insurance',
@@ -15,16 +17,17 @@ import { RegisterService } from '../register.service';
 export class TravelComponent implements OnInit {
 
   buyTDto:BuyTinsuranceDto = new BuyTinsuranceDto();
+  docDto:InsuranceDocumentDto = new InsuranceDocumentDto();
   plan = ['Silver','Gold','Diamond']
   planHasError = true;
   login:Login = new Login();
-  TravelInsurance:TravelInsurance = new TravelInsurance();
+  travelInsurance:TravelInsurance = new TravelInsurance();
   isValid:boolean;
   msg:string;
   user:User = new User();
 
   // travelModel = new Travel('','','','default');
-  constructor(private travelService:TravelServiceService,private router:Router,private registerService:RegisterService) {}
+  constructor(private travelService:TravelServiceService,private router:Router,private registerService:RegisterService,private uploadDocumemt:UploadDocumentServiceService) {}
 
 
   ngOnInit(): void {
@@ -36,17 +39,17 @@ export class TravelComponent implements OnInit {
     console.log(this.buyTDto)
     this.buyTDto.userId = this.user.userId;
     this.travelService.addTravelInsurance(this.buyTDto).subscribe(
-      buytravelInsurance => {
-        console.log(" >> L40", buytravelInsurance);
-        this.isValid = buytravelInsurance.valid;
-        // this.msg=buytravelInsurance.message;
+      buytravelInsurance=> {
+        this.travelInsurance=buytravelInsurance;
         // console.log(this.isValid);
-        if(this.isValid) {
-          alert(this.msg);
-          this.router.navigate(['paymentLink'])
+        this.docDto.insuranceId=buytravelInsurance.travelInsuranceId;
+        console.log(this.travelInsurance);
+        if(this.travelInsurance!=null) {
+          alert("Congratulations your travel insurance id is "+buytravelInsurance.travelInsuranceId);
+          alert("Upload Documents");
         }
         else {
-          alert(this.msg);
+          alert("Some error Occurred");
         }
       }
     )
@@ -58,4 +61,20 @@ export class TravelComponent implements OnInit {
       this.planHasError = false;
     }
   }
+  onFileChange(event){
+    this.docDto.insuranceDocument=event.target.files[0];
+  }
+  ToUpload(){
+  let formData=new FormData();
+  this.docDto.userId=this.buyTDto.userId;
+  console.log(this.docDto.userId);
+  console.log('--------------------------------');
+  this.docDto.insuranceDocument=this.docDto.insuranceDocument;
+  formData.append('userId',this.docDto.userId.toString());
+  formData.append('insuranceId',this.docDto.insuranceId.toString());
+  formData.append('insuranceDocument',this.docDto.insuranceDocument);
+  this.uploadDocumemt.ToUpload(formData)
+  .subscribe(data=>alert(JSON.stringify(data)));
+  location.reload();
+}
 }

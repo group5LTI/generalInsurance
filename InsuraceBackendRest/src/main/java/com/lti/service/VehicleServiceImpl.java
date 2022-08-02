@@ -178,6 +178,12 @@ public class VehicleServiceImpl implements VehicleService {
 		return vehicleInsuranceDao.viewAllVehicleInsurancesByUserName(userName);
 	}
 
+	@Override
+	public List<Integer> viewAllVehicleInsurancesIdByUserName(String uname) {
+		// TODO Auto-generated method stub
+		return vehicleInsuranceDao.viewAllVehicleInsurancesIdByUserName(uname);
+	}
+
 	
 
 }
