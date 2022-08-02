@@ -16,6 +16,7 @@ export class TravelCalculatorComponent implements OnInit {
   // calctravel: CalTravel = new CalTravel();
   caltravel:CalTravel=new CalTravel();
   TravelInput: CalTravelInput = new CalTravelInput();
+
   name: String = "Hello"
 
   
@@ -40,6 +41,32 @@ export class TravelCalculatorComponent implements OnInit {
     // this.caltravel=data?.plan;
     }
   }
+
+
+
+
+  // caltravel:CalTravel=new CalTravel();
+  // TravelInput:CalTravelInput=new CalTravelInput();
+
+  
+  // message: string;
+  
+  // // CalTravel:calTravel=new calTravel();
+
+  // clickmsg = '';
+  // ngOnInit(): void {
+  //   // this.calcTravel = JSON.parse(sessionStorage.getItem(""));
+  // }
+
+  // calcTravel() {
+  //   this.travelService.getCalTravel(this.TravelInput)
+  //     .subscribe(data => {
+  //       // console.log(data);
+
+  //       this.message=data.message;
+  //       this.caltravel=data.plan;
+  //     });
+
 
 
 

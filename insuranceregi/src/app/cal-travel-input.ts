@@ -1,6 +1,6 @@
 export class CalTravelInput {
 
-     location:string;
+    location:string;
 	travelStartDate:string;
 	travelEndDate:string;
 	noOfPeople:number;

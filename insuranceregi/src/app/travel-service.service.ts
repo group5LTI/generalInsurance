@@ -9,7 +9,7 @@ import { CalTravelDto } from './calTravelDto';
 import { ReturnInsuranceMessage } from './return-insurance-message';
 import { TravelInsurance } from './travel-insurance';
 
-import { HttpHeaders } from "@angular/common/http";
+// import { HttpHeaders } from "@angular/common/http";
 
 
 
@@ -44,9 +44,9 @@ export class TravelServiceService {
   }
 
 
-  getCalTravel(calTravela:any) {
+  getCalTravel(calTravela:any):Observable<CalTravelDto> {
     let url="http://localhost:9090/travel/calculatetravel";
-    let body =  {vehicleType:"twoWheeler", noOfYears:2, insuranceType:"thirdParty"}
+    // let body =  {vehicleType:"twoWheeler", noOfYears:2, insuranceType:"thirdParty"}
     let headers=new Headers();
     headers.append("Content-Type", "application/json");
 
