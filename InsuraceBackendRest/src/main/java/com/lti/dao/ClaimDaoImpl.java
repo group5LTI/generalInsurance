@@ -106,7 +106,13 @@ public class ClaimDaoImpl implements ClaimDao {
 			dto.setClaimId(claimins.getClaimId());
 			dto.setAccountNo(claimins.getAccountNo());
 			dto.setApproval(claimins.getApproval());
+			System.out.println(claimins.getApproval());
+			if(claimins.getApproval().equals("Approved")) {
 			dto.setApprovedAmount(claimins.getClaimAmount()*0.8);
+			}
+			else {
+				dto.setApprovedAmount(0);
+			}
 			dto.setClaimAmount(claimins.getClaimAmount());
 			dto.setReason(claimins.getReason());
 			dto.setUserId(ins.getCustomer().getUserId());

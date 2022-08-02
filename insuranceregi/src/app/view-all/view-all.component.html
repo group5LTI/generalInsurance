@@ -23,10 +23,11 @@
 				<table class="table text-center" id='tab' >
 					<thead>
 					<tr>
-						<th scope="col">Insurance Id</th>
-						<th scope="col">Issue Date</th>
-						<th scope="col">Years</th>
-						<th scope="col">Amount Paid</th>
+						<th scope="col" style="text-align: center;">Insurance Id</th>
+						<th scope="col" style="text-align: center;">Issue Date</th>
+						<th scope="col" style="text-align: center;">Years</th>
+						<th scope="col" style="text-align: center;">Amount Paid</th>
+
 					</tr>
 					</thead>
 					
@@ -40,15 +41,32 @@
 					</tbody>
 				</table>	
 			</div>
+            <div class="we-do-comment">
+				<table class="table text-center" id='tab' >
+					<thead>
+					<tr>
+						<th scope="col" style="text-align: center;">Insurance Id</th>
+                        <th scope="col" style="text-align: center;">location</th>
+                        <th scope="col" style="text-align: center;">Travel start date</th>
+                        <th scope="col" style="text-align: center;">Travel End Date</th>
+                        <th scope="col" style="text-align: center;">Amount Paid</th>
+					</tr>
+					</thead>
+					
+					<tbody class="text-center">
+                        <tr *ngFor="let ins of tInsurances">
+                            <td scope="col">{{ins.travelInsuranceId}}</td>
+                            <td>{{ins.location}}</td>
+                            <td>{{ins.travelStartDate}}</td>
+                            <td>{{ins.travelEndDate}}</td>
+                            <td>{{ins.amountPaid}}</td>
+                        </tr>
+					</tbody>
+				</table>	
+			</div>
 		</div>
 	</div>
 </div>
-<button type="button" class="slide-btn" (click)="getInsurances()">
-    View Insurances
-</button>
-<button type="button" class="slide-btn" (click)="getTInsurances()">
-    View Travel Insurances
-</button>
 <!-- <body>
     
     <div>
