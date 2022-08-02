@@ -27,6 +27,7 @@ import { ViewAllComponent } from './view-all/view-all.component';
 import { ClaimInsuranceComponent } from './claim-insurance/claim-insurance.component';
 import { AdminVerifyClaimComponent } from './admin-verify-claim/admin-verify-claim.component';
 import { ViewCustomerClaimsComponent } from './view-customer-claims/view-customer-claims.component';
+import { ViewAllClaimAdminComponent } from './view-all-claim-admin/view-all-claim-admin.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { ViewCustomerClaimsComponent } from './view-customer-claims/view-custome
     ClaimInsuranceComponent,
     AdminVerifyClaimComponent,
     ViewCustomerClaimsComponent,
+    ViewAllClaimAdminComponent,
     
   ],
   imports: [

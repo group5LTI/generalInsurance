@@ -154,7 +154,7 @@ public class VehicleController {
 					throw new CheckIdException("No such Vehicle registered for your account");
 				}
 			} else {
-				throw new VehicleNotFound("No such vehicle ID available!First buy insurance");
+				throw new VehicleNotFound("No such Insurance ID available!First buy insurance");
 			}
 
 		} catch (Exception e) {
