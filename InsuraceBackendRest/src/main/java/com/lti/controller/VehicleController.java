@@ -27,6 +27,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lti.dto.BuyRegisterVInsuranceDto;
@@ -261,7 +262,8 @@ public class VehicleController {
 //>>>>>>> cdae998a8de68d50a6b33b9ed34e137979e7b7e9
 	}
 	
-	@GetMapping(value="/calculatevehicle")
+	@RequestMapping(value="/calculatevehicle",method=RequestMethod.POST)
+	@ResponseBody
 	public ReturnMessageVehiclePremium calculateTravelPremium(@RequestBody PremiumVehicleCalculate pvc) {
 		
 		VehicleInsurancePlan vp = vehicleService.searchPlanByDurationInsuranceType(pvc.getVehicleType(),

@@ -34,6 +34,8 @@ import { CalPageComponent } from './cal-page/cal-page.component';
 import { AdminVerifyClaimComponent } from './admin-verify-claim/admin-verify-claim.component';
 import { UploadDocumentComponent } from './upload-document/upload-document.component';
 import { ViewAllComponent } from './view-all/view-all.component';
+// import { ViewClaimHistoryComponent } from './view-claim-history/view-claim-history/view-claim-history.component';
+// import { ClaimInsuranceComponent } from './claim-insurance/claim-insurance.component';
 
 
 @NgModule({
@@ -65,6 +67,9 @@ import { ViewAllComponent } from './view-all/view-all.component';
     AdminVerifyClaimComponent,
     UploadDocumentComponent,
     ViewAllComponent,
+    ClaimInsuranceComponent,
+    // ViewClaimHistoryComponent,
+
     
   ],
   imports: [

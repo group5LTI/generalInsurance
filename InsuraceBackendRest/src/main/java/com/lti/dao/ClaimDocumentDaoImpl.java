@@ -8,7 +8,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Component;
 
-import com.lti.entity.Claim;
+import com.lti.entity.ClaimInurance;
 import com.lti.entity.ClaimDocument;
 
 @Component

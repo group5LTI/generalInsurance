@@ -19,7 +19,7 @@ export class TravelCalculatorComponent implements OnInit {
 
   name: String = "Hello"
 
-  
+  data:any;
   message: string;
   
   // CalTravel:calTravel=new calTravel();
@@ -35,8 +35,12 @@ export class TravelCalculatorComponent implements OnInit {
 
   calculate_travel(){
     console.log("//", this.TravelInput)
-    let data = this.travelService.getCalTravel(this.TravelInput)
-    console.log("received .. ", this.TravelInput)
+    this.travelService.getCalTravel(this.TravelInput)
+    .subscribe(data=>{
+      this.data=data;
+      console.log(data);
+    })
+    // console.log("received .. ", this.TravelInput)
     // this.message=data?.message;
     // this.caltravel=data?.plan;
     }

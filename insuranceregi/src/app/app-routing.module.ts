@@ -99,7 +99,8 @@ const routes: Routes = [
   path:'addTravelPlan',component:AddTravelPlanComponent
 },
 {
-  path:'adminclaimLink',component:AdminVerifyClaimComponent
+  path:'adminclaimLink',component:AdminVerifyClaimComponent},{
+  path:'claimLink',component:ClaimInsuranceComponent
 }
 ];
 

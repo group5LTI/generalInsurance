@@ -23,3 +23,49 @@
 	color: #7370d8;
 	background: transparent;
 }/*project-btn*/
+
+
+
+
+/* for header  */
+.header1 {
+    /* background-color: blue; */
+    color: #ffffff;
+    padding: 19px 24px;
+  }
+  
+
+/* logo text for L&T Insurance */
+    .demotext1 {
+      text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5, 13px 9px 20px rgba(250,0,0,0);
+      color: #FFFFFF;
+      /* background: #FFFFFF; */
+      }
+
+/* You can add global styles to this file, and also import other style files */
+/* css content hear is valid for all the pages */
+.tpnav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #7370d8;
+}
+
+.tpnav li {
+  float: right;
+}
+
+.tpnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 19px 24px;
+  text-decoration: none;
+}
+/* hover effect */
+.tpnav li a:hover {
+  background-color: #5350b5;
+}
+
+

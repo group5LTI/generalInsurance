@@ -1,5 +1,14 @@
 <!-- dashboard start -->
-<app-dashboard-nav></app-dashboard-nav>
+<div class="tpnav">
+    <ul>
+        <a class="header1">
+            <h1 class="demotext1"><span> L&T </span>Insurance</h1>
+        </a>
+        <li><a type="button" value="Go back!" onclick="history.back()">Back</a></li>
+    </ul>
+
+</div>
+<!-- <app-dashboard-nav></app-dashboard-nav> -->
 <!-- <p>dashboard works!</p> -->
   
         <!--we-do start -->
@@ -47,7 +56,7 @@
                                         </div>
                                     </div>
                                     <!-- button close -->
-                                    {{ TravelInput | json }}
+                                    <!-- {{ TravelInput | json }} -->
 
                                 </div>
                                 <!--/.we-do-comment-->
@@ -78,14 +87,13 @@
                                 <!--/.we-do-info-->
                                 <div class="we-do-comment">
 
-                                    <!-- <h1>{{data.planType}}</h1> -->
+                                    <h1>{{data.plan.planType}}</h1>
                                     <ul class="plan-lists">
-                                        <!-- <li>Medical Expenses rs {{data.plannedAmount}} </li> -->
-                                        <li>Trip Cancellation 40,000</li>
-                                        <li>Baggage Loss
-                                            rs5,000</li>
-                                        <li>Loss of Passport
-                                            Not Covered</li>
+                                        <li>Cost Of Plan {{data.plan.plannedAmount}} </li>
+                                        <li>Numbe of People {{data.plan.noOfPeople}} </li>
+                                        <li>Travel Duration {{data.plan.travleDuration}} Months </li>
+                                        <li>Location {{data.plan.travelLocation}}</li>
+                                        <!-- <li>Loss of Passport Not Covered</li> -->
                                         <li>E-Mail support</li>
                                     </ul>
 

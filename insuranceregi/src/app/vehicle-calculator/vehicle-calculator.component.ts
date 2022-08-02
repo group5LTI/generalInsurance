@@ -1,9 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { ActivatedRoute, Route, Router } from '@angular/router';
-// import { ActivatedRoute, Router } from '@angular/router';
-import { VehicleInsurancePlan } from '../vehicle-insurance-plan';
+
+import { Router } from '@angular/router';
+import { CalVehicleInput } from '../cal-vehicle-input';
+import { CalVehicle } from '../calVehicle';
 import { VehicleServiceService } from '../vehicle-service.service';
 
 @Component({
@@ -13,72 +13,27 @@ import { VehicleServiceService } from '../vehicle-service.service';
 })
 export class VehicleCalculatorComponent implements OnInit {
 
-  planDto:VehicleInsurancePlan = new VehicleInsurancePlan();
-  message:string;
-isValid:boolean;
-validatedUser:VehicleInsurancePlan=new VehicleInsurancePlan();
-  // planId:8040;
-data:any;
-  msg: VehicleInsurancePlan;
+  calvehicle:CalVehicle=new CalVehicle();
+  VehicleInput: CalVehicleInput = new CalVehicleInput();
 constructor(
   private vehicleService:VehicleServiceService,private router:Router
   ){}    
 
-vehiclePlan:VehicleInsurancePlan=new VehicleInsurancePlan();
-  ngOnInit() {
-    // console.log(this.router.snapshot.params['vehiclePlanId'])
-    console.log(JSON.stringify(this.planDto));
-    this.getvehiclePlan();
+  data:any;
+  message:string;
+  ngOnInit() {}
+
+
+calculate_Vehicle(){
+  console.log("//", this.VehicleInput)
+  this.vehicleService.getCalVehicle(this.VehicleInput)
+  .subscribe(data=>{
     
-}
-
-// getvehiclePlan(){
-//   // this.planDto.vehiclePlanId=8020;
-// this.vehicleService.getvehiclePlan(this.planDto.vehiclePlanId)
-// .subscribe(data=>
-//   {
-//     // console.log(data);
-//     this.data=data;
-//     console.log(this.data)
-//   })
-// }
-
-// title='calTravel';
-// getData(data:NgForm){
-//   console.warn((data));
-  
-// }
-// }
-// planType = ['Silver','Gold','Diamond']
-
-getvehiclePlan()
-{
-console.log(JSON.stringify(this.vehiclePlan));
-this.vehicleService.getvehiclePlan(this.planDto.vehiclePlanId)
-.subscribe(
-msg=>{
-   
-  if(this.isValid)
-  {
-    // this.message="feactched";
-    
-    this.msg=msg;
-//     console.log(this.data)
+    this.data=data;
+    console.log(data);
+  })
+  // console.log("received .. ", this.TravelInput)
+  // this.message=data?.message;
+  // this.caltravel=data?.plan;
   }
-  else{
-    // this.message="login failed";
-    alert("plan not applicable");
-    // this.router.navigate(['registerLink'])
-  }
-}
-
-);
-}
-
-title='VehicleInsurancePlan';
-getData(data:NgForm){
-  console.warn((data));
-  
-}
-
 }

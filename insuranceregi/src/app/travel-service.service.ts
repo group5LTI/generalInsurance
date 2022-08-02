@@ -44,15 +44,14 @@ export class TravelServiceService {
   }
 
 
-  getCalTravel(calTravela:any):Observable<CalTravelDto> {
+  getCalTravel(calTravela:CalTravelInput):Observable<CalTravelDto> {
     let url="http://localhost:9090/travel/calculatetravel";
     // let body =  {vehicleType:"twoWheeler", noOfYears:2, insuranceType:"thirdParty"}
-    let headers=new Headers();
-    headers.append("Content-Type", "application/json");
+    const headers = { 'content-type': 'application/json' };
 
     console.log("To send ", calTravela)
-    let data = JSON.parse(JSON.stringify(calTravela))
-    return this.httpClient.get<CalTravelDto>(url, );
+    let data = (JSON.stringify(calTravela))
+    return this.httpClient.post<CalTravelDto>(url, data,{ 'headers': headers });
     // return this.httpClient.get(url, data);
     // return this.httpClient.get<CalTravelDto>(url)
     }

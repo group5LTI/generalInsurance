@@ -8,7 +8,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Component;
 
-import com.lti.entity.Claim;
+import com.lti.entity.ClaimInurance;
 import com.lti.entity.Customer;
 
 @Component
@@ -18,22 +18,22 @@ public class ClaimDaoImpl implements ClaimDao {
 	EntityManager em;
 
 	@Transactional
-	public Claim AddOrUpdateClaim(Claim claim) {
-		Claim claimPersisted = null;
+	public ClaimInurance AddOrUpdateClaim(ClaimInurance claim) {
+		ClaimInurance claimPersisted=null;
 		try {
 			claimPersisted = em.merge(claim);
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println(e.getMessage());
 		}
 		return claimPersisted;
 	}
 
-	public Claim searchClaimById(int claimId) {
+	public ClaimInurance searchClaimById(int claimId) {
 		// TODO Auto-generated method stub
-		return em.find(Claim.class, claimId);
+		return em.find(ClaimInurance.class, claimId);
 	}
 
-	public List<Claim> viewAllClaims() {
+	public List<ClaimInurance> viewAllClaims() {
 		// TODO Auto-generated method stub
 		String jpql = "select cla from Claim cla";
 		return em.createQuery(jpql).getResultList();

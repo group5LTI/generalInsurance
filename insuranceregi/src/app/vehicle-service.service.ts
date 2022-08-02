@@ -8,6 +8,8 @@ import { AdminVerifyClaimComponent } from './admin-verify-claim/admin-verify-cla
 import { AddVehiclePlan } from './add-vehicle-plan';
 import { VehicleInsurance } from './vehicle-insurance';
 import { ViewAlldto } from './view-alldto';
+import { CalVehicleInput } from './cal-vehicle-input';
+import { CalVehicleDto } from './calVehicleDto';
 
 @Injectable({
   providedIn: 'root'
@@ -38,4 +40,22 @@ export class VehicleServiceService {
   {
     return this.httpClient.get<VehicleInsurance[]>("http://localhost:9090/vehicles/viewallinsurance?userName="+userName);
   }
+
+
+
+
+
+
+
+  getCalVehicle(calVehiclea:CalVehicleInput):Observable<CalVehicleDto> {
+    let url="http://localhost:9090/vehicles/calculatevehicle";
+    // let body =  {vehicleType:"twoWheeler", noOfYears:2, insuranceType:"thirdParty"}
+    const headers = { 'content-type': 'application/json' };
+
+    console.log("To send ", calVehiclea)
+    let data = (JSON.stringify(calVehiclea))
+    return this.httpClient.post<CalVehicleDto>(url, data,{ 'headers': headers });
+    
+    }
+
 }

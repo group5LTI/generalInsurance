@@ -1,49 +1,45 @@
 <app-dashboard-nav></app-dashboard-nav>
-<button type="button" class="slide-btn" (click)="getInsurances()">
-    View Insurances
-</button>
-<button type="button" class="slide-btn" (click)="getTInsurances()">
-    View Travel Insurances
-</button>
-<body>
-    
-    <div>
-<table class="table" id='tab'>
-    <tr>
-        <th>Insurance Id</th>
-        <th>Issue Date</th>
-        <th>Years</th>
-        <th>Amount Paid</th>
-        <!-- <th>Vehicle</th>
-        <th>Vehicle Plan</th> -->
-    </tr>
-    <tr *ngFor="let ins of insurances">
-        <td>{{ins.vehicleInsuranceId}}</td>
-        <td>{{ins.issueDate}}</td>
-        <td>{{ins.years}}</td>
-        <td>{{ins.amountPaidV}}</td>
-        <!-- <td>{{ins.vehicle}}</td>
-        <td>{{ins.vehiclePlan}}</td> -->
-    </tr>
-</table>
+<div class="container">	
+  <div class="col-sm-12 col-xs-16">
+	<div class="single-we-do-box text-center">
+		<div class="we-do-description">
+			<div class="we-do-info">
+				<div class="we-do-topics">
+					<!-- <h2>
+						<a>
+							View Insurance
+						</a>
+					</h2> -->
+                    <div project-btn pricing-btn text-center>
+                    <button type="button" class="project-view space1" (click)="getInsurances()">
+                        View Insurances
+                    </button>&nbsp;&nbsp;                    
+                    <button type="button" class="project-view space1" (click)="getTInsurances()">
+                        View Travel Insurances
+                    </button></div></div>
+				</div>
+			</div>
+			<div class="we-do-comment">
+				<table class="table text-center" id='tab' >
+					<thead>
+					<tr>
+						<th scope="col">Insurance Id</th>
+						<th scope="col">Issue Date</th>
+						<th scope="col">Years</th>
+						<th scope="col">Amount Paid</th>
+					</tr>
+					</thead>
+					
+					<tbody class="text-center">
+                        <tr *ngFor="let ins of insurances">
+                            <td scope="col">{{ins.vehicleInsuranceId}}</td>
+                            <td>{{ins.issueDate}}</td>
+                            <td>{{ins.years}}</td>
+                            <td>{{ins.amountPaidV}}</td>
+                        </tr>
+					</tbody>
+				</table>	
+			</div>
+		</div>
+	</div>
 </div>
-<!-- <div>
-    <table border="1" id="2">
-        <tr>
-            <th>Insurance Id</th>
-            <th>location</th>
-            <th>Travel start date</th>
-            <th>Travel End Date</th>
-            <th>Amount Paid</th>
-        </tr>
-        <tr *ngFor="let ins of tInsurances">
-            <td>{{ins.travelInsuranceId}}</td>
-            <td>{{ins.location}}</td>
-            <td>{{ins.travelStartDate}}</td>
-            <td>{{ins.travelEndDate}}</td>
-            <td>{{ins.amountPaid}}</td>
-        </tr>
-    
-    </table>
-    </div> -->
-</body>

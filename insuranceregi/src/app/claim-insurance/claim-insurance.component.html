@@ -1,19 +1,51 @@
 <app-dashboard-nav></app-dashboard-nav>
-
 <body>
-    <div class="main">
-        <div class="Claim">
-            <form id="claim" method="post">
-                <h2>Claim Form </h2>
-                <label>Insurance Id :</label>
-                <input type="string" name="Insurance_Id " id="string" placeholder="Enter your insurance Id">
-                <label> Account No : </label>
-                <input type="number" name="Account_No" min="0" id="number" placeholder="Enter your account No">
-                <label>Claim Amount :</label>
-                <input type="number" name="Claim_Amount " min="0" id="number" placeholder="Enter claim amount">
-                <label>Upload Document :</label>
-                <input type="file" id="myFile" name="filename">
-                <div class="SubmitBtn"><input type="submit" id="submit"></div>
+    <div class="container">
+        <div class="title">Claim Insurance</div><br>
+        <div class="content">
+            <form #claimForm = "ngForm" (ngSubmit)="addClaimInsurance()" novalidate>
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Insurance Id</span>
+                        <input type="text" name="insuranceId" #insuranceId="ngModel" placeholder="Enter Insurance Id"
+                            [(ngModel)]="  claimInsuranceDto.insuranceId" required
+                            [class.is-invalid]="insuranceId.invalid && insuranceId.touched">
+                        <small class="text-danger"
+                            [class.d-none]="insuranceId.valid || insuranceId.untouched">InsuranceId is
+                            Required</small>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Account Number</span>
+                        <input type="number" name="accountNo" #accountNo="ngModel" id="accountNo"
+                            placeholder="Enter Account Number" [(ngModel)]="  claimInsuranceDto.accountNo" required
+                            [class.is-invali]="accountNo.invalid && accountNo.touched">
+                        <small class="text-danger" [class.d-none]="accountNo.valid || accountNo.untouched">Account
+                            Number is
+                            Required</small>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Claim Amount</span>
+                        <input type="number" name="claimAmount" #claimAmount="ngModel" id="claimAmount"
+                            placeholder="Claim Amount" [(ngModel)]="claimInsuranceDto.claimAmount" required
+                            [class.is-invalid]="claimAmount.invalid && claimAmount.touched">
+                        <small class="text-danger" [class.d-none]="claimAmount.valid || claimAmount.untouched">End Date
+                            is Required</small>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Reason to be Claimed</span>
+                        <input type="text" name="reason" #reason="ngModel" id="reason" required
+                            [(ngModel)]="claimInsuranceDto.reason" placeholder="Enter the Claiming Reason"
+                            [class.is-invalid]="reason.invalid && reason.touched">
+                        <small class="text-danger" [class.d-none]="reason.valid || reason.untouched">End Date
+                            is Required</small>
+                    </div>
+
+                </div>
+                <div class="button">
+                    <input type="submit" [disabled]="claimForm.form.invalid" value="Submit"
+                        id="add-travel-form">
+                </div>
             </form>
         </div>
     </div>
