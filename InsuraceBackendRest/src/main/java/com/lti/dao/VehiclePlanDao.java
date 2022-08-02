@@ -2,6 +2,7 @@ package com.lti.dao;
 
 import java.util.List;
 
+import com.lti.dto.VehicleSearchDto;
 import com.lti.entity.VehicleInsurancePlan;
 
 public interface VehiclePlanDao {
@@ -13,7 +14,11 @@ public interface VehiclePlanDao {
 	List<VehicleInsurancePlan> viewAllVehicleInsurancePlans();
 	
 	VehicleInsurancePlan searchVehiclePlan(String vehicleType,String planType ,int years);
+	
+	VehicleInsurancePlan searchPlanByVehicleTypeYear(VehicleSearchDto dto1);
+	
+	VehicleInsurancePlan searchPlanByDurationInsuranceType(String vehicleType, String insuranceType,int planDuration);
 
-	VehicleInsurancePlan searchPlanByDurationInsuranceType(String vehicleType, String insuranceType, int planDuration);
+//	VehicleInsurancePlan searchPlanByDurationInsuranceType(String vehicleType, String insuranceType, int planDuration);
 
 }

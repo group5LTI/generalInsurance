@@ -1,6 +1,10 @@
 package com.lti.service;
 
+
+import com.lti.dto.CalTravelDto;
+
 import java.util.List;
+
 
 import com.lti.dto.TravelSearchDto;
 import com.lti.entity.Insurance;
@@ -22,6 +26,16 @@ public interface TravelService {
 	TravelInsurancePlan searchPlanByPeoplePlanLocationDuration(int noOfPeople,String location,int duration);
 	
 	Insurance addTravelInsurance(Insurance ti);
+//<<<<<<< HEAD
+//	
+////	TravelInsurancePlan searchPlanByPeoplePlanLocationDurationType1(CalTravelDto calTravelDto);
+//	
+//	TravelInsurancePlan searchPlanByPeoplePlanLocationDuration(int noOfPeople,String location,int duration);
+//	
+//	
+//
+//=======
 
 	List<TravelInsurance> viewAllTravelInsurancesByUserName(String uname);
+//>>>>>>> cdae998a8de68d50a6b33b9ed34e137979e7b7e9
 }

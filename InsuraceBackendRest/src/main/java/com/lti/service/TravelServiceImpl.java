@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.lti.dao.InsuranceDao;
 import com.lti.dao.TravelInsuranceDao;
 import com.lti.dao.TravelPlanDao;
+import com.lti.dto.CalTravelDto;
 import com.lti.dto.TravelSearchDto;
 import com.lti.entity.Insurance;
 import com.lti.entity.TravelInsurance;
@@ -86,10 +87,18 @@ public class TravelServiceImpl implements TravelService {
 		return travelPlanDao.searchPlanByPeoplePlanLocationDuration(noOfPeople,location,duration);
 	}
 
+//<<<<<<< HEAD
+////	@Override
+////	public TravelInsurancePlan searchPlanByPeoplePlanLocationDurationType1() {
+////		// TODO Auto-generated method stub
+////		return travelPlanDao.searchPlanByPeoplePlanLocationDurationType(travelSearchDto);
+////	}
+//=======
 	@Override
 	public List<TravelInsurance> viewAllTravelInsurancesByUserName(String uname) {
 		// TODO Auto-generated method stub
 		return travelDao.viewAllTravelInsurancesByUserName(uname);
 	}
+//>>>>>>> cdae998a8de68d50a6b33b9ed34e137979e7b7e9
 
 }

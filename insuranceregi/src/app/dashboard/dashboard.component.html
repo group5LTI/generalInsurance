@@ -23,8 +23,8 @@
                                         <button type="button" class="slide-btn">
                                             get started
                                         </button>
-                                        <button type="button" class="slide-btn">
-                                            Calculate Premium
+                                        <button type="button" class="slide-btn" [routerLink]="['/calPage']">
+                                           <a [routerLink]="['/calPage']"> Calculate Premium</a>
                                         </button>
 
                                         <button type="button" class="slide-btn" [routerLink]="['/viewLink']">
@@ -116,7 +116,7 @@
                                         <!--/.we-do-img-->
                                         <div class="we-do-topics">
                                             <h2>
-                                                <a href="#">
+                                                <a [routerLink]="['/renewLink']">
                                                     Re-new Insurance
                                                 </a>
                                             </h2>

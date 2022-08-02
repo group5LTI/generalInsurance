@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-
 import { BuyComponent } from './buy-insurance/buy-insurance.component';
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
@@ -23,9 +21,14 @@ import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { AddVehiclePlanComponent } from './add-vehicle-plan/add-vehicle-plan.component';
 import { AddTravelPlanComponent } from './add-travel-plan/add-travel-plan.component';
-import { ViewAllComponent } from './view-all/view-all.component';
+import { TravelCalculatorComponent } from './travel-calculator/travel-calculator.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { ClaimInsuranceComponent } from './claim-insurance/claim-insurance.component';
+import { VehicleCalculatorComponent } from './vehicle-calculator/vehicle-calculator.component';
+import { TravelPremiumComponent } from './travel-premium/travel-premium.component';
+import { CalPageComponent } from './cal-page/cal-page.component';
 import { AdminVerifyClaimComponent } from './admin-verify-claim/admin-verify-claim.component';
+import { ViewAllComponent } from './view-all/view-all.component';
 import { ViewCustomerClaimsComponent } from './view-customer-claims/view-customer-claims.component';
 import { ViewAllClaimAdminComponent } from './view-all-claim-admin/view-all-claim-admin.component';
 
@@ -45,16 +48,23 @@ import { ViewAllClaimAdminComponent } from './view-all-claim-admin/view-all-clai
     TravelPageComponent,
     ContactComponent,
     TravelComponent,
+    TravelPremiumComponent,
     RenewInsuranceComponent,
     PaymentPageComponent,
     UpdateProfileComponent,
     AddVehiclePlanComponent,
     AddTravelPlanComponent,
-    ViewAllComponent,
+    TravelCalculatorComponent,
+    ForgotpasswordComponent,
     ClaimInsuranceComponent,
+    VehicleCalculatorComponent,
+    CalPageComponent,
     AdminVerifyClaimComponent,
+    ViewAllComponent,
+    ViewAllComponent,
     ViewCustomerClaimsComponent,
     ViewAllClaimAdminComponent,
+
     
   ],
   imports: [

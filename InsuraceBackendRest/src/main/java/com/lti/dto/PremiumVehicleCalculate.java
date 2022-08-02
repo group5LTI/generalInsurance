@@ -23,6 +23,4 @@ public class PremiumVehicleCalculate {
 	public void setInsuranceType(String insuranceType) {
 		this.insuranceType = insuranceType;
 	}
-	
-	
 }

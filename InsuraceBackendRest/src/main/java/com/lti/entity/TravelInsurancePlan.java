@@ -75,6 +75,7 @@ public class TravelInsurancePlan {
 	public void setPlannedAmount(double plannedAmount) {
 		this.plannedAmount = plannedAmount;
 	}
+
 	@JsonIgnore
 	public List<TravelInsurance> getTravelInsurances() {
 		return travelInsurances;

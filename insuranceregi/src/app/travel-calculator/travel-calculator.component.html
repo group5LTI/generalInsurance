@@ -1,0 +1,125 @@
+<!-- dashboard start -->
+<div class="tpnav">
+    <ul>
+        <a class="header1">
+            <h1 class="demotext1"><span> L&T </span>Insurance</h1>
+        </a>
+        <li><a type="button" value="Go back!" onclick="history.back()">Back</a></li>
+    </ul>
+
+</div>
+<!-- <app-dashboard-nav></app-dashboard-nav> -->
+<!-- <p>dashboard works!</p> -->
+  
+        <!--we-do start -->
+        <section class="we-do">
+            <div class="container">
+                <div class="we-do-details">
+                    <!--/.col-->
+                    <div class="col-sm-7 col-xs-12">
+                        <div class="single-we-do-box ">
+                            <div class="we-do-description">
+                                <!--/.we-do-info-->
+                                <div class="we-do-comment ">
+                                    <div class="container">
+                                        <div class="title">Travel Insurance</div><br>
+                                        <div class="content">
+                                            <form #calTravel="ngForm" (ngSubmit)="calculate_travel()">
+                                                <div class="user-details ">
+                                                    <div class="input-box">
+                                                        <span class="details">Location</span>
+                                                        <input type="text"  name="location" placeholder="Enter Location" [(ngModel)]="TravelInput.location" required>
+                                                    </div>
+                                                    <div class="input-box">
+                                                        <span class="details">No of People</span>
+                                                        <input type="number" name="noOfPeople" placeholder="No of People" [(ngModel)]="TravelInput.noOfPeople" required>
+                                                    </div>
+                                                    <div class="input-box">
+                                                        <span class="details">Travel Start Date</span>
+                                                        <input type="date" name="travelStartDate" placeholder="Enter Start Date" [(ngModel)]="TravelInput.travelStartDate" required>
+                                                    </div>
+                                                    <div class="input-box">
+                                                        <span class="details">Travel End Date</span>
+                                                        <input type="date" name="travelEndDate" placeholder="Enter End Date" [(ngModel)]="TravelInput.travelEndDate" required>
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="project-btn pricing-btn">
+                                                    <input type="submit" value="submit" class="project-view1" >
+                                                        
+                                                
+                                                </div>
+                                                <div>{{clickmsg}}</div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- button close -->
+                                    <!-- {{ TravelInput | json }} -->
+
+                                </div>
+                                <!--/.we-do-comment-->
+                            </div>
+                            <!--/.we-do-description-->
+                        </div>
+                        <!--/.single-we-do-box-->
+                    </div>
+                    <!--/.col-->
+
+
+                    <!--/.col-->
+                    <div class="col-sm-4 col-xs-15">
+                        <div class="single-we-do-box text-center">
+                            <div class="we-do-description">
+                                <div class="we-do-info">
+
+                                    <!--/.we-do-img-->
+                                    <div class="we-do-topics">
+                                        <h2>
+                                            <a href="#">
+                                                Calculated Travel Insurance
+                                            </a>
+                                        </h2>
+                                    </div>
+                                    <!--/.we-do-topics-->
+                                </div>
+                                <!--/.we-do-info-->
+                                <div class="we-do-comment">
+
+                                    <h1>{{data.plan.planType}}</h1>
+                                    <ul class="plan-lists">
+                                        <li>Cost Of Plan {{data.plan.plannedAmount}} </li>
+                                        <li>Numbe of People {{data.plan.noOfPeople}} </li>
+                                        <li>Travel Duration {{data.plan.travleDuration}} Months </li>
+                                        <li>Location {{data.plan.travelLocation}}</li>
+                                        <!-- <li>Loss of Passport Not Covered</li> -->
+                                        <li>E-Mail support</li>
+                                    </ul>
+
+                                    <div class="project-btn pricing-btn text-center">
+                                        <a  class="project-view2">
+                                        <!-- <a [routerLink]="['/travelCal']" class="project-view2"> -->
+                                            Calculate Travel Insurance
+                                        </a>
+                                    </div>
+                                    <!-- button close -->
+
+                                </div>
+                                <!--/.we-do-comment-->
+                            </div>
+                            <!--/.we-do-description-->
+                        </div>
+                        <!--/.single-we-do-box-->
+                    </div>
+                    <!--/.col-->
+
+
+
+                </div>
+            </div>
+            <!--/.row-->
+
+
+
+            <!-- home ends -->

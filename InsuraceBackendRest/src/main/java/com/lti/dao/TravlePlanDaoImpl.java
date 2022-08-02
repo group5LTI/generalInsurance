@@ -58,7 +58,7 @@ public class TravlePlanDaoImpl implements TravelPlanDao {
 			return null;
 		}return tip;
 	}
-
+	
 	@Override
 	public TravelInsurancePlan searchPlanByPeoplePlanLocationDuration(int noOfPeople, String location, int duration) {
 		String jpql = "select tp from TravelInsurancePlan tp where tp.noOfPeople >=:p  and LOWER(tp.travelLocation)= LOWER(:loc) and tp.travleDuration>=:d order by travleDuration asc";
@@ -74,4 +74,20 @@ public class TravlePlanDaoImpl implements TravelPlanDao {
 			return null;
 		}return tip;
 	}
+
+//	@Override
+//	public TravelInsurancePlan searchPlanByPeoplePlanLocationDuration(int noOfPeople, String location, int duration) {
+//		String jpql = "select tp from TravelInsurancePlan tp where tp.noOfPeople >=:p  and LOWER(tp.travelLocation)= LOWER(:loc) and tp.travleDuration>=:d order by travleDuration asc";
+//        TypedQuery<TravelInsurancePlan> qry = em.createQuery(jpql, TravelInsurancePlan.class);
+//        qry.setParameter("p", noOfPeople);
+//        qry.setParameter("loc",location);
+//        qry.setParameter("d",duration);
+//		TravelInsurancePlan tip;
+//		try {
+//			tip=qry.setMaxResults(1).getSingleResult();
+//		} catch (Exception e) {
+//			System.out.println(e.getMessage());
+//			return null;
+//		}return tip;
+//	}
 }

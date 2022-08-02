@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lti.dao.TravleInsuranceDaoImpl;
@@ -27,6 +29,7 @@ import com.lti.entity.InsuranceDocument;
 import com.lti.entity.TravelInsurance;
 import com.lti.entity.TravelInsurancePlan;
 import com.lti.entity.VehicleInsurance;
+import com.lti.entity.VehicleInsurancePlan;
 import com.lti.exception.InsurancePlanNotFound;
 import com.lti.exception.RegistrationError;
 import com.lti.service.CustomerService;
@@ -111,8 +114,10 @@ public class TravelController {
 	public String registerTravelPlan(@RequestBody TravelInsurancePlan travelInsurancePlan) {
 		return travelService.RegisterTravelPlan(travelInsurancePlan);
 	}
+
 	
-	@GetMapping(value="/calculatetravel")
+	@RequestMapping(value="/calculatetravel",method = RequestMethod.POST)
+	@ResponseBody
 	public ReturnMessageTravelPremium calculateTravelPremium(@RequestBody PremiumTravelCalculate ptc) {
 		TravelInsurancePlan t = new TravelInsurancePlan();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -144,9 +149,39 @@ public class TravelController {
 	public List<TravelInsurance> viewAllTravelInsurancesByuserId(@RequestParam("userName") String uname) {
 		return travelService.viewAllTravelInsurancesByUserName(uname);
 	}
+
 //	@GetMapping(value="/searchbytype")
 //	public TravelInsurancePlan searchByDto(@RequestBody TravelSearchDto travelSearchDto) {
 //	return travelService.searchPlanByPeoplePlanLocationDurationType(travelSearchDto);
 //	}
+	
+//	@GetMapping(value="/calculatetravel")
+//	public ReturnMessageTravelPremium calculateTravelPremium(@RequestBody PremiumTravelCalculate ptc) {
+//		TravelInsurancePlan t = new TravelInsurancePlan();
+//		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//		
+//		LocalDate end = LocalDate.parse(ptc.getTravelEndDate(),formatter);
+//		LocalDate start = LocalDate.parse(ptc.getTravelStartDate(),formatter);
+//		Period months = Period.between(start, end);
+//		
+//		
+//		int month = (int)((months.getYears()*12)+months.getMonths()+(int)(months.getDays()/12));
+//		System.out.println(month);
+//		int people =ptc.getNoOfPeople();
+//		String location =ptc.getLocation();
+//		TravelInsurancePlan trp = travelService.searchPlanByPeoplePlanLocationDuration(people,location,month);
+//		ReturnMessageTravelPremium msg = new ReturnMessageTravelPremium();
+//		if(trp!=null) {
+//			msg.setMessage("For your preferences we have found this plan");
+//			msg.setPlan(trp);
+//			return msg;
+//		}
+//		else {
+//			msg.setMessage("No plan Available!");
+//			msg.setPlan(null);
+//			return msg;
+//		}
+		
+	}
+	
 
-}

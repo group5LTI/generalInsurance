@@ -144,6 +144,7 @@ public class VehicleServiceImpl implements VehicleService {
 		return vehicleDao.searchVehicleById(vehicleId);
 	}
 
+
 	@Override
 	public VehicleInsurancePlan searchPlanByDurationInsuranceType(String vehicleType, String insuranceType,
 			int planDuration) {
@@ -154,6 +155,8 @@ public class VehicleServiceImpl implements VehicleService {
 			return null;
 		}
 		return vehiclePlan;
+
+
 	}
 
 	
@@ -182,6 +185,5 @@ public class VehicleServiceImpl implements VehicleService {
 	}
 
 	
-
 
 }

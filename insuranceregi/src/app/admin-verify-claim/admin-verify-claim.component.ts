@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+// import { Component, OnInit } from '@angular/core';
 import { ClaimInsurance } from '../claim-insurance';
 import { ClaimServiceService } from '../claim-service.service';
 
@@ -8,6 +11,8 @@ import { ClaimServiceService } from '../claim-service.service';
   styleUrls: ['./admin-verify-claim.component.css']
 })
 export class AdminVerifyClaimComponent implements OnInit {
+
+
 
   constructor(private claimService:ClaimServiceService) { }
 viewClaims:any= new Array();

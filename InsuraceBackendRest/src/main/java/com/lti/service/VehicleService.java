@@ -31,6 +31,13 @@ public interface VehicleService {
 
 	Insurance addVehicleInsurance(Insurance vi);
 	
+//<<<<<<< HEAD
+////	VehicleInsurance updateBuyInsurance(VehicleInsurance vehicleInsurance);
+//
+////	String RegisterVehiclePlan(VehicleInsurancePlan vehicleInsurancePlan);
+//
+//	VehicleInsurancePlan searchPlanByDurationInsuranceType(String vehicleType,String insuranceType,int planDuration);
+//=======
 
 	VehicleInsurancePlan searchPlanByDurationInsuranceType(String vehicleType,String insuranceType,int planDuration);
 
@@ -42,6 +49,7 @@ public interface VehicleService {
 
 	List<Integer> viewAllVehicleInsurancesIdByUserName(String uname);
 	
+//>>>>>>> cdae998a8de68d50a6b33b9ed34e137979e7b7e9
 	
 	
 }
