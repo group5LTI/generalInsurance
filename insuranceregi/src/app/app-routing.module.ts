@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AddTravelPlanComponent } from './add-travel-plan/add-travel-plan.component';
 import { AddVehiclePlanComponent } from './add-vehicle-plan/add-vehicle-plan.component';
+import { AdminVerifyClaimComponent } from './admin-verify-claim/admin-verify-claim.component';
 import { AdminComponent } from './admin/admin.component';
 import { BuyComponent } from './buy-insurance/buy-insurance.component';
 import { ClaimInsuranceComponent } from './claim-insurance/claim-insurance.component';
@@ -18,6 +19,7 @@ import { TravelComponent } from './travel-insurance/travel-insurance.component';
 import { TravelPageComponent } from './travel-page/travel-page.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { ViewAllComponent } from './view-all/view-all.component';
+import { ViewCustomerClaimsComponent } from './view-customer-claims/view-customer-claims.component';
 
 const routes: Routes = [
   {
@@ -76,6 +78,12 @@ const routes: Routes = [
 },
 {
   path:'claimLink',component:ClaimInsuranceComponent
+},
+{
+  path:'verifyClaim',component:AdminVerifyClaimComponent
+},
+{
+  path:'viewCustomerClaim',component:ViewCustomerClaimsComponent
 }
 
 

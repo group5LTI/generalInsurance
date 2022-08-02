@@ -34,6 +34,9 @@ public class Customer {
 	
 	@OneToMany(mappedBy = "customer")
 	List<TravelInsurance> travelInsurances;
+	
+	@OneToMany(mappedBy = "customer")
+	List<Insurance> insurance;
 
 	@OneToMany(mappedBy = "customer")
 	List<InsuranceDocument> insuranceDocuments;
@@ -111,6 +114,14 @@ public class Customer {
 
 	public void setInsuranceDocuments(List<InsuranceDocument> insuranceDocuments) {
 		this.insuranceDocuments = insuranceDocuments;
+	}
+	@JsonIgnore
+	public List<Insurance> getInsurance() {
+		return insurance;
+	}
+
+	public void setInsurance(List<Insurance> insurance) {
+		this.insurance = insurance;
 	}
 	
 	

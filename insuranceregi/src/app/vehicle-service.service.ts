@@ -13,8 +13,8 @@ export class VehicleServiceService {
 
   constructor(private httpClient:HttpClient) { }
 
-  addVehicleInsurance(buyDto:BuyVInsuranceDto):Observable<boolean>{
-    return this.httpClient.post<boolean>("http://localhost:9090/vehicles/buyvehicleinsurance",buyDto)
+  addVehicleInsurance(buyDto:BuyVInsuranceDto):Observable<VehicleInsurance>{
+    return this.httpClient.post<VehicleInsurance>("http://localhost:9090/vehicles/buyvehicleinsurance",buyDto)
   }
   AddVehiclePlan(addVplan:AddVehiclePlan):Observable<string>
   {
@@ -23,5 +23,10 @@ export class VehicleServiceService {
   getInsurances(userName:string):Observable<VehicleInsurance[]>
   {
     return this.httpClient.get<VehicleInsurance[]>("http://localhost:9090/vehicles/viewallinsurance?userName="+userName);
+  }
+
+  getVInsuranceId(userName:string):Observable<number[]>
+  {
+    return this.httpClient.get<number[]>("http://localhost:9090/vehicles/viewallinsuranceid?userName="+userName);
   }
 }

@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
@@ -31,12 +32,15 @@ public class Insurance {
 	TravelInsurance travelInsurance;
 	
 	@OneToOne
-	@JoinColumn(name = "vehcileInsuranceId")
+	@JoinColumn(name = "vehicleInsuranceId")
 	VehicleInsurance vehicleInsurance;
 	
+	@ManyToOne
+	@JoinColumn(name="customer_id")
+	Customer customer;
 	
 	@OneToMany(mappedBy = "insurance")
-	List<ClaimInurance> claims;
+	List<ClaimInsurance> claims;
 	
 	@OneToOne(mappedBy = "insurance")
 	InsuranceDocument insuranceDocument;
@@ -66,11 +70,11 @@ public class Insurance {
 	}
 
 	@JsonIgnore
-	public List<ClaimInurance> getClaims() {
+	public List<ClaimInsurance> getClaims() {
 		return claims;
 	}
 
-	public void setClaims(List<ClaimInurance> claims) {
+	public void setClaims(List<ClaimInsurance> claims) {
 		this.claims = claims;
 	}
 
@@ -80,6 +84,14 @@ public class Insurance {
 
 	public void setInsuranceDocument(InsuranceDocument insuranceDocument) {
 		this.insuranceDocument = insuranceDocument;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 	
 	

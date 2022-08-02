@@ -1,5 +1,6 @@
 package com.lti.service;
 
+import com.lti.entity.Insurance;
 import com.lti.entity.InsuranceDocument;
 
 public interface InsuranceService {
@@ -9,5 +10,7 @@ public interface InsuranceService {
 	InsuranceDocument searchInsuranceDocumentByInsuranceId(int insuranceId);
 	
 	InsuranceDocument updateInsuranceDocument(InsuranceDocument id);
+
+	Insurance searchInsuranceByinsuranceId(int insuranceId);
 	
 }

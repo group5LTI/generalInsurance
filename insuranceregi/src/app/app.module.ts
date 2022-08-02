@@ -19,14 +19,14 @@ import { TravelComponent } from './travel-insurance/travel-insurance.component';
 import { TravelPageComponent } from './travel-page/travel-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RenewInsuranceComponent } from './renew-insurance/renew-insurance.component';
-import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { AddVehiclePlanComponent } from './add-vehicle-plan/add-vehicle-plan.component';
 import { AddTravelPlanComponent } from './add-travel-plan/add-travel-plan.component';
-import { UploadDocumentComponent } from './upload-document/upload-document.component';
 import { ViewAllComponent } from './view-all/view-all.component';
 import { ClaimInsuranceComponent } from './claim-insurance/claim-insurance.component';
+import { AdminVerifyClaimComponent } from './admin-verify-claim/admin-verify-claim.component';
+import { ViewCustomerClaimsComponent } from './view-customer-claims/view-customer-claims.component';
 
 
 @NgModule({
@@ -49,9 +49,10 @@ import { ClaimInsuranceComponent } from './claim-insurance/claim-insurance.compo
     UpdateProfileComponent,
     AddVehiclePlanComponent,
     AddTravelPlanComponent,
-    UploadDocumentComponent,
     ViewAllComponent,
     ClaimInsuranceComponent,
+    AdminVerifyClaimComponent,
+    ViewCustomerClaimsComponent,
     
   ],
   imports: [

@@ -5,6 +5,7 @@ import { User } from '../user';
 import { VehicleInsurance } from '../vehicle-insurance';
 import { Router } from '@angular/router';
 import { RegisterService } from '../register.service';
+import { VehicleServiceService } from '../vehicle-service.service';
 
 @Component({
   selector: 'app-renew-insurance',
@@ -14,10 +15,13 @@ import { RegisterService } from '../register.service';
 export class RenewInsuranceComponent implements OnInit {
 
   msg:string;
-  constructor(private renewInsuranceService:InsuranceService,private registerService:RegisterService) { }
+  plan = ['Silver','Gold','Diamond']
+  planHasError = true;
+  constructor(private renewInsuranceService:InsuranceService,private registerService:RegisterService,private vehicleService:VehicleServiceService) { }
   buyInsurance:VehicleInsurance=new VehicleInsurance();
   user:User=new User();
   renewDto:RenewRegisterVInsuranceDto=new RenewRegisterVInsuranceDto();
+  arrays:number[]=[]; 
   ngOnInit(): void {
     this.user=JSON.parse(sessionStorage.getItem("userDetails"));
   }
@@ -28,9 +32,24 @@ export class RenewInsuranceComponent implements OnInit {
     .subscribe(message=>{
     this.msg=message
     alert(this.msg);
+    location.reload();
     console.log(this.msg);
   }
 )
   }
-
+  getVInsuranceId(){
+    this.vehicleService.getVInsuranceId(this.user.userName)
+    .subscribe(
+      obj=>{
+        this.arrays=obj;
+      }
+    )
+  }
+  validatePlan(value:string) {
+    if(value == 'default') {
+      this.planHasError = true;
+    }else {
+      this.planHasError = false;
+    }
+  }
 }

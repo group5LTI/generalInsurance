@@ -2,13 +2,21 @@ package com.lti.dao;
 
 import java.util.List;
 
-import com.lti.entity.ClaimInurance;
+import com.lti.dto.ClaimViewDto;
+import com.lti.dto.ViewUnverifiedDto;
+import com.lti.entity.ClaimInsurance;
 
 public interface ClaimDao {
 
-	ClaimInurance AddOrUpdateClaim(ClaimInurance claim);
+	ClaimInsurance AddOrUpdateClaim(ClaimInsurance claim);
 
-	ClaimInurance searchClaimById(int claimId);
+	ClaimInsurance searchClaimById(int claimId);
 
-	List<ClaimInurance> viewAllClaims();
+	List<ClaimInsurance> viewAllClaims();
+
+	List<ViewUnverifiedDto>viewAllUnverifiedClaims();
+
+	boolean checkStatus(int claimId, String status);
+
+	List<ClaimViewDto> viewClaimsUserName(int userIdd);
 }

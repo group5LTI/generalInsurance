@@ -40,6 +40,7 @@ import com.lti.dto.viewAllDto;
 import com.lti.entity.Customer;
 import com.lti.entity.Insurance;
 import com.lti.entity.InsuranceDocument;
+import com.lti.entity.TravelInsurance;
 import com.lti.entity.TravelInsurancePlan;
 import com.lti.entity.Vehicle;
 import com.lti.entity.VehicleInsurance;
@@ -51,6 +52,7 @@ import com.lti.exception.RegistrationError;
 import com.lti.exception.VehicleNotFound;
 import com.lti.service.CustomerService;
 import com.lti.service.InsuranceService;
+import com.lti.service.TravelService;
 import com.lti.service.VehicleService;
 
 @RestController
@@ -66,9 +68,12 @@ public class VehicleController {
 
 	@Autowired
 	InsuranceService insuranceService;
+	
+	@Autowired
+	TravelService travelService;
 
 	@PostMapping(value = "/buyvehicleinsurance")
-	public boolean buyVehicleInsurance(@RequestBody BuyVInsuranceDto vehicleInsurance) {
+	public VehicleInsurance buyVehicleInsurance(@RequestBody BuyVInsuranceDto vehicleInsurance) {
 
 		Vehicle reg = new Vehicle();
 		reg.setBrand(vehicleInsurance.getVehicleBrand());
@@ -92,6 +97,7 @@ public class VehicleController {
 					if (b != null) {
 						Insurance i = new Insurance();
 						i.setVehicleInsurance(b);
+						i.setCustomer(vehicle.getCustomer());
 						Insurance insurance = vehicleService.addVehicleInsurance(i);
 						VehicleInsurance vf = vehicleService.searchVehicleInsuranceById(b.getVehicleInsuranceId());
 						vf.setInsurance(insurance);
@@ -99,7 +105,8 @@ public class VehicleController {
 						idoc.setCustomer(vehicle.getCustomer());
 						idoc.setInsurance(insurance);
 						InsuranceDocument idocument = insuranceService.addOrUpdateInsuranceDocument(idoc);
-						return true;
+
+						return b;
 					} else {
 
 						throw new RegistrationError("Error while Adding insurance");
@@ -112,7 +119,7 @@ public class VehicleController {
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-			return false;
+			return null;
 		}
 	}
 
@@ -165,8 +172,18 @@ public class VehicleController {
 
 	@PostMapping(value = "/upload-insurancedocument")
 //	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.ALL_VALUE ,value = "/upload-document")
-	public String uploadDocument(@ModelAttribute InsuranceDocumentDto dto) {
-
+	public String uploadDocument(@ModelAttribute InsuranceDocumentDto dto, HttpServletRequest request) {
+		int insIdUpload=0;
+		if(dto.getInsuranceId()>=7000) {
+			VehicleInsurance v = vehicleService.searchVehicleInsuranceById(dto.getInsuranceId());
+			Insurance i = v.getInsurance();
+			insIdUpload = i.getInsuranceId();
+		}
+		else if(dto.getInsuranceId()<6000) {
+			TravelInsurance t = travelService.searchTravelInsuranceById(dto.getInsuranceId());
+			Insurance i = t.getInsurance();
+			insIdUpload = i.getInsuranceId();
+		}
 		String imageUploadLocation = "c:/uploads/";
 		String fileName = dto.getInsuranceDocument().getOriginalFilename();
 		String targetFile = imageUploadLocation + fileName;
@@ -175,8 +192,8 @@ public class VehicleController {
 		} catch (IOException e) {
 			return e.getMessage();
 		}
-		System.out.println(dto.getInsuranceId());
-		InsuranceDocument idoc = insuranceService.searchInsuranceDocumentByInsuranceId(dto.getInsuranceId());
+		System.out.println(insIdUpload);
+		InsuranceDocument idoc = insuranceService.searchInsuranceDocumentByInsuranceId(insIdUpload);
 		System.out.println(idoc.getCustomer().getUserId());
 		try {
 			if (idoc.getCustomer().getUserId() == dto.getUserId()) {
@@ -184,6 +201,10 @@ public class VehicleController {
 				idoc.setInsuranceDocumentPath(fileName);
 				InsuranceDocument id1 = insuranceService.updateInsuranceDocument(idoc);
 				if (id1 != null) {
+					InsuranceDocument id = downloadDocument(insIdUpload,request);
+					if(id!=null) {
+					System.out.println("Downloaded file you have uploaded");
+					}
 					return "File uploaded";
 
 				} else {
@@ -192,72 +213,77 @@ public class VehicleController {
 			} else {
 				throw new InsuranceNotFound("No insurance found for this customer");
 			}
-			
-			
+
 		} catch (Exception e) {
 			return e.getMessage();
 		}
 
 	}
-	
-	@GetMapping("/downloaddocument")
-    public InsuranceDocument profile(@RequestParam("insuranceId") int id, HttpServletRequest request) {
-        //fetching customer data from the database
-        InsuranceDocument idoc = insuranceService.searchInsuranceDocumentByInsuranceId(id);
-        //reading the project's deployed folder location
-        String projPath = request.getServletContext().getRealPath("/");
-        String tempDownloadPath = projPath + "/downloads/";
-        //creating a folder within the project where we will place the profile pic of the customer getting fetched
-        File f = new File(tempDownloadPath);
-        if(!f.exists())
-            f.mkdir();
-        String targetFile = tempDownloadPath + idoc.getInsuranceDocumentPath();
 
-        //the original location where the uploaded images are present
-        String uploadedImagesPath = "c:/uploads/";
-        String sourceFile = uploadedImagesPath + idoc.getInsuranceDocumentPath();
+//	@GetMapping("/downloaddocument")
+	public InsuranceDocument downloadDocument(int id, HttpServletRequest request) {
+		// fetching customer data from the database
+		InsuranceDocument idoc = insuranceService.searchInsuranceDocumentByInsuranceId(id);
+		// reading the project's deployed folder location
+		String projPath = request.getServletContext().getRealPath("/");
+		String tempDownloadPath = projPath + "/downloads/";
+		System.out.println(tempDownloadPath);
+		// creating a folder within the project where we will place the profile pic of
+		// the customer getting fetched
+		File f = new File(tempDownloadPath);
+		if (!f.exists())
+			f.mkdir();
+		String targetFile = tempDownloadPath + idoc.getInsuranceDocumentPath();
 
-        try {
-            FileCopyUtils.copy(new File(sourceFile), new File(targetFile));
-        } catch (IOException e) {
-            e.printStackTrace();
-            //maybe for this customer there is no profile pic
-        }
+		// the original location where the uploaded images are present
+		String uploadedImagesPath = "c:/uploads/";
+		String sourceFile = uploadedImagesPath + idoc.getInsuranceDocumentPath();
 
-        return idoc;
-    }
+		try {
+			FileCopyUtils.copy(new File(sourceFile), new File(targetFile));
+		} catch (IOException e) {
+			e.printStackTrace();
+			// maybe for this customer there is no profile pic
+		}
+
+		return idoc;
+	}
+
 	@GetMapping("/insurance/{insuranceId}")
 	public InsuranceDocument searchCustomerByUsername(@PathVariable int insuranceId) {
 		return insuranceService.searchInsuranceDocumentByInsuranceId(insuranceId);
 	}
-	
-	@GetMapping(value="/calculatevehicle")
+
+	@GetMapping(value = "/calculatevehicle")
 	public ReturnMessageVehiclePremium calculateTravelPremium(@RequestBody PremiumVehicleCalculate pvc) {
-		
+
 		VehicleInsurancePlan vp = vehicleService.searchPlanByDurationInsuranceType(pvc.getVehicleType(),
 				pvc.getInsuranceType(), pvc.getNoOfYears());
 		ReturnMessageVehiclePremium msg = new ReturnMessageVehiclePremium();
-		if(vp!=null) {
+		if (vp != null) {
 			msg.setMessage("For your preferences we have found this plan");
 			msg.setVip(vp);
 			return msg;
-		}
-		else {
+		} else {
 			msg.setMessage("No plan Available!");
 			msg.setVip(null);
 			return msg;
-	
+
 		}
 	}
 
-	
 	@GetMapping("/viewAll")
-	public List<VehicleInsurance> viewAllVehicleInsurances()
-	{
+	public List<VehicleInsurance> viewAllVehicleInsurances() {
 		return vehicleService.viewAllVehicleInsurances();
 	}
+
 	@GetMapping("/viewallinsurance")
 	public List<VehicleInsurance> viewAllVehicleInsurancesByuserId(@RequestParam("userName") String uname) {
 		return vehicleService.viewAllVehicleInsurancesByUserName(uname);
+	}
+
+	@GetMapping("/viewallinsuranceid")
+	public List<Integer> viewAllVehicleInsurancesIdByuserId(@RequestParam("userName") String uname) {
+		return vehicleService.viewAllVehicleInsurancesIdByUserName(uname);
 	}
 }

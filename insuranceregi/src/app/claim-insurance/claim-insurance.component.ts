@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ClaimDocumentDto } from '../claim-document-dto';
 import { ClaimInsurance } from '../claim-insurance';
 import { ClaimInsuranceDto } from '../claim-insurance-dto';
 import { ClaimServiceService } from '../claim-service.service';
+import { UploadDocumentServiceService } from '../upload-document-service.service';
 import { User } from '../user';
 
 @Component({
@@ -15,7 +17,8 @@ user:User=new User();
 message:string;
 claiminsurance:ClaimInsurance=new ClaimInsurance();
   claimInsuranceDto:ClaimInsuranceDto=new ClaimInsuranceDto();
-  constructor( private claimService:ClaimServiceService,private router:Router) { }
+  claimdocDto:ClaimDocumentDto = new ClaimDocumentDto();
+  constructor( private claimService:ClaimServiceService,private router:Router,private uploadDocumemt:UploadDocumentServiceService) { }
 
   ngOnInit(): void {
     this.user=JSON.parse(sessionStorage.getItem("userDetails"));
@@ -25,10 +28,30 @@ claiminsurance:ClaimInsurance=new ClaimInsurance();
     this.claimService.addClaimInsurance(this.claimInsuranceDto)
     .subscribe(
       claiminsu=>{
-        this.message=claiminsu;
-        alert(this.message);
-        this.router.navigate(['dbLink'])
+        this.claiminsurance=claiminsu;
+        this.claimdocDto.claimId=claiminsu.claimId;
+        alert(this.claiminsurance);
+        if(this.claiminsurance!=null){
+          alert("Claim submitted your id = "+this.claiminsurance.claimId);
+        }
+        else{
+          alert("Some Error occured");
+        }
       }
     )
+  }
+  onFileChange(event){
+    this.claimdocDto.claimInsuranceDocument=event.target.files[0];
+  }
+  UploadClaim(){
+    let formData=new FormData();
+    this.claimdocDto.userId=this.user.userId;
+    this.claimdocDto.claimInsuranceDocument=this.claimdocDto.claimInsuranceDocument;
+    formData.append('claimId',this.claimdocDto.claimId.toString());
+    formData.append('userId',this.claimdocDto.userId.toString());
+    formData.append('claimInsuranceDocument',this.claimdocDto.claimInsuranceDocument);
+    this.uploadDocumemt.ToUploadClaim(formData)
+    .subscribe(data=>alert(JSON.stringify(data)));
+    location.reload();
   }
 }

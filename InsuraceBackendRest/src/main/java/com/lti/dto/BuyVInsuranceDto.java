@@ -2,6 +2,8 @@ package com.lti.dto;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class BuyVInsuranceDto {
 
 	int userId;
@@ -67,6 +69,8 @@ public class BuyVInsuranceDto {
 	public void setPlanType(String planType) {
 		this.planType = planType;
 	}
+	
+
 
 	
 

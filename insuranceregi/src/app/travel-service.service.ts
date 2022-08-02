@@ -17,8 +17,8 @@ export class TravelServiceService {
     return this.httpClient.post("http://localhost:9090/travel/registertravelplan",addTPlan,{responseType:'text'})
   }
 
-  addTravelInsurance(buyTDto:BuyTinsuranceDto):Observable<ReturnInsuranceMessage>{
-    return this.httpClient.post<ReturnInsuranceMessage>("http://localhost:9090/travel/buytravelinsurance",buyTDto)
+  addTravelInsurance(buyTDto:BuyTinsuranceDto):Observable<TravelInsurance>{
+    return this.httpClient.post<TravelInsurance>("http://localhost:9090/travel/buytravelinsurance",buyTDto)
   }
 
  getTInsurances(userName:string):Observable<TravelInsurance[]>

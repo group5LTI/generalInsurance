@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BuyVInsuranceDto } from '../buy-vinsurance-dto';
+import { InsuranceDocumentDto } from '../insurance-document-dto';
 import { Login } from '../login';
 import { RegisterService } from '../register.service';
+import { UploadDocumentServiceService } from '../upload-document-service.service';
 import { User } from '../user';
 import { VehicleInsurance } from '../vehicle-insurance';
 import { VehicleServiceService } from '../vehicle-service.service';
@@ -20,15 +22,16 @@ export class BuyComponent implements OnInit {
 
   // buyRegDto:BuyRegisterVInsuranceDto=new BuyRegisterVInsuranceDto();
   buyDto:BuyVInsuranceDto = new BuyVInsuranceDto();
+  docDto:InsuranceDocumentDto = new InsuranceDocumentDto();
   plan = ['Silver','Gold','Diamond']
   planHasError = true;
   login:Login=new Login();
   vehicleInsurance:VehicleInsurance=new VehicleInsurance();
-  isValid:boolean;
   msg:string;
   user:User=new User();
+
   // vehicleModel = new vehicle('','','','','','','','','default');
-  constructor(private vehicleService:VehicleServiceService,private registerService:RegisterService,private router:Router) {}
+  constructor(private vehicleService:VehicleServiceService,private registerService:RegisterService,private router:Router,private uploadDocumemt:UploadDocumentServiceService) {}
   ngOnInit(): void {
     this.user=JSON.parse(sessionStorage.getItem("userDetails"));
   }
@@ -42,11 +45,12 @@ export class BuyComponent implements OnInit {
     this.vehicleService.addVehicleInsurance(this.buyDto)
     .subscribe(
       buyVehicleInsurance=>{
-        this.isValid=buyVehicleInsurance;
-        console.log(this.isValid);
-        if(this.isValid){
+        this.vehicleInsurance=buyVehicleInsurance;
+        this.docDto.insuranceId=this.vehicleInsurance.vehicleInsuranceId;
+        console.log(this.vehicleInsurance);
+        if(this.vehicleInsurance!=null){
           alert("Congratulations you have choosed "+this.buyDto.planType+" for your "+this.buyDto.vehicleType+" for "+this.buyDto.planDuration+" year/s");
-          this.router.navigate(['paymentLink'])
+          alert("Upload documents");
         }
         else{
           alert("Right now "+this.buyDto.planType+" plan is not available for "+this.buyDto.vehicleType +" for "+this.buyDto.planDuration+" years");
@@ -54,7 +58,9 @@ export class BuyComponent implements OnInit {
       }
     )
   }   
-
+  onFileChange(event){
+    this.docDto.insuranceDocument=event.target.files[0];
+  }
   validatePlan(value:string) {
     if(value == 'default') {
       this.planHasError = true;
@@ -62,6 +68,16 @@ export class BuyComponent implements OnInit {
       this.planHasError = false;
     }
   }
-
+ToUpload(){
+  let formData=new FormData();
+  this.docDto.userId=this.buyDto.userId;
+  this.docDto.insuranceDocument=this.docDto.insuranceDocument;
+  formData.append('userId',this.docDto.userId.toString());
+  formData.append('insuranceId',this.docDto.insuranceId.toString());
+  formData.append('insuranceDocument',this.docDto.insuranceDocument);
+  this.uploadDocumemt.ToUpload(formData)
+  .subscribe(data=>alert(JSON.stringify(data)));
+  location.reload();
+}
   
 }

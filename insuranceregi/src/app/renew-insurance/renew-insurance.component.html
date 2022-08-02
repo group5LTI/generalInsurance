@@ -1,6 +1,6 @@
 <app-dashboard-nav></app-dashboard-nav>
 <body>
-    
+  
     <div class="container">
         <div class="title">Vehicle Renew Insurance</div><br>
         <div class="content">
@@ -8,20 +8,29 @@
                 <div class="travel-details">
                     <div class="input-box">
                         <span class="details">Enter Vehicle Insurance ID</span>
-                        <input type="number" name="vehicleId" min="1000" [(ngModel)]="renewDto.vehicleInsuranceId" placeholder="Enter Plan Duration" required/>
+                        <input type="number" name="vehicleInsuranceId" min="1000" #vid="ngModel"  [class.is-invalid]="vid.invalid && vid.touched" [(ngModel)]="renewDto.vehicleInsuranceId" placeholder="Enter Plan Duration" required/>
+                        <small class="text-danger"
+                        [class.d-none]="vid.valid || vid.untouched">vehicle insurance id
+                        Required</small>
                     </div>
                     <div class="input-box">
                         <span class="details">Plan Duration</span>
-                        <input type="number" name="planDuration" min="1"  [(ngModel)]="renewDto.planDuration" placeholder="Enter Plan Duration" required/>
+                        <input type="number" name="planDuration" #planduration="ngModel"
+                        [class.is-invalid]="planduration.invalid && planduration.touched" min="1" max="3" [(ngModel)]="renewDto.planDuration" placeholder="Enter Plan Duration" required/>
+                        <small class="text-danger"
+                        [class.d-none]="planduration.valid || planduration.untouched">PlanDuration between 1-3 yrs
+                        Required</small>
                     </div>
                     <div class="input-box">
                         <span class="details">Plan Type</span>
-                        <select name="planType" id="dropdown" [(ngModel)]="renewDto.planType">
+                        <select (blur)="validatePlan(plan.value)" (change)="validatePlan(plan.value)" name="planType" #plan="ngModel" [class.is-invalid]="planHasError && plan.touched" id="dropdown" [(ngModel)]="renewDto.planType">
                             <option value="default">Select Plan</option>
                             <option value="Silver">Silver</option>
                             <option value="Gold">Gold</option>
                             <option value="Diamond">Diamond</option>
                         </select>
+                        <small class="text-danger" [class.d-none]="!planHasError || plan.untouched">Please Choose a
+                            Plan</small>
                     </div>
                 </div>
                 <div class="button">

@@ -3,7 +3,7 @@
     <div class="container">
         <div class="title">Vehicle Insurance</div><br>
         <div class="content">
-            <form #userForm="ngForm" (ngSubmit)="addVehicleInsurance()" novalidate>
+            <form #userForm="ngForm" (ngSubmit)="addVehicleInsurance()" novalidate >
                 <div class="travel-details">
                     <input type="radio" name="vehicleType" id="dot-1" value="twoWheeler" [(ngModel)]="buyDto.vehicleType">
                     <input type="radio" name="vehicleType" id="dot-2" value="fourWheeler" [(ngModel)]="buyDto.vehicleType">
@@ -45,23 +45,7 @@
                         <small class="text-danger" [class.d-none]="licence.valid || licence.untouched">Driving Licence
                             is Required</small>
                     </div>
-                    <!-- <div class="input-box">
-                        <span class="details">Registration Number</span>
-                        <input type="text" name="registrationNo" #registrationNo="ngModel"
-                            [class.is-invalid]="registrationNo.invalid && registrationNo.touched"
-                            placeholder="Enter Registration Number" required [(ngModel)]="vehicleModel.registrationNo">
-                        <small class="text-danger"
-                            [class.d-none]="registrationNo.valid || registrationNo.untouched">RegistrationNo is
-                            Required</small>
-                    </div> -->
-                    <!-- <div class="input-box">
-                        <span class="details">Engine Number</span>
-                        <input type="text" name="engineNo" #engineNo="ngModel"
-                            [class.is-invalid]="engineNo.invalid && engineNo.touched" placeholder="Enter Engine Number"
-                            required [(ngModel)]="vehicleModel.engineNo">
-                        <small class="text-danger" [class.d-none]="engineNo.valid || engineNo.untouched">EngineNo is
-                            Required</small>
-                    </div> -->
+                  
                     <div class="input-box">
                         <span class="details" id="Chassis">Chassis Number</span>
                         <input type="text" name="chassisNo" #chassisNo="ngModel"
@@ -74,10 +58,11 @@
                         <span class="details">Plan Duration</span>
                         <input type="number" name="planDuration" #planduration="ngModel"
                             [class.is-invalid]="planduration.invalid && planduration.touched"
-                            placeholder="Enter Plan Duration" required [(ngModel)]="buyDto.planDuration">
+                            placeholder="Enter Plan Duration" min="1" max="3" required [(ngModel)]="buyDto.planDuration">
                         <small class="text-danger"
-                            [class.d-none]="planduration.valid || planduration.untouched">PlanDuration is
+                            [class.d-none]="planduration.valid || planduration.untouched">PlanDuration between 1-3 yrs
                             Required</small>
+        
                     </div>
                     <div class="input-box">
                         <span class="details">Plan Type</span>
@@ -92,12 +77,19 @@
                         <small class="text-danger" [class.d-none]="!planHasError || plan.untouched">Please Choose a
                             Plan</small>
                     </div>
+    
                 </div>
                 <div class="button">
                     <input type="submit" value="Submit" [disabled]="userForm.form.invalid || planHasError">
                 </div>
 
             </form>
+            <div>
+                <form enctype="multipart/form-data" (submit)="ToUpload()"> <input type="file" name="pp" (change)="onFileChange($event)"> <br>
+                <button type="submit" >upload</button>
+                </form>
+            </div>
+           
         </div>
     </div>
 </body>
