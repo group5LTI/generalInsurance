@@ -28,7 +28,7 @@
                         <input type="number" name="claimAmount" #claimAmount="ngModel" id="claimAmount"
                             placeholder="Claim Amount" [(ngModel)]="claimInsuranceDto.claimAmount" required
                             [class.is-invalid]="claimAmount.invalid && claimAmount.touched">
-                        <small class="text-danger" [class.d-none]="claimAmount.valid || claimAmount.untouched">End Date
+                        <small class="text-danger" [class.d-none]="claimAmount.valid || claimAmount.untouched">Claim Amount
                             is Required</small>
                     </div>
 
@@ -37,7 +37,7 @@
                         <input type="text" name="reason" #reason="ngModel" id="reason" required
                             [(ngModel)]="claimInsuranceDto.reason" placeholder="Enter the Claiming Reason"
                             [class.is-invalid]="reason.invalid && reason.touched">
-                        <small class="text-danger" [class.d-none]="reason.valid || reason.untouched">End Date
+                        <small class="text-danger" [class.d-none]="reason.valid || reason.untouched">Reason
                             is Required</small>
                     </div>
 

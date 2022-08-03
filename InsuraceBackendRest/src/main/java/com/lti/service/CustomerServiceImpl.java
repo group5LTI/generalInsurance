@@ -40,6 +40,11 @@ public class CustomerServiceImpl implements CustomerService{
         UpdateCustomer updateCustomer=new UpdateCustomer();
         try {
             Customer cust2=customerDao.addOrUpdateCustomer(customer);
+            String email=customer.getMailId();
+			String text = "Profile Updated Successfully. For user id is "+customer.getUserId();
+			String subject = "Profile update Confirmation";
+			emailService.sendEmailForSignup(email, text, subject);
+			System.out.println("Email Sent");
             updateCustomer.setMessage("profile updated");
             updateCustomer.setCustomer(cust2);
             return updateCustomer;
