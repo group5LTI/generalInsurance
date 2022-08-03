@@ -34,19 +34,29 @@
                                             </div> -->
                                             <div class="input-box">
                                                 <span class="details " >Vehicle Type</span>
-                                                <select name="cars"  [(ngModel)]="VehicleInput.vehicleType" placeholder="select option">
+                                                <select name="vehicleType"  [(ngModel)]="VehicleInput.vehicleType" placeholder="select option">
                                                     <option value="twoWheeler">Two Wheeler</option>
                                                     <option value="fourWheeler">Four Wheeler</option>
                                                 </select>
                                             </div>
                                             <div class="input-box">
                                                 <span class="details">Insurance Type </span>
-                                                <input type="text" [(ngModel)]="VehicleInput.insuranceType" name="vehicleType" placeholder="No of People" ng-model required>
+                                                <select name="insuranceType"
+                                                        id="dropdown" [(ngModel)]="VehicleInput.insuranceType"
+                            >
+                            <option value="default">Select Plan</option>
+                            <option value="thirdParty">Third Party</option>
+                            <option value="comprehensive">Comprehensive</option>
+                            <!-- <option value="Diamond">Diamond</option> -->
+                        </select>
                                             </div>
                                             <div class="input-box">
                                                 <span class="details">No Of Years</span>
-                                                <input type="number" [(ngModel)]="VehicleInput.noOfYears" name="noOfYears" placeholder="Enter Start Date" ng-model
+                                                <input type="number" [(ngModel)]="VehicleInput.noOfYears" name="noOfYears" placeholder="Enter Duration" #planduration="ngModel" [class.is-invalid]="planduration.invalid && planduration.touched" min="1" max="3" ng-model
                                                     required>
+                                                    <small class="text-danger"
+                                                    [class.d-none]="planduration.valid || planduration.untouched">PlanDuration between 1-3 yrs
+                                                    Required</small>
                                             </div>
                                             
                                         </div>
@@ -93,10 +103,11 @@
 
                             <h1><a class="demotext2">{{ data.vip.planType}}</a></h1>
                             <ul class="plan-lists">
-                                <li>Cost rs {{ data.vip.plannedAmountV }}</li>
+                                <li>{{data.message}}</li>
+                                <li>Cost Rs {{ data.vip.plannedAmountV }}</li>
                                 <li>validity {{ data.vip.noOfYears }} year</li>
                                 <li>Insurance Type{{ data.vip.insuranceType }} </li>
-                                <li>{{data.message}}</li>
+                                
                             </ul>
 
                             <div class="project-btn pricing-btn text-center">

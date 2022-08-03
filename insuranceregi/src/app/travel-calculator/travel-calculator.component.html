@@ -24,29 +24,36 @@
                                     <div class="container">
                                         <div class="title">Travel Insurance</div><br>
                                         <div class="content">
-                                            <form #calTravel="ngForm" (ngSubmit)="calculate_travel()">
+                                            <form #calTravelForm="ngForm" (ngSubmit)="calculate_travel()">
                                                 <div class="user-details ">
                                                     <div class="input-box">
                                                         <span class="details">Location</span>
-                                                        <input type="text"  name="location" placeholder="Enter Location" [(ngModel)]="TravelInput.location" required>
+                                                        <input type="text"  name="location" placeholder="Enter Location" #location="ngModel" [(ngModel)]="TravelInput.location" required [class.is-invali]="location.invalid && location.touched">
+                                                        <small class="text-danger" [class.d-none]="location.valid || location.untouched">Location is
+                                                            Required</small>
                                                     </div>
                                                     <div class="input-box">
                                                         <span class="details">No of People</span>
-                                                        <input type="number" name="noOfPeople" placeholder="No of People" [(ngModel)]="TravelInput.noOfPeople" required>
+                                                        <input type="number" name="noOfPeople" #people="ngModel" placeholder="No of People" [(ngModel)]="TravelInput.noOfPeople" required  [class.is-invali]="people.invalid && people.touched">
+                                                        <small class="text-danger" [class.d-none]="people.valid || people.untouched">No of people is
+                                                            Required</small>
                                                     </div>
                                                     <div class="input-box">
                                                         <span class="details">Travel Start Date</span>
-                                                        <input type="date" name="travelStartDate" placeholder="Enter Start Date" [(ngModel)]="TravelInput.travelStartDate" required>
+                                                        <input type="date" name="travelStartDate" placeholder="Enter Start Date" #travelStartDate="ngModel" [(ngModel)]="TravelInput.travelStartDate" required [class.is-invali]="travelStartDate.invalid && travelStartDate.touched">
+                                                        <small class="text-danger" [class.d-none]="travelStartDate.valid || travelStartDate.untouched">Start Date is
+                                                            Required</small>
                                                     </div>
                                                     <div class="input-box">
                                                         <span class="details">Travel End Date</span>
-                                                        <input type="date" name="travelEndDate" placeholder="Enter End Date" [(ngModel)]="TravelInput.travelEndDate" required>
+                                                        <input type="date" name="travelEndDate" placeholder="Enter End Date" #travelEndDate="ngModel" [(ngModel)]="TravelInput.travelEndDate" required [class.is-invali]="travelEndDate.invalid && travelEndDate.touched">
+                                                        <small class="text-danger" [class.d-none]="travelEndDate.valid || travelEndDate.untouched">End Date is Required</small>
                                                     </div>
 
 
                                                 </div>
                                                 <div class="project-btn pricing-btn">
-                                                    <input type="submit" value="submit" class="project-view1" >
+                                                    <input type="submit" [disabled]="calTravelForm.form.invalid" value="submit" class="project-view1" >
                                                         
                                                 
                                                 </div>
@@ -90,11 +97,12 @@
                                     <h1>{{data.plan.planType}}</h1>
                                     <ul class="plan-lists">
                                         <li>Cost Of Plan {{data.plan.plannedAmount}} </li>
-                                        <li>Numbe of People {{data.plan.noOfPeople}} </li>
+                                        <li>Number of People {{data.plan.noOfPeople}} </li>
                                         <li>Travel Duration {{data.plan.travleDuration}} Months </li>
                                         <li>Location {{data.plan.travelLocation}}</li>
                                         <!-- <li>Loss of Passport Not Covered</li> -->
-                                        <li>E-Mail support</li>
+                                        <li>For more information</li>
+                                        <li>contact:lntinsurance@gmail.com</li>
                                     </ul>
 
                                     <div class="project-btn pricing-btn text-center">

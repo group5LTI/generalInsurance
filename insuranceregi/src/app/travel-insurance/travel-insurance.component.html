@@ -24,8 +24,8 @@
                     <div class="input-box">
                         <span class="details">Travel End Date</span>
                         <input type="date" name="travelEndDate" #travelEndDate="ngModel" id="travelEndDate"
-                            placeholder="Enter End Date" [(ngModel)]="buyTDto.travelEndDate" required [class.is-invalid] ="travelEndDate.invalid && travelEndDate.touched">
-                        <small class="text-danger" [class.d-none]="travelEndDate.valid || travelEndDate.untouched">End Date is Required</small>
+                            placeholder="Enter End Date" [(ngModel)]="buyTDto.travelEndDate" required [class.is-invali]="travelEndDate.invalid && travelEndDate.touched">
+                            <small class="text-danger" [class.d-none]="travelEndDate.valid || travelEndDate.untouched">End Date is Required</small>
                     </div>
                     <!-- <div class="input-box">
                         <span class="details">Amount Paid</span>
@@ -44,7 +44,7 @@
                     </div>
 
                     <div class="input-box">
-                        <span class="details">NoOfPeople</span>
+                        <span class="details">No Of People</span>
                         <input type="number" name="noOfPeople" #people="ngModel"
                             placeholder="Enter no Of people traveling" [(ngModel)]="buyTDto.noOfPeople" required
                             [class.is-invali]="people.invalid && people.touched">

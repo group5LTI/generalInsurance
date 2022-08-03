@@ -30,7 +30,6 @@ claiminsurance:ClaimInsurance=new ClaimInsurance();
       claiminsu=>{
         this.claiminsurance=claiminsu;
         this.claimdocDto.claimId=claiminsu.claimId;
-        alert(this.claiminsurance);
         if(this.claiminsurance!=null){
           alert("Claim submitted your id = "+this.claiminsurance.claimId);
         }

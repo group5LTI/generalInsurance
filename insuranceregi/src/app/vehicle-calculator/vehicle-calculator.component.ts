@@ -28,9 +28,13 @@ calculate_Vehicle(){
   console.log("//", this.VehicleInput)
   this.vehicleService.getCalVehicle(this.VehicleInput)
   .subscribe(data=>{
-    
+    if(data.vip!=null){
     this.data=data;
     console.log(data);
+    }
+    else{
+      alert("No plan available");
+    }
   })
   // console.log("received .. ", this.TravelInput)
   // this.message=data?.message;
