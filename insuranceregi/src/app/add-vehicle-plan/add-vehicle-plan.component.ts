@@ -30,4 +30,11 @@ plan = ['Silver','Gold','Diamond']
     );
     
   }
+  validatePlan(value:string) {
+    if(value == 'default') {
+      this.planHasError = true;
+    }else {
+      this.planHasError = false;
+    }
+  }
 }

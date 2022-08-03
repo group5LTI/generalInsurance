@@ -1,12 +1,14 @@
 <!-- dashboard start -->
+<div class="header">
 <div class="tpnav">
+    <div class="navbar">
+        <img class="banner-img" src="../assets/images/it.jpg" />
+    </div>
+    <h1 class="demotext1"><span> L&T </span>Insurance</h1>
     <ul>
-        <a class="header1">
-            <h1 class="demotext1"><span> L&T </span>Insurance</h1>
-        </a>
         <li><a type="button" value="Go back!" onclick="history.back()">Back</a></li>
     </ul>
-
+</div>
 </div>
 <!-- <app-dashboard-nav></app-dashboard-nav> -->
 <!-- <p>dashboard works!</p> -->
@@ -94,7 +96,7 @@
                                 <!--/.we-do-info-->
                                 <div class="we-do-comment">
 
-                                    <h1>{{data.plan.planType}}</h1>
+                                    <h1 id="plantypet">{{data.plan.planType}}</h1>
                                     <ul class="plan-lists">
                                         <li>Cost Of Plan {{data.plan.plannedAmount}} </li>
                                         <li>Number of People {{data.plan.noOfPeople}} </li>

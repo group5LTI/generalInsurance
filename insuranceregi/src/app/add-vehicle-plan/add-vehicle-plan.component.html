@@ -1,6 +1,6 @@
 <!-- <app-dashboard-nav></app-dashboard-nav> -->
 <app-admin-nav></app-admin-nav>
-<body>
+<body style = "background-image: url('../assets/images/v1insurance.jpg'); background-size:cover;">
     <div class="container">
         <div class="title">Vehicle Insurance</div><br>
         <div class="content">
@@ -25,7 +25,7 @@
                     <div class="input-box">
                         <span class="details" id="plannedAmountV">Planned Amount</span>
                         <input type="number" name="plannedAmountV" #plannedAmount="ngModel" min="1000"
-                            placeholder="Enter Planned Ampunt" required [(ngModel)]="addVehicleplan.plannedAmountV">
+                            placeholder="Enter Planned Amount" required [(ngModel)]="addVehicleplan.plannedAmountV">
                             <small class="text-danger"
                             [class.d-none]="plannedAmount.valid || plannedAmount.untouched">Plan amount is Required
                             </small>
@@ -41,8 +41,8 @@
                     </div>
                     <div class="input-box">
                         <span class="details">Plan Type</span>
-                        <select name="planType"  #plan="ngModel"
-                             id="dropdown" [(ngModel)]="addVehicleplan.planType"
+                        <select (blur)="validatePlan(plan.value)" (change)="validatePlan(plan.value)" name="planType"  #plan="ngModel"
+                             id="dropdown" [(ngModel)]="addVehicleplan.planType" [class.is-invalid]="planHasError && plan.touched"
                             >
                             <option value="default">Select Plan</option>
                             <option value="Silver">Silver</option>

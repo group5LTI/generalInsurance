@@ -20,7 +20,7 @@
     transition: 0.5s ease-in-out;
 }
 .project-view1:hover {
-	color: #7370d8;
+	color: #33307d;
 	background: transparent;
 }/*project-btn*/
 
@@ -44,28 +44,52 @@
 
 /* You can add global styles to this file, and also import other style files */
 /* css content hear is valid for all the pages */
+.header {
+  background-color: #110e68;
+}
+h1 {
+  padding-left: 10px;
+  margin-right: 1100px;
+}
+.tpnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar{
+  /* position: fixed;
+  top:0; */
+  width: 65px;
+  height:60px;
+  margin-left: 6px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
 .tpnav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #7370d8;
 }
-
+ul {
+  list-style-type: none;
+}
 .tpnav li {
   float: right;
+  display: inline-block;
 }
 
 .tpnav li a {
   display: block;
-  color: white;
+  color: rgb(192, 105, 105);
   text-align: center;
+  font-weight: bold;
   padding: 19px 24px;
   text-decoration: none;
+
 }
 /* hover effect */
 .tpnav li a:hover {
-  background-color: #5350b5;
+  background-color: #444499;
 }
-
 

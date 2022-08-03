@@ -2,19 +2,17 @@
 <!-- <app-home-menu></app-home-menu> -->
 <!-- <app-dashboard-nav></app-dashboard-nav> -->
 <!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<div class="header">
 <div class="tpnav">
-
+  <div class="navbar">
+    <img class="banner-img" src="../assets/images/it.jpg" />
+</div>
+<h1 class="demotext1" id="LT"><span> L&T </span>Insurance</h1>
     <ul>
-        <a class="header1">
-            <h1 class="demotext1"><span> L&T </span>Insurance</h1>
-        </a>
-        <li><a [routerLink]="['./contactLink']">Contact</a></li>
         <li><a [routerLink]="['/homeLink']">LogOut </a></li>
-        <li><a href="#aboutnull">About</a></li>
-        <!-- <li><a class="active" [routerLink]="['/updateProfileLink']">Profile</a></li> -->
         <li><a class="active" [routerLink]="['/dbLink']">Home</a></li>
     </ul>
-
+  </div>
 </div>
 <html lang="en" dir="ltr">
   <head>
@@ -25,7 +23,7 @@
   <body>
     
     <div class="center">
-      <h1>Update Profile</h1>
+      <h1 id="up">Update</h1>
       <form #regForm="ngForm" (ngSubmit)="updateProfile()">
         <span></span>
         

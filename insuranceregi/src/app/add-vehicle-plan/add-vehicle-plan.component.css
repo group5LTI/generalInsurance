@@ -9,26 +9,26 @@
 
 body {
     display: flex;
-    height: 100vh;
+    height: 90vh;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    /* background: linear-gradient(135deg, #71b7e6, #9b59b6); */
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
 .container {
     max-width: 700px;
     width: 100%;
-    background-color: #fff;
+    background-color: rgb(122, 149, 178);
     padding: 25px 30px;
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-    /* opacity: 0.8; */
+    opacity: 0.9;
 }
 
 .container .title {
     font-size: 25px;
-    font-weight: 500;
+    font-weight: 800;
     position: relative;
 }
 
@@ -48,6 +48,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 20px 0 12px 0;
+    font-weight: 500;
 }
 
 form .user-details .input-box {
@@ -67,7 +68,7 @@ form .details {
 }
 
 .user-details .input-box input {
-    height: 45px;
+    height: 60px;
     width: 100%;
     outline: none;
     font-size: 16px;
@@ -147,7 +148,7 @@ form .buttonVehicle input {
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s ease;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    background: linear-gradient(135deg, #083756, #4d0769);
 }
 form .button input {
     height: 100%;
@@ -160,16 +161,16 @@ form .button input {
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s ease;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    background: linear-gradient(135deg, #3680b1, #9438b8);
 }
 
 form .button input:hover {
     /* transform: scale(0.99); */
-    background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+    background: linear-gradient(-135deg, #2e75a4, #590e76);
 }
 form .buttonVehicle input:hover {
     /* transform: scale(0.99); */
-    background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+    background: linear-gradient(-135deg, #2e75a4, #590e76);
 }
 
 @media(max-width: 584px) {

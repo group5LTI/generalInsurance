@@ -50,7 +50,15 @@ claiminsurance:ClaimInsurance=new ClaimInsurance();
     formData.append('userId',this.claimdocDto.userId.toString());
     formData.append('claimInsuranceDocument',this.claimdocDto.claimInsuranceDocument);
     this.uploadDocumemt.ToUploadClaim(formData)
-    .subscribe(data=>alert(JSON.stringify(data)));
+    .subscribe(
+      data=>{
+        console.log(data)
+       
+      }
+
+
+    );
+    alert("File Uploaded");
     location.reload();
   }
 }

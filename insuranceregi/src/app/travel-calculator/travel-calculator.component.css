@@ -1,6 +1,20 @@
-
+#plantypet{
+    text-align: center;
+    /* border: 1px solid red; */
+    margin-left: 110px;
+}
+.details {
+    /* font-weight: bold; */
+    font-size: medium;
+    font-size: medium;
+}
+#travel {
+    margin-left:230px;
+    font-weight: bolder;
+    font-size: x-large;
+    color:brown;
+}
 input {
-    
     width: 30%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -43,29 +57,56 @@ input {
 
 /* You can add global styles to this file, and also import other style files */
 /* css content hear is valid for all the pages */
-.tpnav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #7370d8;
-}
-
-.tpnav li {
-  float: right;
-}
-
-.tpnav li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 19px 24px;
-  text-decoration: none;
-}
-/* hover effect */
-.tpnav li a:hover {
-  background-color: #5350b5;
-}
+.header {
+    background-color: #110e68;
+  }
+  h1 {
+    padding-left: 10px;
+    margin-right: 1100px;
+  }
+  .tpnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navbar{
+    /* position: fixed;
+    top:0; */
+    width: 65px;
+    height:60px;
+    margin-left: 6px;
+    overflow: hidden;
+    margin-bottom: 5px;
+  }
+  .tpnav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  ul {
+    list-style-type: none;
+  }
+  .tpnav li {
+    float: right;
+    display: inline-block;
+  }
+  
+  .tpnav li a {
+    display: block;
+    color: rgb(192, 105, 105);
+    text-align: center;
+    font-weight: bold;
+    padding: 19px 24px;
+    text-decoration: none;
+  
+  }
+  /* hover effect */
+  .tpnav li a:hover {
+    background-color: #444499;
+  }
+  
+  
 /* headerrrrrr */
 
 
@@ -143,7 +184,7 @@ form input[type="radio"] {
 
 form .button {
     height: 45px;
-    margin: 35px 0
+    margin: 30px 0px;
 }
 
 form .button input {
@@ -153,7 +194,7 @@ form .button input {
     border: none;
     color: #fff;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -259,3 +300,4 @@ form .button input:hover {
 	color: #7370d8;
 	background: transparent;
 }/*project-btn*/
+  

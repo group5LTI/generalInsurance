@@ -1,43 +1,75 @@
-
 /* for header  */
 .header1 {
-    /* background-color: blue; */
-    color: #ffffff;
-    padding: 19px 24px;
-  }
-  
+  /* background-color: blue; */
+  color: #edcccc;
+  padding: 19px 24px;
+}
+
 
 /* logo text for L&T Insurance */
-    .demotext1 {
-      text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5, 13px 9px 20px rgba(250,0,0,0);
-      color: #FFFFFF;
-      /* background: #FFFFFF; */
-      }
+.demotext1 {
+  text-shadow: 2px 2px 0 #691039, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5, 13px 9px 20px rgba(250, 0, 0, 0);
+  color: #f2e9e9;
+
+  /* background: #FFFFFF; */
+}
 
 /* You can add global styles to this file, and also import other style files */
 /* css content hear is valid for all the pages */
+
+
+.header {
+  background-color: #110e68;
+}
+
+h1 {
+  padding-left: 10px;
+  margin-right: 700px;
+}
+
+.tpnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar {
+  /* position: fixed;
+  top:0; */
+  width: 65px;
+  height: 60px;
+  margin-left: 7px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
 .tpnav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #7370d8;
+}
+
+ul {
+  list-style-type: none;
 }
 
 .tpnav li {
   float: right;
+  display: inline-block;
 }
 
 .tpnav li a {
   display: block;
-  color: white;
+  color: rgb(192, 105, 105);
   text-align: center;
+  font-weight: bold;
   padding: 19px 24px;
   text-decoration: none;
+
 }
+
 /* hover effect */
 .tpnav li a:hover {
-  background-color: #5350b5;
+  background-color: #444499;
 }
-
-

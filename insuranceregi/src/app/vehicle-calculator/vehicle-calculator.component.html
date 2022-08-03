@@ -1,13 +1,14 @@
 <!-- dashboard start -->
+<div class="header">
 <div class="tpnav">
-
+    <div class="navbar">
+        <img class="banner-img" src="../assets/images/it.jpg" />
+    </div>
+    <h1 class="demotext1" id="LT"><span> L&T </span>Insurance</h1>
     <ul>
-        <a class="header1">
-            <h1 class="demotext1"><span> L&T </span>Insurance</h1>
-        </a>
         <li><a type="button" value="Go back!" onclick="history.back()">Back</a></li>
     </ul>
-
+</div>
 </div>
 <!-- <app-dashboard-nav></app-dashboard-nav> -->
 <!-- header-slider-area start -->
@@ -101,7 +102,7 @@
                         <!--/.we-do-info-->
                         <div class="we-do-comment">
 
-                            <h1><a class="demotext2">{{ data.vip.planType}}</a></h1>
+                         <h1 id="plantype">{{ data.vip.planType}}</h1>
                             <ul class="plan-lists">
                                 <li>{{data.message}}</li>
                                 <li>Cost Rs {{ data.vip.plannedAmountV }}</li>
